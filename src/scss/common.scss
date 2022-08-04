@@ -1,0 +1,117 @@
+//================================================================================================================================
+//ОБЩИЕ СТИЛИ
+//========================================================================================================================================================
+//ТЕКСТ
+//==================================================================================================================================
+//ССЫЛКИ
+//========================================================================================================================================================
+//ФОРМА
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: rem(10);
+  transition: all 0.3s ease 0s;
+  pointer-events: none;
+}
+input,
+select {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  font-size: rem(16);
+  color: #252525;
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  opacity: 0;
+}
+//убираем крестики у input search
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+//убирает крстик у input search в IE и Safari
+.someinput::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+//ЧЕКБОКСЫ
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  appearance: none;
+  width: 0;
+  height: 0;
+  border: 0;
+  @extend .visually-hidden;
+}
+
+//========================================================================================================================================================
+//Все svg иконки
+.icon-img{
+  fill: #ffffff;
+  width: rem(30);
+  height: rem(30);
+  object-fit: cover;
+  padding: 5px;
+  @media (min-width:$tablet){
+    &:hover {
+      fill: $color-main;
+    }
+  }
+}
+
+//=================================================================================================================================
+//КНОПКИ
+.btn {
+  display: inline-block;
+  padding: 13px 42px;
+  height: 45px;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+}
+
+//=================================================================================================================================
+//ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ
+
+//================================================================================================================================
+
+//=================================================================================================================================
+//СВАЙПЕР
+.swiper {
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 480px) {
+    .swiper-slide {
+      opacity: 0.5;
+    }
+    .swiper-slide-active {
+      opacity: 1;
+    }
+  }
+}
+
+.swiper-pagination {
+  bottom: 24px;
+}
+
+.swiper-pagination-bullet {
+  background-color: transparent;
+  opacity: unset;
+  background-color: #ead1d0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #961914;
+}

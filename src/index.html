@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Главная'
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html', {})
+    <div class="container">
+      <main class="page">
+        <section class="main-screen">
+          <div class="main-screen__images">
+            <div class="main-screen__image">
+              <picture>
+                <img src='@img/1.main-screen/Yanki1.jpg' srcset='' alt=''>
+              </picture>
+            </div>
+          </div>
+        </section>
+    </div>
+    <!--<form action="" method=''>
+        <fieldset class="form__group">
+          <input class="form__input" id="" placeholder=" " type="text" name="" value="">
+          <label class="form__label" for=""></label>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <label class="form__label label--checkbox" name="" for="">
+            <input class="form__input  input--checkbox" type="checkbox" name="" id="">
+            <span class="check__box"></span>
+            
+          </label>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <label class="form__label label--checkbox" name="" for="">
+            <input class="form__input  input--checkbox" type="checkbox" name="" id="">
+            <span class="check__box"></span>
+            
+          </label>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <label class="form__label--radio checkboxmark--body" name="" for="checkboxmark_calculate1">
+            <input class="form__input--radio checkboxmark" type="radio" name="checkboxmark"
+              id="checkboxmark_calculate1">
+            <span class="radio"></span>
+            
+          </label>
+          <label class="form__label--radio checkboxmark--body" name="" for="checkboxmark_calculate2">
+            <input class="form__input--radio checkboxmark" type="radio" name="checkboxmark"
+              id="checkboxmark_calculate2">
+            <span class="radio"></span>
+           
+          </label>
+        </fieldset>
+
+        <div class="form__group">
+          <select class="form__input" name="" id="">
+            <option value="1"></option>
+            <option value="1"></option>
+            <option value="1"></option>
+            <option value="1"></option>
+          </select>
+        </div>
+
+        <div class="form__group quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img src="@img/popup_form/Plus.svg" alt="" />
+          </button>
+          <input class="form__input input" type="number" name="name" min="1" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="@img/popup_form/Minus.svg" alt="" />
+          </button>
+        </div>
+
+        <button type="submit" class="form__button btn"></button>
+      </form>
+
+      <details class="spoilers--block__title">
+        <summary>
+          <div class="spoilers--block__quest"></div>
+          <div class="spoilers--block__icon icon-spoiler">
+            <span class="icon-spoiler__line"></span>
+          </div>
+        </summary>
+        <div class="spoilers--block__answer">
+        </div>
+      </details>-->
+
+    </main>
+    @@include('html/popups.html', {})
+    @@include('html/footer.html', {})
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>

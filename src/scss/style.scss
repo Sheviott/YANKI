@@ -1,0 +1,80 @@
+// <Шрифт по умолчанию>=========================================================================================
+$fontfamily: 'Raleway', sans-serif;
+// <Шрифт по умолчанию>=========================================================================================
+
+// <ПЕРЕМЕННЫЕ>=======================================================================================
+$minWidth: 320px;
+$tablet: 768px;
+$pc: 1024px;
+$fontsize: 16;
+//ЦВЕТА============================================================================================
+$color-main: #E0BEA2;
+$color-text-grey: #434242;
+$color-background-pink: #ead1d0;
+$color-background-lightpink: #fff4f3;
+$color-lightred: #ec7973;
+$color-main-red: #961914;
+// <ПЕРЕМЕННЫЕ>=======================================================================================
+
+@import "nullstyle.scss";
+@import "adaptive.scss";
+@import "base.scss";
+@import "common.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+
+// <ОБОЛОЧКА>======================================================================================================
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+[class*="__container"] {
+  max-width: 1298px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.page {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+// <ОБОЛОЧКА>======================================================================================================
+
+// <Оcновная сетка>======================================================================================================
+// для пользльзователей предпочитающих отключать анимации
+// нет поддержки в EI / opera mini
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-size: 1em;
+  line-height: 140%;
+  font-style: normal;
+  font-weight: 400;
+  color: black;
+  background-color: #434242;
+}
+
+// <Оcновная сетка>====================================================================================================

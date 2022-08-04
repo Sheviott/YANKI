@@ -1,0 +1,515 @@
+body[class="__lock"] {
+  overflow: hidden;
+}
+.search {
+  &__label {
+  }
+  &__input {
+  }
+}
+// иконка поиска svg
+.search-icon {
+  fill: #000000;
+  @media (min-width: $tablet) {
+    fill: #ffffff;
+  }
+}
+//========================================================================================================================================================
+//выпадающее меню
+.dropdown {
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  height: min-content;
+  transition: all 0.3s ease 0s;
+  //ссылки из выпадающего меню
+  .dropdown-item {
+    display: block;
+    padding: rem(5);
+    color: #ffffff;
+    border-top: 1px solid $color-main;
+    @media (min-width: $tablet) {
+      &:hover {
+        transition: all 0.3s ease 0s;
+        color: $color-main;
+      }
+    }
+  }
+}
+//текущее значение
+.current-dropdown {
+  //width: rem(60);
+  padding: rem(5);
+  cursor: pointer;
+  @media (min-width: $tablet) {
+    &:hover {
+      color: $color-main;
+      transition: all 0.3s ease 0s;
+    }
+    display: inline;
+  }
+}
+//черный цвет на белом фоне
+.menu__value {
+  .dropdown {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    @media (min-width: $tablet) {
+      box-shadow: none;
+    }
+  }
+  .dropdown-item {
+    color: #000000;
+    @media (min-width: $tablet) {
+      color: white;
+    }
+  }
+}
+// убираем ропзрачность на выпадашка с языком для белого фона
+.dropdown--black {
+  background-color: rgba(131, 131, 131, 0.9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+// личный кабинет пользолвателя в меню бургере, иконка слева
+.user-profile {
+}
+.user-profile--icon {
+  position: relative;
+  //padding-top: 0;
+  padding-bottom: 0;
+  top: 5px;
+  //display: inline-block;
+  ////position: absolute;
+  //margin-bottom: -10px;
+  //margin-top: -5px;
+  //left: 0;
+}
+.user-profile--link {
+  display: inline-block;
+}
+.contacts {
+  &__icons {
+  }
+  &__tel {
+    margin-bottom: rem(5);
+  }
+  &__email {
+  }
+}
+.instagram-icon {
+}
+.telegram-icon {
+  margin-left: rem(10);
+}
+
+.language {
+}
+.user--menu {
+  @media (min-width:$tablet){
+    align-items: center;
+  }
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  &__container {
+  }
+  &__body {
+  }
+  &__menu {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+    align-items: center;
+    @media (min-width: $tablet) {
+      justify-content: space-around;
+    }
+  }
+  &__contacts {
+    align-self: flex-end;
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    justify-self: center;
+    padding: 20% 0 rem(30) 0;
+    //align-self: flex-start;
+    text-align: center;
+    @media (min-width: $tablet) {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+  //центрируем логотип магазина
+  &__logo {
+    flex: 1 0 auto;
+    text-align: center;
+    @media (min-width: $tablet) {
+      flex: none;
+      order: 3;
+    }
+  }
+  &__icon-logo {
+  }
+  &__user--menu {
+    width: 80px;
+    @media (min-width: $tablet) {
+      width: auto;
+      order: 5;
+    }
+  }
+  //иконка стрелочки для выбора языка
+  &__lang {
+    color: white;
+    position: relative;
+    margin-top: rem(-5);
+    @media (min-width: $tablet) {
+      order: 4;
+      margin-right: 10px;
+    }
+  }
+  &__lang--current {
+    width: rem(50);
+    position: relative;
+    @media (min-width: $tablet) {
+      margin-right: 20px;
+    }
+  }
+  &__lang--dropdown {
+  }
+  .lang--arrow {
+    position: absolute;
+    top: rem(7);
+    right: -10;
+  }
+
+  .arrow-icon {
+    width: rem(20);
+    height: rem(20);
+    transition: all 0.3s ease 0s;
+  }
+  .__arrow-rotate {
+    transform: rotate(-180deg);
+  }
+
+  .menu {
+    &__icon {
+    }
+    &__line {
+    }
+    &__body {
+      position: absolute;
+      display: grid;
+      grid-template-columns: 20px minmax(auto, 400px) 65px 8px;
+      grid-template-rows: auto auto 1fr;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin-top: rem(65);
+      height: 100vh;
+      padding-bottom: rem(60);
+      background-color: rgba($color: white, $alpha: 1);
+      transition: all 0.3s ease 0s;
+      overflow: scroll;
+      transform: translate(-100%, 0);
+      @media (min-width: $tablet) {
+        display: block;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        transform: translate(0, 0);
+        background-color: transparent;
+        flex: 0 0 236px;
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+    //========================================================================================================================================================
+    //строка поиска
+    //wrapper
+    &__search {
+      position: relative;
+      margin: 20px 0;
+      padding-right: 15px;
+      width: 100%;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      @media (min-width: $tablet) {
+        visibility: hidden;
+        position: absolute;
+        //order: 5;
+        max-width: 300px;
+        margin: 0;
+        padding: 0 20px 0 0;
+        display: inline;
+        //position: relative;
+      }
+    }
+    @media (min-width:$tablet){
+      .__search--open {
+        visibility: visible;
+        position: absolute;
+        right: 139px; 
+        .search-icon {
+          fill: #000000;
+        }
+      }
+    }
+    &__search--label {
+      padding-top: rem(10);
+      padding-left: rem(20);
+      color: #252525;
+    }
+    &__search--input {
+      width: 100%;
+      height: rem(40);
+      padding-left: rem(10);
+      border: rem(0.5) solid #9e9383;
+      border-radius: 30px;
+    }
+    //========================================================================================================================================================
+    // смена валюты
+    &__value {
+      grid-column: 3/4;
+      @media (min-width: $tablet) {
+        width: 70px;
+        margin: 0;
+        display: inline;
+      }
+    }
+    // текущая валюта
+    &__value--current {
+      position: relative;
+      .arrow-icon {
+        fill: black;
+        @media (min-width: $tablet) {
+          fill: white;
+        }
+      }
+    }
+    &__value--dropdown {
+      @media (min-width: $tablet) {
+        right: 0;
+        background-color: transparent;
+      }
+    }
+    //иконка стерки
+    .value--arrow {
+      @extend .lang--arrow;
+      left: 45px;
+    }
+    //========================================================================================================================================================
+    //основне меню
+    &__list {
+      grid-column: 2/4;
+      grid-row: 2/3;
+      justify-self: center;
+      text-align: center;
+      width: 100%;
+      max-width: 480px;
+      @media (min-width: $tablet) {
+        position: relative;
+        display: inline-block;
+        display: flex;
+      }
+      li {
+        display: block;
+        padding: 20px 0;
+        border-bottom: 1px solid #9e9383;
+        &:first-child {
+          border-top: 1px solid #9e9383;
+          
+        }
+        @media (min-width:$tablet){
+          border: none; 
+       }
+      }
+    }
+    //ссылки меню
+    &__link {
+      //display: inline;
+      font-weight: 300;
+      line-height: 22px;
+      position: relative;
+      font-size: 16px;
+      color: black;
+      @media (min-width: $tablet) {
+        color: white;
+        padding: 0;
+        border-bottom: none;
+        display: inline-block;
+        margin-right: 25px;
+      }
+      &:hover{
+        color: $color-main;
+      }
+    }
+    &__link--mobile {
+      @media (min-width: $tablet) {
+        position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+      }
+    }
+  }
+  //========================================================================================================================================================
+  //Меню бургер
+  .icon-menu {
+    background: none;
+    display: block;
+    position: relative;
+    width: 34px;
+    height: 24px;
+    cursor: pointer;
+    margin-top: rem(-8);
+    z-index: 1;
+    //отрисовка меню бургера
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      left: 0;
+      position: absolute;
+      height: 3.5px;
+      background-color: rgb(255, 255, 255);
+      padding: 1.8px;
+    }
+    span {
+      top: calc(50% - rem(1));
+      width: 80%;
+    }
+    &::before {
+      top: 0;
+      width: 100%;
+    }
+    &::after {
+      width: 50%;
+      bottom: 0;
+    }
+  }
+  // кнопка поиска button
+  .search__button {
+    background-color: transparent;
+    position: absolute;
+    top: rem(5);
+    right: rem(20);
+    @media (min-width: 350px) {
+      right: rem(35);
+    }
+  }
+  
+  // иконки пользователя (профиль, избранные, корзина, поиск) // a
+  .icon {
+    display: inline-block;
+    //&:not(:first-child) {
+    //  //margin-left: rem(20);
+    //}
+  }
+  .value {
+  }
+
+  .icons {
+    text-align: end;
+    justify-content: flex-end;
+    &__search {
+      @media (max-width: 767px) {
+        position: absolute;
+        visibility: hidden;
+      }
+    }
+    &__profile {
+      &:hover{
+        color: $color-main;
+      }
+      @media (max-width: 767px) {
+        position: absolute;
+        visibility: hidden;
+        
+      }
+    }
+    &__favorits {
+      margin-right: 5px;
+    }
+    &__basket {
+    }
+  }
+  .profile-icon {
+    
+  }
+  .favorits-icon {
+  }
+  .basket-icon {
+  }
+
+  .header--transparent {
+  }
+
+  //убирает сдвиг страницы при открытии попапа (из за скрола popup.js)
+  .lock-padding {
+  }
+
+  //МОДИФИКАТОРЫ
+  //========================================================================================================================================================
+  //Класс для плавного показа меню боди (при нажатии на меню бургер)
+  .__active-menu--burger {
+    transform: translate(0, 0);
+  }
+  // при нажатии на меню бургер превращается в закрывающую кнопку
+  .__menu-open {
+    span {
+      background-color: rgb(255, 255, 255);
+      width: 50%;
+      transform: rotate(45deg) translate(15px, -5.5px);
+    }
+    &::before {
+      top: calc(50% - rem(1));
+      transform: rotate(-45deg);
+      background-color: rgb(255, 255, 255);
+    }
+    &::after {
+      bottom: calc(50% - rem(1));
+      transform: rotate(45deg) translate(-1px, -4px);
+      background-color: rgb(255, 255, 255);
+    }
+  }
+
+  // появляется скролл хедера при определенном пороге значений (scroll.js)
+  .__scroll-on {
+    position: fixed;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: em(1) 0;
+    margin: 0 auto;
+    animation: showBlock 0.3s ease 0s;
+    z-index: 10000;
+    @keyframes showBlock {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// класс для блокировки скрола при открытом меню
