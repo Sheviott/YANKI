@@ -1,0 +1,156 @@
+.__catalog-page.header {
+  //border-bottom: 1px solid $color-main;
+}
+.__catalog-page {
+  .value--arrow {
+    fill: black;
+
+  }
+  .icon-svg {
+    fill: $color-main;
+  }
+  .header {
+    &__container {
+    }
+    &__body {
+    }
+    &__menu {
+    }
+    &__contacts {
+    }
+    &__lang {
+      color: black;
+    }
+    &__lang--current {
+    }
+    &__lang--dropdown {
+    }
+    &__logo {
+    }
+    &__icon-logo {
+    }
+    &__user--menu {
+    }
+  }
+  .lock-padding {
+  }
+
+  .menu {
+    &__icon {
+    }
+    &__line {
+      background-color: $color-main;
+    }
+    &__body {
+      @media (max-width: 1023px){
+        border-top: 1px solid $color-main;
+      }
+    }
+    &__search {
+    }
+    &__search--button {
+    }
+    &__search--input {
+    }
+    &__search--label {
+    }
+    &__value {
+    }
+    &__value--current {
+    }
+    &__value--dropdown {
+    }
+    &__list {
+    }
+    &__link--mobile {
+    }
+    &__link {
+      color: black;
+      
+    }
+  }
+  .icon-menu {
+    span,
+    &::before,
+    &::after {
+      background-color: $color-main;
+    }
+  }
+  .search {
+    &__button {
+    }
+    &__input {
+    }
+    &__label {
+    }
+  }
+  .search-icon {
+    fill: black;
+  }
+
+  .current-dropdown {
+  }
+  .value {
+  }
+  .value--arrow {
+    fill: black;
+
+  }
+  .arrow {
+    fill: black;
+  }
+  .arrow-icon {
+  }
+  .visually-hidden {
+  }
+  .dropdown {
+    background-color: white;
+  }
+  .dropdown-item {
+    color: black;
+  }
+  .user-profile--icon {
+  }
+  .user-profile {
+  }
+  .user-profile--link {
+  }
+  .contacts {
+    &__icons {
+    }
+    &__tel {
+    }
+    &__email {
+    }
+  }
+  .instagram-icon {
+  }
+  .telegram-icon {
+  }
+  .language {
+  }
+  .lang--arrow {
+  }
+  .logo-icon {
+  }
+  .icon {
+  }
+  .user--menu {
+    &__icons {
+    }
+  }
+  .icons {
+    &__profile {
+    }
+    &__favorits {
+    }
+    &__basket {
+    }
+  }
+  .profile-icon {
+  }
+  .favorits-icon {
+  }
+  .basket-icon {
+  }
+}

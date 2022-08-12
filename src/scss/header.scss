@@ -1,17 +1,25 @@
 body[class="__lock"] {
   overflow: hidden;
 }
-.search {
-  &__label {
-  }
-  &__input {
-  }
-}
+
 // иконка поиска svg
 .search-icon {
   fill: #000000;
-  @media (min-width: $tablet) {
+  z-index: 10;
+  @media (min-width: $pc) {
     fill: #ffffff;
+    pointer-events: none;
+  }
+}
+.__home-page {
+  .menu__value--current {
+    position: relative;
+    .arrow-icon {
+      fill: black;
+      @media (min-width: $pc) {
+        fill: white;
+      }
+    }
   }
 }
 //========================================================================================================================================================
@@ -28,7 +36,7 @@ body[class="__lock"] {
     padding: rem(5);
     color: #ffffff;
     border-top: 1px solid $color-main;
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       &:hover {
         transition: all 0.3s ease 0s;
         color: $color-main;
@@ -41,7 +49,7 @@ body[class="__lock"] {
   //width: rem(60);
   padding: rem(5);
   cursor: pointer;
-  @media (min-width: $tablet) {
+  @media (min-width: $pc) {
     &:hover {
       color: $color-main;
       transition: all 0.3s ease 0s;
@@ -54,13 +62,13 @@ body[class="__lock"] {
   .dropdown {
     background-color: #ffffff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       box-shadow: none;
     }
   }
   .dropdown-item {
     color: #000000;
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       color: white;
     }
   }
@@ -106,7 +114,7 @@ body[class="__lock"] {
 .language {
 }
 .user--menu {
-  @media (min-width:$tablet){
+  @media (min-width: $pc) {
     align-items: center;
   }
   &__icons {
@@ -116,7 +124,8 @@ body[class="__lock"] {
 }
 
 .header {
-  position: fixed;
+  //position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -130,9 +139,7 @@ body[class="__lock"] {
     flex-flow: row nowrap;
     gap: 15px;
     align-items: center;
-    @media (min-width: $tablet) {
-      justify-content: space-around;
-    }
+    justify-content: space-between;
   }
   &__contacts {
     align-self: flex-end;
@@ -142,7 +149,7 @@ body[class="__lock"] {
     padding: 20% 0 rem(30) 0;
     //align-self: flex-start;
     text-align: center;
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       visibility: hidden;
       position: absolute;
     }
@@ -151,7 +158,7 @@ body[class="__lock"] {
   &__logo {
     flex: 1 0 auto;
     text-align: center;
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       flex: none;
       order: 3;
     }
@@ -160,7 +167,7 @@ body[class="__lock"] {
   }
   &__user--menu {
     width: 80px;
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       width: auto;
       order: 5;
     }
@@ -170,15 +177,25 @@ body[class="__lock"] {
     color: white;
     position: relative;
     margin-top: rem(-5);
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
+      order: 3;
+      margin-right: 10px;
+      flex: 0 0 100px;
+      top: 12px;
+      align-items: center;
+    }
+    @media (min-width: $pc) {
       order: 4;
       margin-right: 10px;
+      flex: 0 0 100px;
+      top: 12px;
+      align-items: center;
     }
   }
   &__lang--current {
     width: rem(50);
     position: relative;
-    @media (min-width: $tablet) {
+    @media (min-width: $pc) {
       margin-right: 20px;
     }
   }
@@ -207,6 +224,7 @@ body[class="__lock"] {
     &__body {
       position: absolute;
       display: grid;
+      z-index: 1;
       grid-template-columns: 20px minmax(auto, 400px) 65px 8px;
       grid-template-rows: auto auto 1fr;
       justify-content: center;
@@ -221,7 +239,7 @@ body[class="__lock"] {
       transition: all 0.3s ease 0s;
       overflow: scroll;
       transform: translate(-100%, 0);
-      @media (min-width: $tablet) {
+      @media (min-width: $pc) {
         display: block;
         position: relative;
         padding: 0;
@@ -243,44 +261,114 @@ body[class="__lock"] {
       width: 100%;
       grid-column: 2/3;
       grid-row: 1/2;
-      @media (min-width: $tablet) {
-        visibility: hidden;
-        position: absolute;
+      @media (min-width: $pc) {
+        //visibility: hidden;
+        //position: absolute;
         //order: 5;
-        max-width: 300px;
+        cursor: pointer;
+        overflow: hidden;
         margin: 0;
-        padding: 0 20px 0 0;
+        padding: 0;
         display: inline;
+
         //position: relative;
       }
     }
-    @media (min-width:$tablet){
-      .__search--open {
-        visibility: visible;
-        position: absolute;
-        right: 139px; 
-        .search-icon {
-          fill: #000000;
-        }
-      }
+    @media (min-width: $pc) {
+      //.__search--open {
+      //  visibility: visible;
+      //  position: absolute;
+      //  right: 139px;
+      //  .search-icon {
+      //    fill: #000000;
+      //  }
+      //}
     }
     &__search--label {
       padding-top: rem(10);
       padding-left: rem(20);
       color: #252525;
+      @media (min-width: $pc) {
+        pointer-events: none;
+        opacity: 0;
+      }
     }
     &__search--input {
       width: 100%;
       height: rem(40);
       padding-left: rem(10);
       border: rem(0.5) solid #9e9383;
+      transition: all 0.3s ease 0s;
       border-radius: 30px;
+      @media (min-width: $pc) {
+        background-color: transparent;
+        width: rem(40);
+        height: rem(40);
+        border: none;
+        color: transparent;
+        &:focus {
+          border: rem(0.5) solid #9e9383;
+          background-color: white;
+          color: black;
+          width: 250px;
+          transition: all 0.3s ease 0s;
+        }
+        &:focus + .menu__search--label {
+          transition: all 0.3s ease 0s;
+        }
+        &:focus #icon-search-menu {
+          fill: black;
+          z-index: 1;
+        }
+
+        //&:focus ~ .menu__search--label {
+        //  color: black;
+        //}
+      }
     }
+    // кнопка поиска button
+    .search__button {
+      background-color: transparent;
+      position: absolute;
+      width: rem(40);
+      height: rem(40);
+      right: rem(20);
+      z-index: 1;
+      @media (min-width: 350px) {
+        right: rem(35);
+      }
+      @media (min-width: $pc) {
+        right: 0;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        pointer-events: painted;
+        z-index: 10;
+        &:focus ~ .menu__search--input {
+          border: rem(0.5) solid #9e9383;
+          background-color: white;
+          width: 250px;
+          color: black;
+          transition: all 0.3s ease 0s;
+        }
+        &:focus .search-icon {
+          fill: black;
+        }
+        &:focus + .menu__search--input + .menu__search--label {
+          opacity: 1;
+        }
+        &:focus + .menu__search--input:not(:placeholder-shown) + .menu__search--label {
+          opacity: 0;
+        }
+      }
+    }
+
     //========================================================================================================================================================
     // смена валюты
     &__value {
       grid-column: 3/4;
-      @media (min-width: $tablet) {
+      @media (min-width: $pc) {
         width: 70px;
         margin: 0;
         display: inline;
@@ -289,15 +377,9 @@ body[class="__lock"] {
     // текущая валюта
     &__value--current {
       position: relative;
-      .arrow-icon {
-        fill: black;
-        @media (min-width: $tablet) {
-          fill: white;
-        }
-      }
     }
     &__value--dropdown {
-      @media (min-width: $tablet) {
+      @media (min-width: $pc) {
         right: 0;
         background-color: transparent;
       }
@@ -316,7 +398,7 @@ body[class="__lock"] {
       text-align: center;
       width: 100%;
       max-width: 480px;
-      @media (min-width: $tablet) {
+      @media (min-width: $pc) {
         position: relative;
         display: inline-block;
         display: flex;
@@ -327,11 +409,10 @@ body[class="__lock"] {
         border-bottom: 1px solid #9e9383;
         &:first-child {
           border-top: 1px solid #9e9383;
-          
         }
-        @media (min-width:$tablet){
-          border: none; 
-       }
+        @media (min-width: $pc) {
+          border: none;
+        }
       }
     }
     //ссылки меню
@@ -342,34 +423,35 @@ body[class="__lock"] {
       position: relative;
       font-size: 16px;
       color: black;
-      @media (min-width: $tablet) {
+      @media (min-width: $pc) {
         color: white;
         padding: 0;
         border-bottom: none;
         display: inline-block;
         margin-right: 25px;
       }
-      &:hover{
+      &:hover {
         color: $color-main;
       }
     }
     &__link--mobile {
-      @media (min-width: $tablet) {
+      @media (min-width: $pc) {
         position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.3s ease 0s;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease 0s;
       }
     }
   }
+
   //========================================================================================================================================================
   //Меню бургер
   .icon-menu {
@@ -380,6 +462,7 @@ body[class="__lock"] {
     height: 24px;
     cursor: pointer;
     margin-top: rem(-8);
+    flex: 0 0 auto;
     z-index: 1;
     //отрисовка меню бургера
     span,
@@ -406,20 +489,13 @@ body[class="__lock"] {
       bottom: 0;
     }
   }
-  // кнопка поиска button
-  .search__button {
-    background-color: transparent;
-    position: absolute;
-    top: rem(5);
-    right: rem(20);
-    @media (min-width: 350px) {
-      right: rem(35);
-    }
-  }
-  
+
   // иконки пользователя (профиль, избранные, корзина, поиск) // a
   .icon {
     display: inline-block;
+    //margin-right: 15px;
+    padding: 0 3px;
+
     //&:not(:first-child) {
     //  //margin-left: rem(20);
     //}
@@ -430,6 +506,7 @@ body[class="__lock"] {
   .icons {
     text-align: end;
     justify-content: flex-end;
+    gap: 10px;
     &__search {
       @media (max-width: 767px) {
         position: absolute;
@@ -437,23 +514,20 @@ body[class="__lock"] {
       }
     }
     &__profile {
-      &:hover{
+      &:hover {
         color: $color-main;
       }
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         position: absolute;
         visibility: hidden;
-        
       }
     }
     &__favorits {
-      margin-right: 5px;
     }
     &__basket {
     }
   }
   .profile-icon {
-    
   }
   .favorits-icon {
   }
@@ -512,4 +586,7 @@ body[class="__lock"] {
   }
 }
 
-// класс для блокировки скрола при открытом меню
+@import "header-catalog.scss";
+
+//========================================================================================================================================================
+//========================================================================================================================================================

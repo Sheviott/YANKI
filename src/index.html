@@ -6,96 +6,110 @@
 
 <body>
   <div class="wrapper">
-    @@include('html/header.html', {})
-    <div class="container">
-      <main class="page">
-        <section class="main-screen">
-          <div class="main-screen__images">
-            <div class="main-screen__image">
-              <picture>
-                <img src='@img/1.main-screen/Yanki1.jpg' srcset='' alt=''>
-              </picture>
+    @@include('html/header.html', {
+      'page': '__home-page'
+    })
+    <main class="page">
+      <section class="main-screen">
+        <div class="main-screen__images">
+          <picture class="main-img main-img__1 ibg">
+            <img src='@img/1.main-screen/Yanki1.jpg' srcset='' alt=''>
+          </picture>
+          <picture class="main-img main-img__2 ibg">
+            <source srcset='@img/1.main-screen/Yanki2.jpg' media="(min-width: 768px)">
+            <img src='@img/1.main-screen/Yanki2.jpg' srcset='' alt=''>
+          </picture>
+          <picture class="main-img main-img__3 ibg">
+            <source srcset='@img/1.main-screen/Yanki3.jpg' media="(min-width: 1024px)">
+            <img src='@img/1.main-screen/Yanki3.jpg' srcset='' alt=''>
+          </picture>
+        </div>
+        <div class="main-screen__content">
+          <a href="" class="main-screen__body">
+            <h1 class="main-screen__title title">Новая коллекция</h1>
+            <div class="main-screen__subtitle">Смотреть Новинки
             </div>
+          </a>
+        </div>
+      </section>
+      <section class="category">
+        <div class="category__body category__container">
+          <h2 class="category__title title">Категории</h2>
+          <div class="category__slider swiper">
+            <div class="category__slider-wrapper swiper-wrapper">
+              <div class="category__slide swiper-slide">
+                <a href="" class="category__item item">
+                  <div class="item__image ibg">
+                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
+                    <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+                  </div>
+                  <div class="item__category-name">Куртки</div>
+                </a>
+              </div>
+              <div class="category__slide swiper-slide">
+                <a href="" class="category__item item">
+                  <div class="item__image ibg">
+                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
+                    <img src='@img/2.category/category_2.jpg' srcset='' alt=''>
+                  </div>
+                  <div class="item__category-name">Пальто</div>
+                </a>
+              </div>
+              <div class="category__slide swiper-slide">
+                <a href="" class="category__item item">
+                  <div class="item__image ibg">
+                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
+                    <img src='@img/2.category/category_3.jpg' srcset='' alt=''>
+                  </div>
+                  <div class="item__category-name">Шубы</div>
+                </a>
+              </div>
+              <div class="category__slide swiper-slide">
+                <a href="" class="category__item item">
+                  <div class="item__image ibg">
+                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
+                    <img src='@img/2.category/category_4.jpg' srcset='' alt=''>
+                  </div>
+                  <div class="item__category-name">Парки</div>
+                </a>
+              </div>
+              <div class="category__slide swiper-slide">
+                <a href="" class="category__item item">
+                  <div class="item__image ibg">
+                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
+                    <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+                  </div>
+                  <div class="item__category-name">Шапки</div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
-        </section>
-    </div>
-    <!--<form action="" method=''>
-        <fieldset class="form__group">
-          <input class="form__input" id="" placeholder=" " type="text" name="" value="">
-          <label class="form__label" for=""></label>
-        </fieldset>
-
-        <fieldset class="form__group">
-          <label class="form__label label--checkbox" name="" for="">
-            <input class="form__input  input--checkbox" type="checkbox" name="" id="">
-            <span class="check__box"></span>
-            
-          </label>
-        </fieldset>
-
-        <fieldset class="form__group">
-          <label class="form__label label--checkbox" name="" for="">
-            <input class="form__input  input--checkbox" type="checkbox" name="" id="">
-            <span class="check__box"></span>
-            
-          </label>
-        </fieldset>
-
-        <fieldset class="form__group">
-          <label class="form__label--radio checkboxmark--body" name="" for="checkboxmark_calculate1">
-            <input class="form__input--radio checkboxmark" type="radio" name="checkboxmark"
-              id="checkboxmark_calculate1">
-            <span class="radio"></span>
-            
-          </label>
-          <label class="form__label--radio checkboxmark--body" name="" for="checkboxmark_calculate2">
-            <input class="form__input--radio checkboxmark" type="radio" name="checkboxmark"
-              id="checkboxmark_calculate2">
-            <span class="radio"></span>
-           
-          </label>
-        </fieldset>
-
-        <div class="form__group">
-          <select class="form__input" name="" id="">
-            <option value="1"></option>
-            <option value="1"></option>
-            <option value="1"></option>
-            <option value="1"></option>
-          </select>
         </div>
-
-        <div class="form__group quantity">
-          <button class="plus-btn" type="button" name="button">
-            <img src="@img/popup_form/Plus.svg" alt="" />
-          </button>
-          <input class="form__input input" type="number" name="name" min="1" value="1">
-          <button class="minus-btn" type="button" name="button">
-            <img src="@img/popup_form/Minus.svg" alt="" />
-          </button>
+      </section>
+      <section class="email-subscribe">
+        <div class="email-subscribe__body __container">
+          <h2 class="email-subscribe__title title">Узнайте первым о новинках</h2>
+          <form action="" method='' class="email-subscribe__form-email">
+            <fieldset class="email-subscribe__form-group">
+              <input autocomplete="off" type="email" name="form[]" data-error="Ошибка" placeholder=" "
+                class="email-subscribe__email--input" id="email-form">
+              <label class="email-subscribe__email--label" for="email-form">Ваш e-mail*</label>
+            </fieldset>
+            <button class="email-subscribe__button btn" type="submit">Подписаться</button>
+          </form>
+          <p class="email-subscribe__accept-policy">Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих
+            персональных данных и ознакомлен(а) с условиями конфиденциальности.
+          </p>
         </div>
-
-        <button type="submit" class="form__button btn"></button>
-      </form>
-
-      <details class="spoilers--block__title">
-        <summary>
-          <div class="spoilers--block__quest"></div>
-          <div class="spoilers--block__icon icon-spoiler">
-            <span class="icon-spoiler__line"></span>
-          </div>
-        </summary>
-        <div class="spoilers--block__answer">
-        </div>
-      </details>-->
-
+      </section>
     </main>
-    @@include('html/popups.html', {})
-    @@include('html/footer.html', {})
+    @@include('html/footer.html', {
+      })
+   
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/app.min.js"></script>
+  @@include('html/script.html', {
+    })
 </body>
-
 </html>

@@ -2,10 +2,76 @@
 //ОБЩИЕ СТИЛИ
 //========================================================================================================================================================
 //ТЕКСТ
+.title {
+  margin-bottom: rem(30);
+  font-weight: 300;
+  line-height: 28px;
+  font-size: 24px;
+  @media (min-width:$tablet){
+    font-size: 36px;
+  }
+}
+
+//========================================================================================================================================================
+//Все svg иконки
+.icon-svg {
+  fill: #ffffff;
+  width: rem(30);
+  height: rem(30);
+  object-fit: cover;
+  padding: 5px;
+  
+}
+.__home-page {
+  .icon-svg {
+    @media (min-width: $tablet) {
+      &:hover {
+        fill: $color-main;
+      }
+    }
+  }
+}
+//=================================================================================================================================
+//КНОПКИ
+.btn {
+  display: inline-block;
+  padding: 13px 42px;
+  height: 50px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  line-height: 18.78px;
+  background-color: $color-main;
+  text-align: center;
+}
+
+//=================================================================================================================================
+//ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ
+
+//================================================================================================================================
+
+//=================================================================================================================================
+//СВАЙПЕР
+.swiper {
+width: 100%;
+height: 100%;
+}
+
 //==================================================================================================================================
 //ССЫЛКИ
+//a:hover:not(.main-screen__body){
+//  text-decoration: underline;
+//  text-decoration-color: $color-main;
+//  text-underline-position: under;
+//}
+//a:hover:not(.menu__link) {
+  //@extend a:hover:not(.main-screen__body);
+//}
 //========================================================================================================================================================
 //ФОРМА
+fieldset {
+  position: relative;
+}
 label {
   position: absolute;
   top: 0;
@@ -17,7 +83,8 @@ label {
 input,
 select {
   position: relative;
-  height: 40px;
+  height: 50px;
+  padding: rem(10);
   width: 100%;
   font-size: rem(16);
   color: #252525;
@@ -40,7 +107,7 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 0;
 }
 
-//ЧЕКБОКСЫ
+//УБЕРАЕМ ВСТРОЕННЫЕ СТИЛИ
 input[type="checkbox"],
 input[type="radio"] {
   position: absolute;
@@ -50,68 +117,30 @@ input[type="radio"] {
   border: 0;
   @extend .visually-hidden;
 }
-
-//========================================================================================================================================================
-//Все svg иконки
-.icon-img{
-  fill: #ffffff;
-  width: rem(30);
-  height: rem(30);
-  object-fit: cover;
-  padding: 5px;
-  @media (min-width:$tablet){
-    &:hover {
-      fill: $color-main;
-    }
-  }
-}
-
-//=================================================================================================================================
-//КНОПКИ
-.btn {
-  display: inline-block;
-  padding: 13px 42px;
-  height: 45px;
-  border-radius: 8px;
-  color: white;
-  transition: all 0.3s ease 0s;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  text-align: center;
-}
-
-//=================================================================================================================================
-//ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ
-
-//================================================================================================================================
-
-//=================================================================================================================================
-//СВАЙПЕР
-.swiper {
-  height: 100%;
+summary {
+  display: inline-block; // убирает стрелки
+  cursor: pointer;
+  position: relative;
   width: 100%;
+  height: 100%;
+}
+select {
+  appearance: none;
+}
+//========================================================================================================================================================
 
-  @media (max-width: 480px) {
-    .swiper-slide {
-      opacity: 0.5;
-    }
-    .swiper-slide-active {
-      opacity: 1;
-    }
+summary:after {
+  content: url('../images/icons.svg#arrowBrown');
+  width: rem(25);
+  height: rem(25);
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+  @media (min-width:$pc){
+     display: none; 
   }
 }
 
-.swiper-pagination {
-  bottom: 24px;
-}
-
-.swiper-pagination-bullet {
-  background-color: transparent;
-  opacity: unset;
-  background-color: #ead1d0;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #961914;
+details[open] > summary:after {
+  transform: rotateZ(-180deg);
 }

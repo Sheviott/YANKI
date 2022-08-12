@@ -1,15 +1,16 @@
 // <Шрифт по умолчанию>=========================================================================================
-$fontfamily: 'Raleway', sans-serif;
+$fontfamily: "Raleway", sans-serif;
 // <Шрифт по умолчанию>=========================================================================================
 
 // <ПЕРЕМЕННЫЕ>=======================================================================================
 $minWidth: 320px;
-$tablet: 768px;
-$pc: 1024px;
+$tablet: 767.99px;
+$pc: 1023.99px;
+$mobile: 424.99px;
 $fontsize: 16;
 //ЦВЕТА============================================================================================
-$color-main: #E0BEA2;
-$color-text-grey: #434242;
+$color-main: #e0bea2;
+$color-text-grey: #252525;
 $color-background-pink: #ead1d0;
 $color-background-lightpink: #fff4f3;
 $color-lightred: #ec7973;
@@ -20,8 +21,12 @@ $color-main-red: #961914;
 @import "adaptive.scss";
 @import "base.scss";
 @import "common.scss";
-@import "popup.scss";
+
+//страницы
 @import "header.scss";
+@import "catalog.scss";
+@import "exchange.scss";
+@import "delivery.scss";
 @import "footer.scss";
 
 // <ОБОЛОЧКА>======================================================================================================
@@ -29,9 +34,14 @@ $color-main-red: #961914;
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-flow: column;
 }
-[class*="__container"] {
-  max-width: 1298px;
+main {
+  flex: 1 0 100%;
+}
+[class*="container"] {
+  max-width: 1180px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -62,11 +72,11 @@ $color-main-red: #961914;
 // <Оcновная сетка>======================================================================================================
 // для пользльзователей предпочитающих отключать анимации
 // нет поддержки в EI / opera mini
-@media screen and (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
+//@media screen and (prefers-reduced-motion: no-preference) {
+//  html {
+//    scroll-behavior: smooth;
+//  }
+//}
 
 body {
   font-size: 1em;
@@ -74,7 +84,239 @@ body {
   font-style: normal;
   font-weight: 400;
   color: black;
-  background-color: #434242;
+  background-color: #ffffff;
 }
-
 // <Оcновная сетка>====================================================================================================
+.main-screen {
+  width: 100%;
+  margin-bottom: rem(60);
+  height: 100vh;
+  &__images {
+    z-index: -1;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    &::before {
+      content: "";
+      background-image: linear-gradient(to bottom, #3d3d3d80 0%, transparent 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+  &__content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+  &__body {
+    display: block;
+    color: white;
+    text-align: center;
+    @media (min-width: $mobile) {
+      &:hover {
+        //filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+        transition: all 0.3s ease 0s;
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__title {
+    display: block;
+    font-size: 32px;
+    line-height: 37.57px;
+    @media (min-width: $mobile) {
+      font-size: 46px;
+      line-height: 54px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: rem(2);
+      background-color: rgba($color: #ffffff, $alpha: 0.5);
+      bottom: -50%;
+      right: 50%;
+      transform: translate(50%, 0);
+    }
+    position: relative;
+    margin-bottom: rem(41);
+  }
+  &__subtitle {
+    display: block;
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: right url(../images/arrowWhite.svg) no-repeat;
+      position: absolute;
+      width: 18px;
+      fill: #961914;
+      display: inline-block;
+      transform: rotate(-90deg);
+      height: 18px;
+      top: 6px;
+      right: 25px;
+    }
+    @media (min-width: $mobile) {
+      &::before {
+        right: 80px;
+      }
+    }
+  }
+  .main-img {
+    display: inline-block;
+    flex: 1 0 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-width: $mobile) {
+      flex: 1 0 50%;
+    }
+    @media (min-width: $tablet) {
+      flex: 1 0 33.33%;
+    }
+    &__2 {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+    &__3 {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+}
+//========================================================================================================================================================
+.category {
+  &__body {
+    margin-bottom: rem(100);
+  }
+  &__container {
+  }
+  &__title {
+  }
+  &__slider {
+  }
+  &__slider-wrapper {
+  }
+  &__slide {
+  }
+  &__item {
+    display: block;
+   
+  }
+  .swiper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .item {
+    position: relative;
+    max-width: 273px;
+    max-height: 450px;
+    &__image {
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        &:hover{
+          transform: scale(1.2);
+          transition: all 0.3s ease 0s;
+        }
+      }
+      
+    }
+    &__category-name {
+      text-align: center;
+      color: white;
+      line-height: 35px;
+      position: absolute;
+      width: 100%;
+      height: 35px;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($color: $color-main, $alpha: 0.7);
+      //filter: blur(3px);
+      font-size: 18px;
+      font-weight: 300;
+      backdrop-filter: blur(3px);
+    }
+  }
+  .swiper-button-prev {
+    width: rem(40);
+    height: rem(40);
+    background-color: $color-main;
+    color: white;
+    &::after {
+      font-size: rem(30);
+      font-weight: 600;
+    }
+  }
+  .swiper-button-next {
+    @extend .swiper-button-prev;
+  }
+  .swiper-button-disabled {
+    display: none;
+  }
+}
+//========================================================================================================================================================
+.email-subscribe {
+  &__body {
+    max-width: rem(600);
+    margin-bottom: rem(60);
+    @media (min-width: $tablet) {
+      // margin: 0;
+    }
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: rem(30);
+    @media (min-width: $tablet) {
+      margin-bottom: rem(50);
+    }
+  }
+  &__form-email {
+  }
+  &__form-group {
+    margin-bottom: rem(15);
+    @media (min-width: $tablet) {
+      margin-bottom: rem(20);
+    }
+  }
+  &__email--label {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  &__email--input {
+    border: 1px solid rgba($color: #252525, $alpha: 0.5);
+    position: relative;
+  }
+  &__accept-policy {
+    font-weight: 200;
+    line-height: 19px;
+    text-align: center;
+  }
+  &__button {
+    margin-bottom: rem(15);
+    @media (min-width: $tablet) {
+      margin-bottom: rem(20);
+    }
+  }
+}
+//========================================================================================================================================================
+
+

@@ -11,20 +11,19 @@ if (currentdropdown.length > 0) {
     currentdropdownItem.addEventListener("click", function (e) {
       dropdownOpenBlock.classList.toggle('visually-hidden');
       arrowItem.classList.toggle('__arrow-rotate');
-      
+      console.log(e);
     });
-    
-    //document.addEventListener( 'click', (e) => {
-    //  let target = e.target;
-    //    if(!target.contains(currentdropdownItem) && target.parentElement.contains(currentdropdownItem)) {
-    //      dropdownOpenBlock.classList.add('visually-hidden');
-    //    }
-    //    console.log(target.parentElement.contains(currentdropdownItem));
-      
-    //})
-   
+    // скрываем все по клику вне объекта
+    document.addEventListener('click', (e) => {
+      const pathDropdown = e.composedPath().includes(dropdownOpenBlock);
+      const pathCurrent = e.composedPath().includes(currentdropdownItem);
+      console.log(pathCurrent)
+      if (!pathDropdown & !pathCurrent) {
+        dropdownOpenBlock.classList.add('visually-hidden');
+        arrowItem.classList.remove('__arrow-rotate');
+      }
+    })
+
   }
 }
-//currentdropdown.onclick = function {
-  
-//}
+

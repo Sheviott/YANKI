@@ -58,7 +58,7 @@
     "gulp-zip": "^5.1.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.45.1",
-    "swiper": "^8.3.1",
+    "swiper": "^8.3.2",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "2.2.3",
     "webpack": "^5.65.0",

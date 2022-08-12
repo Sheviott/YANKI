@@ -1,3 +1,133 @@
 //====================================================================================================
+.footer {
+  text-align: center;
+  margin-top: rem(30);
+  margin-bottom: rem(5);
+  @media (min-width:$tablet){
+    margin-top: rem(50);
+    margin-bottom: rem(10);
+  }
+  &__copyright {
+  }
+}
+.footer-menu {
+  &__body {
+  }
+  &__navigation {
+    @media (min-width: $pc) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+    }
+    @media (max-width: $pc) {
+      max-width: rem(600);
+      margin: 0 auto;
+    }
+  }
+  &__company {
+  }
+  &__useful {
+  }
+  &__for-user {
+  }
+  &__contacts {
+  }
+  details {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgb(182, 182, 182);
+    margin-bottom: rem(15);
+    [class*="__link"] {
+      display: block;
+      padding: 5px 0;
+      color: #252525;
+    }
+    @media (min-width: $pc) {
+      border: none;
+      text-align: start;
+      flex: 1 0 25%;
+      margin-bottom: rem(0);
+    }
+  }
+  summary {
+    padding-top: 5px;
+    @media (min-width: $pc) {
+      height: auto;
+      padding: 0;
+      pointer-events: none; /* prevents click events */
+      user-select: none; /* prevents text selection */
+    }
+  }
+  .company {
+    &__title {
+    }
+    &__list {
+    }
+    &__link {
+    }
+  }
+  .title {
+    font-size: rem(18);
+    margin: 0;
+    @media (min-width: $pc) {
+      margin-bottom: rem(15);
+    }
+  }
+  .useful {
+    &__title {
+    }
+    &__list {
+    }
+    &__link {
+    }
+  }
+  .for-user {
+    &__title {
+    }
+    &__list {
+    }
+    &__link {
+    }
+  }
+  .contacts {
+    text-align: center;
 
+    @media (min-width: $pc) {
+      flex: 0 0 25%;
+      text-align: left;
+    }
+    &__title {
+      @media (min-width: $pc) {
+        margin-bottom: rem(15);
+      }
+    }
+    &__icons {
+      
+    }
+    &__tel {
+      display: block;
+      width: 100%;
+      color: $color-text-grey;
+    }
+    &__email {
+      @extend .contacts__tel;
+    }
+  }
+  .instagram-icon {
+  }
+  .icon-img {
+  }
+  .telegram-icon {
+  }
+  &__copyright {
+    text-align: center;
+    margin-top: rem(30);
+    margin-bottom: rem(5);
+    @media (min-width: $tablet) {
+      margin-top: rem(50);
+      margin-bottom: rem(10);
+    }
+  }
+}
 //====================================================================================================

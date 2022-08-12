@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'О нас'
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html', {
+    'page': '__catalog-page'
+    })
+    <main>
+      <div class="exchange">
+        <div class="exchange__body exchange__container">
+          <div class="exchange__navigation navigation">
+            <a class="navigation__link" href="">Главная</a>
+            <a class="navigation__link" href="">Обмен и воврат</a>
+          </div>
+
+          <div class="exchange__content">
+            <h2 class="exchange__title">Обмен и возврат</h2>
+            <p class="exchange__subtitle">Если вам не подошел заказ, мы с удовольствием вам его обменяем или примем возврат
+              </br>
+              Обмен и возврат возможен в случае :
+            </p>
+            <div class="exchange__row">
+              <div class="exchange__text-block">
+                <svg class="icon-svg">
+                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
+                </svg>
+                <p class="exchange__text">если заказ не был использован и сохранил товарный вид (в том числе не нарушены
+                  бирки, ярлыки, упаковочные материалы)</p>
+              </div>
+              <div class="exchange__text-block">
+                <svg class="icon-svg">
+                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
+                </svg>
+                <p class="exchange__text">возврат и обмен осуществляется в течение двух дней с момента получения заказа
+                </p>
+              </div>
+              <div class="exchange__text-block">
+                <svg class="icon-svg">
+                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
+                </svg>
+                <p class="exchange__text">возврат и обмен товара возможен только при отправке по Украине
+                </p>
+              </div>
+              <div class="exchange__text-block">
+                <svg class="icon-svg">
+                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
+                </svg>
+                <p class="exchange__text">бланк возврата присутствует в каждой посылке </p>
+              </div>
+              <div class="exchange__text-block">
+                <svg class="icon-svg">
+                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
+                </svg>
+                <p class="exchange__text">все расходы по обмену и возврату товара несет покупатель
+                </p>
+              </div>
+              <div class="exchange__text-block">
+                <svg class="icon-svg">
+                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
+                </svg>
+                <p class="exchange__text">после получения возврата мы делаем перевод денежных средств на карту клиента
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    @@include('html/footer.html', {})
+    @@include('html/script.html', {
+    })
+  </div>
+</body>
+
+</html>
