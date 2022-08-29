@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Каталог'
+})
+
+<body>
+  @@include('html/header.html', {
+  'page': '__catalog-page'
+  })
+  <main>
+
+    <div class="product">
+      <div class="product__body product__container">
+        <div class="product__navigation navigation">
+          <a class="navigation__link" href="">Главная</a>
+          <a class="navigation__link" href="">Каталог</a>
+          <a class="navigation__link" href="">Пальто</a>
+          <a class="navigation__link" href="">Кремовое пальто</a>
+        </div>
+        <div class="product__item item">
+          <div class="product__swiper swiper">
+            <div class="product__swiper-wrapper swiper-wrapper">
+               <div class="item__image swiper-slide">
+                 <img src='@img/3.product-page/item_1.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image swiper-slide">
+                 <img src='@img/3.product-page/item_2.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_3.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_4.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_5.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_6.jpg' srcset='' alt=''>
+               </div>
+           </div>
+          </div>
+          <div class="product__swiper-mini swiper">
+            <div class="product__swiper-mini-wrapper swiper-wrapper">
+               <div class="item__image swiper-slide swiper-slide-big">
+                 <img src='@img/3.product-page/item_1.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image swiper-slide">
+                 <img src='@img/3.product-page/item_2.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_3.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_4.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_5.jpg' srcset='' alt=''>
+               </div>
+               <div class="item__image  swiper-slide">
+                 <img src='@img/3.product-page/item_6.jpg' srcset='' alt=''>
+               </div>
+           </div>
+
+         </div>
+
+          <div class="item__description">
+            <div class="item__name">Кремовое пальто</div>
+            <div class="item__price">3150 грн</div>
+            <form class="product__form" action="">
+              <fieldset class="form__colors item__colors">
+                <input name="colors" id='white' class="item__color-input" type="radio">
+                <label class="item__color-label" for="white">Цвет: Мороженое с ванилью
+                </label>
+                  <span class="radio-color item__color item__color--white"></span>
+                <input name="colors" id='blue' class="item__color-input" type="radio">
+                <label class="item__color-label" for="blue">Цвет: Глубокий океан
+                </label>
+                  <span class="radio-color item__color item__color--blue"></span>
+                <input checked name="colors" id='yellow' class="item__color-input" type="radio">
+                <label class="item__color-label" for="yellow">Цвет: Кофе с молоком меланж
+                </label>
+                  <span class="radio-color item__color item__color--yellow"></span>
+              </fieldset>
+
+
+              <fieldset class="form__select item__select">
+                  <!--<span class="selectLabel" id="jobLabel"> Main job role</span>-->
+                  <div class="selectWrapper">
+                    <select class="selectNative js-selectNative" aria-labelledby="jobLabel">
+                      <option value="" hidden disabled selected>Выберите размер</option>
+                      <option value="1">XS</option>
+                      <option value="2">S</option>
+                      <option value="3">M</option>
+                      <option value="4">L</option>
+                    </select>
+
+                    <div class="selectCustom js-selectCustom" aria-hidden="true">
+                      <div class="selectCustom-trigger">Выберите размер</div>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="1">XS</div>
+                        <div class="selectCustom-option" data-value="2">XS</div>
+                        <div class="selectCustom-option" data-value="3">S</div>
+                        <div class="selectCustom-option" data-value="4">M</div>
+                        <div class="selectCustom-option" data-value="5">L</div>
+                      </div>
+                    </div>
+                  </div>
+              </fieldset>
+              <button data-cart class="btn btn--brown">В корзину</button>
+              <button class="item__to-favorits btn btn--white">
+                <svg class='item__icon icon-svg'>
+                  <use xlink:href='../images/icons.svg#favorits'></use>
+                </svg>
+                В избранное</button>
+            </form>
+            <div class="product__details">
+              <p>Подробности</p>
+              <details class="product__details-item">
+                <summary class="product__summary">Обмеры и описание</summary>
+                Состав: 50% Шерсть, 50% Полиэстер<br>
+                Подкладка: 100% Полиэстер<br>
+                Утеплитель: 90% Пух, 10% Перо<br>
+                <br>
+                <ul>
+                  <li>- Не стирать</li>
+                  <li>- Гладить при температуре утюга до 110°C</li>
+                  <li>- Не отбеливать</li>
+                  <li>- Сухая чистка (химчистка)</li>
+                  <li>- Барабанная сушка запрещена</li>
+                </ul>
+              </details>
+              <details class="product__details-item">
+                <summary class="product__summary">Состав и уход</summary>
+                Состав: 50% Шерсть, 50% Полиэстер<br>
+                Подкладка: 100% Полиэстер<br>
+                Утеплитель: 90% Пух, 10% Перо<br>
+                <br>
+                <ul>
+                  <li>- Не стирать</li>
+                  <li>- Гладить при температуре утюга до 110°C</li>
+                  <li>- Не отбеливать</li>
+                  <li>- Сухая чистка (химчистка)</li>
+                  <li>- Барабанная сушка запрещена</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+        <h2 class="product__title title">Весь образ</h2>
+        <div class="product__full-product">
+          <div class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </div>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+        </div>
+        <h2 class="product__title title">Дополните образ</h2>
+        <div class="product__full-product">
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+        </div>
+        <h2 class="product__title title">Вам может понравится</h2>
+        <div class="product__full-product">
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+        </div>
+        <h2 class="product__title title">Вы недавно смотрели</h2>
+        <div class="product__full-product">
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+          <a href="" class="catalog-products__item item">
+            <div class="item__image">
+              <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
+            </div>
+            <div href="" class="item__to-favorits">
+              <svg class='item__icon icon-svg'>
+                <use xlink:href='../images/icons.svg#favorits'></use>
+              </svg>
+            </div>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  @@include('html/footer.html', {})
+  @@include('html/script.html', {
+  })
+
+</body>
+
+</html>

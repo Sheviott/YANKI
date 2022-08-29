@@ -6,6 +6,7 @@
   @media (min-width:$tablet){
     margin-top: rem(50);
     margin-bottom: rem(10);
+
   }
   &__copyright {
   }
@@ -18,7 +19,13 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
+     ul li a:hover,  a:hover {
+        text-decoration: underline;
+        text-underline-position: below;
+        color: $color-main;
+      }
     }
+
     @media (max-width: $pc) {
       max-width: rem(600);
       margin: 0 auto;
@@ -103,7 +110,7 @@
       }
     }
     &__icons {
-      
+
     }
     &__tel {
       display: block;

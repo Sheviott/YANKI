@@ -9,8 +9,10 @@ import './modules/dynamicAdapt.js'
 import './modules/selects.js'
 import './modules/details.js'
 import './modules/search.js'
+import './modules/counter.js'
+// import './modules/cart.js'
 
-////кнопка-счетчик 
+////кнопка-счетчик
 //document.addEventListener('click', function (e) {
 //  if (e.target.classList.contains("plus-btn")) {
 //    ++e.target.parentElement.querySelector("input").value;
@@ -20,5 +22,3 @@ import './modules/search.js'
 //});
 
 //flsFunctions.isWebp();
-
-
