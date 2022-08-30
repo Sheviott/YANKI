@@ -28,6 +28,7 @@
     @media (min-width: $tablet) {
       &:hover {
         fill: $color-main;
+        transition: all 0.3s ease 0s;
       }
     }
   }
@@ -42,6 +43,7 @@
   color: white;
   text-transform: uppercase;
   line-height: 18.78px;
+  transition: all 0.3s ease 0s;
   text-align: center;
 }
 .btn--brown {
@@ -115,6 +117,7 @@ select {
   height: 50px;
   padding: rem(10);
   width: 100%;
+
   font-size: rem(16);
   color: #252525;
 }

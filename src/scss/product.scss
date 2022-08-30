@@ -2,7 +2,7 @@
   margin-top: rem(80);
   margin-bottom: rem(60);
   summary:after {
-    @media (min-width:$pc){
+    @media (min-width: $pc) {
       display: block;
       top: 0;
     }
@@ -19,30 +19,29 @@
   }
   &__item {
     margin-bottom: rem(60);
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       margin: 0;
       display: grid;
       gap: 10px;
       grid-template-columns: 100px 1fr 50%;
-    margin-bottom: rem(100);
-    grid-template-rows: 1fr;
-   }
+      margin-bottom: rem(100);
+      grid-template-rows: 1fr;
+    }
     .item {
       &__image {
-        @media (min-width:$tablet){
-           margin: 0;
+        @media (min-width: $tablet) {
+          margin: 0;
         }
       }
       &__description {
-
         text-align: start;
         max-width: 340px;
         margin: 0 auto;
-        @media (min-width:$tablet){
+        @media (min-width: $tablet) {
           width: 100%;
           max-width: none;
           padding-left: 40px;
-       }
+        }
       }
       &__name {
       }
@@ -87,15 +86,14 @@
         position: absolute;
         top: 8px;
         left: 5px;
-        @media (min-width:$tablet){
+        @media (min-width: $tablet) {
           //  left: 3%;
-           @include adaptive-value("left", 45, -45, 1);
+          @include adaptive-value("left", 45, -45, 1);
         }
         // display: inline-block;
       }
       &__size {
       }
-
     }
   }
   &__swiper {
@@ -106,16 +104,14 @@
     .swiper-slide {
       width: 335px;
       height: 335px;
-      @media (min-width:$tablet){
+      @media (min-width: $tablet) {
         height: 100%;
         width: 100%;
-
       }
     }
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       max-height: 575px;
       max-width: 440px;
-
     }
   }
   &__swiper-wrapper {
@@ -124,25 +120,21 @@
     max-width: 335px;
     max-height: 575px;
     margin: 0 auto;
-    @media (min-width:$tablet){
-
-
+    @media (min-width: $tablet) {
     }
     .swiper-slide {
       width: 63px;
       height: 63px;
-      @media (min-width:$tablet){
+      @media (min-width: $tablet) {
         width: 100px;
         height: 100px;
-
       }
     }
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       order: -1;
     }
   }
   &__swiper-mini-wrapper {
-
   }
   &__details-item {
     border-bottom: 2px solid #d8d8d8;
@@ -150,19 +142,16 @@
   }
   &__details-item[open] > .product__summary {
     margin-bottom: rem(15);
-
   }
   p {
     margin-bottom: rem(10);
     font-weight: 400;
-
   }
   &__summary {
     font-weight: 400;
   }
   &__form {
     margin-bottom: rem(15);
-
   }
   &__full-product {
     display: grid;
@@ -173,10 +162,9 @@
     &:not(:last-child) {
       margin-bottom: rem(60);
     }
-    @media (min-width: 768px){
-    justify-content: start;
-    grid-template-columns: repeat(auto-fit, 274px);
-
+    @media (min-width: 768px) {
+      justify-content: start;
+      grid-template-columns: repeat(auto-fit, 274px);
     }
   }
   .navigation {
@@ -190,18 +178,18 @@
     &:not(:last-child) {
       margin-right: 10px;
     }
-    @media (min-width: 376px){
+    @media (min-width: 376px) {
       &:not(:last-child) {
         margin-right: 15px;
       }
     }
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       width: 47.3%;
-       &:not(:last-child) {
+      &:not(:last-child) {
         margin-right: 3.8%;
       }
     }
-    }
+  }
 
   .swiper {
   }
@@ -218,8 +206,7 @@
   .icon-svg {
   }
   .details {
-  margin-top: 50px;
-
+    margin-top: 50px;
   }
   .catalog-products {
     &__item {
@@ -233,11 +220,11 @@
 .catalog-products__item {
   .item {
     &__image {
-      @media (min-width: 375px){
+      @media (min-width: 375px) {
         height: 230px;
       }
-      @media (min-width:$tablet){
-         height: 350px;
+      @media (min-width: $tablet) {
+        height: 350px;
       }
     }
     &__to-favorits {
@@ -274,23 +261,22 @@
   &__colors {
   }
 }
-.item__color-input:checked  + .item__color-label + .radio-color {
-outline-offset: 2px;
-outline: solid 0.8px rgb(161, 161, 161);
+.item__color-input:checked + .item__color-label + .radio-color {
+  outline-offset: 2px;
+  outline: solid 0.8px rgb(161, 161, 161);
 }
-.item__color-input:checked  + .item__color-label  {
+.item__color-input:checked + .item__color-label {
   opacity: 1;
 }
-#blue.item__color-input:checked  + .item__color-label  {
+#blue.item__color-input:checked + .item__color-label {
   color: blue;
 }
-#yellow.item__color-input:checked  + .item__color-label  {
+#yellow.item__color-input:checked + .item__color-label {
   color: $color-main;
 }
-#white.item__color-input:checked  + .item__color-label  {
+#white.item__color-input:checked + .item__color-label {
   color: rgb(116, 116, 116);
 }
-
 
 //========================================================================================================================================================
 

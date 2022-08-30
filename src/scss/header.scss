@@ -9,8 +9,13 @@ body[class="__lock"] {
   @media (min-width: $pc) {
     fill: #ffffff;
     pointer-events: none;
+    &:hover {
+      fill: $color-main;
+      transition: all 0.3s ease 0s;
+    }
   }
 }
+
 .__home-page {
   .menu__value--current {
     position: relative;
@@ -346,6 +351,10 @@ body[class="__lock"] {
         cursor: pointer;
         pointer-events: painted;
         z-index: 10;
+        &:hover svg {
+        fill: $color-main;
+        transition: all 0.3s ease 0s;
+        }
         &:focus ~ .menu__search--input {
           border: rem(0.5) solid #9e9383;
           background-color: white;
@@ -433,6 +442,7 @@ body[class="__lock"] {
       }
       &:hover {
         color: $color-main;
+        transition: all 0.3s ease 0s;
       }
     }
     &__link--mobile {
@@ -517,6 +527,7 @@ body[class="__lock"] {
     &__profile {
       &:hover {
         color: $color-main;
+        transition: all 0.3s ease 0s;
       }
       @media (max-width: 1023px) {
         position: absolute;
