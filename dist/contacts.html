@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>О нас</title>
+  <title>Каталог</title>
 </head>
 
 
-<body>
-  <div class="wrapper">
+  <body>
     <header id="header" class="header lock-padding __catalog-page">
   <div class="header__container">
     <div class="header__body">
@@ -124,61 +123,65 @@
 </header>
 
     <main>
-      <div class="exchange">
-        <div class="exchange__body exchange__container">
-          <div class="exchange__navigation navigation">
+      <div class="contacts-page">
+        <div class="contacts-page__body contacts-page__container">
+          <div class="contacts-page__navigation navigation">
             <a class="navigation__link" href="">Главная</a>
-            <a class="navigation__link" href="">Обмен и воврат</a>
+            <a class="navigation__link" href="">Контакты</a>
           </div>
-
-          <div class="exchange__content">
-            <h2 class="exchange__title">Обмен и возврат</h2>
-            <p class="exchange__subtitle">Если вам не подошел заказ, мы с удовольствием вам его обменяем или примем возврат
-              </br>
-              Обмен и возврат возможен в случае :
-            </p>
-            <div class="exchange__row">
-              <div class="exchange__text-block">
-                <svg class="icon-svg">
-                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
-                </svg>
-                <p class="exchange__text">если заказ не был использован и сохранил товарный вид (в том числе не нарушены
-                  бирки, ярлыки, упаковочные материалы)</p>
-              </div>
-              <div class="exchange__text-block">
-                <svg class="icon-svg">
-                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
-                </svg>
-                <p class="exchange__text">возврат и обмен осуществляется в течение двух дней с момента получения заказа
-                </p>
-              </div>
-              <div class="exchange__text-block">
-                <svg class="icon-svg">
-                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
-                </svg>
-                <p class="exchange__text">возврат и обмен товара возможен только при отправке по Украине
-                </p>
-              </div>
-              <div class="exchange__text-block">
-                <svg class="icon-svg">
-                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
-                </svg>
-                <p class="exchange__text">бланк возврата присутствует в каждой посылке </p>
-              </div>
-              <div class="exchange__text-block">
-                <svg class="icon-svg">
-                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
-                </svg>
-                <p class="exchange__text">все расходы по обмену и возврату товара несет покупатель
-                </p>
-              </div>
-              <div class="exchange__text-block">
-                <svg class="icon-svg">
-                  <use xlink:href='../images/icons.svg#pay-icon-1'></use>
-                </svg>
-                <p class="exchange__text">после получения возврата мы делаем перевод денежных средств на карту клиента
-                </p>
-              </div>
+          <h3 class="contacts-page__title title">Связаться с нами</h3>
+          <div class="contacts-page__content">
+            <div class="contacts-page__row">
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">В социальных сетях</div>
+                    <a href="">
+                        <svg class='instagram-icon icon-svg'>
+                        <use xlink:href='../images/icons.svg#instagram'></use>
+                        </svg>
+                    </a>
+                   <a href="">
+                        <svg class='telegram-icon icon-svg'>
+                        <use xlink:href='../images/icons.svg#telegram'></use>
+                        </svg>
+                   </a>
+                </div>
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">По телефону</div>
+                    <p>+38(067) 158 82 66</p>
+                    <p>+38(073) 226 39 81</p>
+                </div>
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">По почте</div>
+                    <p>example@gmail.com</p>
+                </div>
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">Наш офис</div>
+                    <p>г. Киев, улица Батумская, 18</p>
+                </div>
+            </div>
+            <div class="contacts-page__row">
+                <h2 class="contacts-page__title">Узнайте  первым о новинках</h2>
+                <form class="contacts-page__form form" action="">
+                    <fieldset class="contacts-page__input-email fieldsrt-form">
+                        <input
+                          placeholder=" "
+                          id="contacts-page--email"
+                          type="email"
+                          class="contacts-page__input input-form"
+                        />
+                        <label class="label-form" for="contacts-page--email"
+                          >Ваш e-mail*</label
+                        >
+                      </fieldset>
+                      <button class="contacts-page__button btn btn--brown" type="submit">
+                       Подписаться
+                      </button>
+                      <p class="contacts-page__policy order-info__policy">
+                        Нажимая на кнопку «оплатить заказ», я принимаю условия
+                        <a href="">публичной оферты</a> и
+                        <a href="">политики конфиденциальности</a>
+                      </p>
+                </form>
             </div>
           </div>
         </div>
@@ -243,11 +246,8 @@
     </div>
   </div>
 </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="js/app.min.js"></script>
-  </div>
-</body>
-
+  </body>
 </html>

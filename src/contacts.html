@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', { 'title': 'Каталог' })
+
+  <body>
+    @@include('html/header.html', { 'page': '__catalog-page' })
+    <main>
+      <div class="contacts-page">
+        <div class="contacts-page__body contacts-page__container">
+          <div class="contacts-page__navigation navigation">
+            <a class="navigation__link" href="">Главная</a>
+            <a class="navigation__link" href="">Контакты</a>
+          </div>
+          <h3 class="contacts-page__title title">Связаться с нами</h3>
+          <div class="contacts-page__content">
+            <div class="contacts-page__row">
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">В социальных сетях</div>
+                    <a href="">
+                        <svg class='instagram-icon icon-svg'>
+                        <use xlink:href='../images/icons.svg#instagram'></use>
+                        </svg>
+                    </a>
+                   <a href="">
+                        <svg class='telegram-icon icon-svg'>
+                        <use xlink:href='../images/icons.svg#telegram'></use>
+                        </svg>
+                   </a>
+                </div>
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">По телефону</div>
+                    <p>+38(067) 158 82 66</p>
+                    <p>+38(073) 226 39 81</p>
+                </div>
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">По почте</div>
+                    <p>example@gmail.com</p>
+                </div>
+                <div class="contacts-page__column">
+                    <div class="contacts-page__name-block">Наш офис</div>
+                    <p>г. Киев, улица Батумская, 18</p>
+                </div>
+            </div>
+            <div class="contacts-page__row">
+                <h2 class="contacts-page__title">Узнайте  первым о новинках</h2>
+                <form class="contacts-page__form form" action="">
+                    <fieldset class="contacts-page__input-email fieldsrt-form">
+                        <input
+                          placeholder=" "
+                          id="contacts-page--email"
+                          type="email"
+                          class="contacts-page__input input-form"
+                        />
+                        <label class="label-form" for="contacts-page--email"
+                          >Ваш e-mail*</label
+                        >
+                      </fieldset>
+                      <button class="contacts-page__button btn btn--brown" type="submit">
+                       Подписаться
+                      </button>
+                      <p class="contacts-page__policy order-info__policy">
+                        Нажимая на кнопку «оплатить заказ», я принимаю условия
+                        <a href="">публичной оферты</a> и
+                        <a href="">политики конфиденциальности</a>
+                      </p>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    @@include('html/footer.html', {}) @@include('html/script.html', { })
+  </body>
+</html>

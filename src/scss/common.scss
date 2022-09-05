@@ -92,12 +92,13 @@
   position: relative;
 }
 .input-form {
-  border: 1px solid rgba($color: #252525, $alpha: 0.5);
+  border: 1px solid rgba($color: #252525, $alpha: 0.3);
   position: relative;
 }
 .label-form {
   padding: 15px;
   width: 100%;
+  font-weight: 200;
   text-align: center;
 }
 fieldset {
@@ -105,7 +106,7 @@ fieldset {
 }
 label {
   position: absolute;
-  top: 0;
+  // top: 0;
   left: 0;
   padding: rem(10);
   transition: all 0.3s ease 0s;

@@ -1,0 +1,118 @@
+.contacts-page {
+    margin: 80px auto 60px auto;
+    @media (min-width: $pc) {
+        margin: 80px auto 100px auto;
+    }
+    &__body {
+    }
+    &__container {
+    }
+    &__navigation {
+    }
+    &__content {
+    }
+    &__title {
+        font-size: rem(20);
+    }
+    &__row:not(:last-child) {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 15px;
+        margin-bottom: rem(60);
+        @media (min-width: 375px) {
+            justify-content: center;
+        }
+        @media (min-width: $pc) {
+            margin-bottom: rem(100);
+        }
+    }
+    &__row:last-child {
+        text-align: center;
+        .contacts-page__title{
+            display: block;
+            line-height: 28px;
+            text-align: center;
+            font-size: rem(24);
+            margin-bottom: rem(30);
+            @media (min-width:$pc){
+                font-size: rem(34);
+                margin-bottom: rem(50);
+
+            }
+        }
+    }
+    &__column {
+        flex: 0 0 160px;
+        @media (min-width: 375px) {
+            flex: 1 0 160px;
+        }
+        p:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+    &__name-block {
+        margin-bottom: rem(15);
+        @media (min-width: $pc) {
+            margin-bottom: rem(20);
+        }
+    }
+    &__form {
+        max-width: 600px;
+        display: inline-block;
+        margin: 0;
+    }
+    &__input-email {
+        margin-bottom: rem(20);
+    }
+    &__input {
+    }
+    &__button {
+        margin-bottom: rem(20);
+    }
+    &__policy {
+        text-align: center;
+        a {
+            color: black;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: $color-main;
+            transition: all 0.3s ease 0s;
+        }
+    }
+    .navigation {
+        &__link {
+        }
+    }
+    .cart {
+        &__title {
+        }
+    }
+    .title {
+    }
+    .instagram-icon {
+    }
+    .icon-svg {
+        margin: 0;
+        height: 35px;
+        width: 35px;
+    }
+    .telegram-icon {
+    }
+    .form {
+    }
+    .fieldsrt-form {
+    }
+    .input-form {
+    }
+    .label-form {
+    }
+    .btn {
+    }
+    .btn--brown {
+    }
+    .order-info {
+        &__policy {
+        }
+    }
+}

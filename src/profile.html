@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', { 'title': 'Каталог' })
+
+  <body>
+    @@include('html/header.html', { 'page': '__catalog-page' })
+    <main>
+      <div class="profile">
+        <div class="profile__body profile__container">
+          <div class="profile__navigation navigation">
+            <a class="navigation__link" href="">Главная</a>
+            <a class="navigation__link" href="">Личный кабинет</a>
+          </div>
+          <div class="profile__actions">
+            <button class="profile__history _active">История заказов</button>
+            <button class="profile__profile-info">Личные данные</button>
+            <button class="profile__logout">Выйти</button>
+          </div>
+          <!-- История заказов -->
+          <div class="profile__list js-history _active">
+            <div class="profile__item-order item-order">
+              <div  class="item-order__row">
+                <div class="item-order__number item-order__info-item">№ 718 от 28.09.21</div>
+                <div class="item-order__status item-order__info-item">
+                  Статус:
+                  <span>Отменён</span>
+                </div>
+                <div class="item-order__summ item-order__info-item">
+                  Сумма заказа:
+                  <span>13682 грн</span>
+                </div>
+                <svg class="value--arrow arrow arrow-icon icon-svg">
+                  <use xlink:href="../images/icons.svg#arrow"></use>
+                </svg>
+              </div>
+              <div class="item-order__body">
+                <div class="item-order__product cart__item product-cart">
+                  <div class="product-cart__image item__image">
+                    <img
+                      src="@img/3.product-page/item_1.jpg"
+                      srcset=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-cart__info">
+                    <div class="product-cart__top">
+                      <div class="product-cart__id">арт. 1588262</div>
+                      <div class="product-cart__name">Синяя парка</div>
+                    </div>
+                    <div class="product-cart__bottom">
+                      <span
+                        class="product-cart__color radio-color item__color item__color--yellow"
+                      ></span>
+                      <div class="product-cart__size"><span>Размер:</span> L</div>
+                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                      <div class="product-cart__price">9450 грн</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-order__product cart__item product-cart">
+                  <div class="product-cart__image item__image">
+                    <img
+                      src="@img/2.category/category_3.jpg"
+                      srcset=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-cart__info">
+                    <div class="product-cart__top">
+                      <div class="product-cart__id">арт. 1588262</div>
+                      <div class="product-cart__name">Синяя парка</div>
+                    </div>
+                    <div class="product-cart__bottom">
+                      <span
+                        class="product-cart__color radio-color item__color item__color--white"
+                      ></span>
+                      <div class="product-cart__size"><span>Размер:</span> L</div>
+                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                      <div class="product-cart__price">9450 грн</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-order__product cart__item product-cart">
+                  <div class="product-cart__image item__image">
+                    <img
+                      src="@img/2.category/category_2.jpg"
+                      srcset=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-cart__info">
+                    <div class="product-cart__top">
+                      <div class="product-cart__id">арт. 1588262</div>
+                      <div class="product-cart__name">Синяя парка</div>
+                    </div>
+                    <div class="product-cart__bottom">
+                      <span
+                        class="product-cart__color radio-color item__color item__color--blue"
+                      ></span>
+                      <div class="product-cart__size"><span>Размер:</span> L</div>
+                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                      <div class="product-cart__price">9450 грн</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-order__person-info">
+                  <div class="person-info__name
+                  person-info__info">
+                    Имя Фамилия: <span>Елизаветта Станиславчук</span>
+                  </div>
+                  <div class="person-info__email person-info__info">
+                    E-mail: <span>ella.s97@gmail.com</span>
+                  </div>
+                  <div class="person-info__tel person-info__info">
+                    Номер телефона: <span>+38(067)470 20 66</span>
+                  </div>
+                  <div class="person-info__delivery person-info__info">
+                    Способ доставки: <span>Доставка Новой Почтой</span>
+                  </div>
+                  <div class="person-info__pay person-info__info">
+                    Способ оплаты: <span>Оплата при получении</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="profile__item-order item-order">
+              <div  class="item-order__row">
+                <div class="item-order__number item-order__info-item">№ 718 от 28.09.21</div>
+                <div class="item-order__status item-order__info-item">
+                  Статус:
+                  <span>Отменён</span>
+                </div>
+                <div class="item-order__summ item-order__info-item">
+                  Сумма заказа:
+                  <span>13682 грн</span>
+                </div>
+                <svg class="value--arrow arrow arrow-icon icon-svg">
+                  <use xlink:href="../images/icons.svg#arrow"></use>
+                </svg>
+              </div>
+              <div class="item-order__body">
+                <div class="item-order__product cart__item product-cart">
+                  <div class="product-cart__image item__image">
+                    <img
+                      src="@img/3.product-page/item_1.jpg"
+                      srcset=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-cart__info">
+                    <div class="product-cart__top">
+                      <div class="product-cart__id">арт. 1588262</div>
+                      <div class="product-cart__name">Синяя парка</div>
+                    </div>
+                    <div class="product-cart__bottom">
+                      <span
+                        class="product-cart__color radio-color item__color item__color--blue"
+                      ></span>
+                      <div class="product-cart__size"><span>Размер:</span> L</div>
+                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                      <div class="product-cart__price">9450 грн</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-order__person-info">
+                  <div class="person-info__name
+                  person-info__info">
+                    Имя Фамилия: <span>Елизаветта Станиславчук</span>
+                  </div>
+                  <div class="person-info__email person-info__info">
+                    E-mail: <span>ella.s97@gmail.com</span>
+                  </div>
+                  <div class="person-info__tel person-info__info">
+                    Номер телефона: <span>+38(067)470 20 66</span>
+                  </div>
+                  <div class="person-info__delivery person-info__info">
+                    Способ доставки: <span>Доставка Новой Почтой</span>
+                  </div>
+                  <div class="person-info__pay person-info__info">
+                    Способ оплаты: <span>Оплата при получении</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Личные данные -->
+          <div class="profile__personal-info js-personal-info">
+            <form action="" class="order-info__form order-info">
+              <div class="order-info__order-column">
+                <div class="order-info__name-block">Персональные данные:</div>
+                <fieldset class="order-info__user-info  user-info fieldsrt-form">
+                  <input
+                    placeholder=" "
+                    id="user-info--name"
+                    type="text"
+                    class="user-info__input input-form"
+                  />
+                  <label class="label-form" for="user-info--name"
+                    >Ваше имя*</label
+                  >
+                </fieldset>
+                <fieldset class="order-info__user-info user-info fieldsrt-form">
+                  <input
+                    placeholder=" "
+                    id="user-info--lastname"
+                    type="text"
+                    class="user-info__input input-form"
+                  />
+                  <label class="label-form" for="user-info--lastname"
+                    >Ваша фамилия*</label
+                  >
+                </fieldset>
+                <fieldset class="order-info__user-info user-info fieldsrt-form">
+                  <input
+                    placeholder=" "
+                    id="user-info--email"
+                    type="email"
+                    class="user-info__input input-form"
+                  />
+                  <label class="label-form" for="user-info--email"
+                    >Ваш e-mail*</label
+                  >
+                </fieldset>
+
+                <fieldset class="order-info__user-info user-info fieldsrt-form">
+                  <input
+                    placeholder=" "
+                    id="user-info--tel"
+                    type="tel"
+                    class="user-info__input input-form"
+                  />
+                  <label class="label-form" for="user-info--tel"
+                    >Ваш телефон*</label
+                  >
+                </fieldset>
+                <div class="order-info__name-block">Адрес доставки:</div>
+                <fieldset class="order-info__adress adress fieldsrt-form">
+                  <input
+                    placeholder=" "
+                    id="adress--city"
+                    type="text"
+                    class="adress__input input-form"
+                  />
+                  <label class="label-form" for="adress--city"> Город*</label>
+                </fieldset>
+                <fieldset class="order-info__adress adress fieldsrt-form">
+                  <input
+                    placeholder=" "
+                    id="adress--post"
+                    type="text"
+                    class="adress__input input-form"
+                  />
+                  <label class="label-form" for="adress--post">
+                    Отделение почты*</label
+                  >
+                </fieldset>
+                <button class="order-info__button btn btn--brown" type="submit">
+                  ОБНОВИТЬ ИНФОРМАЦИЮ
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    @@include('html/footer.html', {}) @@include('html/script.html', { })
+  </body>
+</html>

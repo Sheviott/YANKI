@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
   <title>Каталог</title>
 </head>
@@ -47,16 +48,18 @@
           <nav class="menu__list">
             <ul class="menu__list">
               <li class="menu__link--mobile ">
-                <svg class='user-profile--icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#personalBrown'></use>
-                </svg>
-                <a href="" class="menu__link user-profile user-profile--link ">ЛИЧНЫЙ КАБИНЕТ</a>
+                <a href="profile.html">
+                  <svg class='user-profile--icon icon-svg'>
+                    <use xlink:href='../images/icons.svg#personalBrown'></use>
+                  </svg>
+                </a>
+                <a href="profile.html" class="menu__link user-profile user-profile--link ">ЛИЧНЫЙ КАБИНЕТ</a>
               </li>
               <li><a class="menu__link" href="">NEW</a></li>
               <li><a class="menu__link" href="catalog.html">КАТАЛОГ</a></li>
               <li><a class="menu__link" href="">О НАС</a></li>
               <li><a class="menu__link menu__link--mobile" href="exchange.html">УСЛОВИЯ ВОЗВРАТА</a></li>
-              <li><a class="menu__link menu__link--mobile" href="">КОНТАКТЫ</a></li>
+              <li><a class="menu__link menu__link--mobile" href="contacts.html">КОНТАКТЫ</a></li>
             </ul>
           </nav>
           <div class="header__contacts contacts">
@@ -98,12 +101,12 @@
         </div>
         <div class="header__user--menu">
           <div class="user--menu__icons icons">
-            <a href="" class="icons__profile">
+            <a href="profile.html" class="icons__profile">
               <svg class="profile-icon icon-svg" alt="profile">
                 <use xlink:href='../images/icons.svg#profile'></use>
               </svg>
             </a>
-            <a href="" class="icons__favorits">
+            <a href="favorits.html" class="icons__favorits">
               <svg class="favorits-icon icon-svg" alt="favorits">
                 <use xlink:href='../images/icons.svg#favorits'></use>
               </svg>
@@ -209,7 +212,7 @@
         </details>
         <div class="catalog__products catalog-products__content">
           <div class="catalog-products__list">
-            <div  class="catalog-products__item item">
+            <div class="catalog-products__item item">
               <a href="product-page.html" class="item__image">
                 <img src='images/2.category/category_6.jpg' srcset='' alt=''>
               </a>
@@ -331,7 +334,7 @@
         </summary>
         <ul class="company__list">
           <li><a href="" class="company__link">О нас</a></li>
-          <li><a href="" class="company__link">Контакты</a></li>
+          <li><a href="../contacts.html" class="company__link">Контакты</a></li>
         </ul>
       </details>
       <details class="footer-menu__useful">
