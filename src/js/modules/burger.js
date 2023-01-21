@@ -12,7 +12,7 @@ if (iconMenu) {
     iconMenu.classList.toggle('__menu-open');
     document.body.classList.toggle('__lock');
     langDropdown.classList.toggle('dropdown--black'); // убирает прозрачность выпадашкe с языком
-    
+
   };
 };
 const linkmenu = document.querySelectorAll('.menu__link a');

@@ -1,0 +1,74 @@
+[
+    {
+        "id": "0001",
+        "name": "Куртка белая",
+        "price": "2900",
+        "img": "images/2.category/category_1.jpg",
+        "imgmini": ["images/2.category/category_1.jpg", "images/2.category/category_1.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "sizes": ["XXS","XS", "S", "M", "L", "XL"],
+        "colors": {
+            "yellow": true,
+            "blue": true,
+            "white": true
+        },
+        "new": true,
+        "category": "куртка jacket"
+    },
+    {
+        "id": "0002",
+        "name": "Синее пальто",
+        "price": "3150",
+        "img": "images/2.category/category_2.jpg",
+        "imgmini": ["images/2.category/category_2.jpg", "images/2.category/category_2.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "sizes": ["XXS","XS", "S"],
+        "colors": {
+            "yellow": true,
+            "blue": false,
+            "white": true
+        },
+        "new": false
+    },
+    {
+        "id": "0003",
+        "name": "Бежевая шуба",
+        "price": "4200",
+        "img": "images/2.category/category_3.jpg",
+        "imgmini": ["images/2.category/category_3.jpg", "images/2.category/category_3.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "sizes": ["XS", "S", "M"],
+        "colors": {
+            "yellow": false,
+            "blue": false,
+            "white": true
+        },
+        "new": false
+    },
+    {
+        "id": "0004",
+        "name": "Синяя парка",
+        "price": "2900",
+        "img": "images/2.category/category_4.jpg",
+        "imgmini": ["images/2.category/category_4.jpg", "images/2.category/category_4.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "sizes": ["M", "L", "XL"],
+        "colors": {
+            "yellow": true,
+            "blue": false,
+            "white": false
+        },
+        "new": false
+    },
+    {
+        "id": "0005",
+        "name": "Бежевое пальто",
+        "price": "3800",
+        "img": "images/2.category/category_6.jpg",
+        "imgmini": ["images/2.category/category_6.jpg", "images/2.category/category_6.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "sizes": ["XXS","XS", "S", "M", "L"],
+        "colors": {
+            "yellow": true,
+            "blue": true,
+            "white": false
+        },
+        "new": true
+    }
+
+]

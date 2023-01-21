@@ -131,13 +131,16 @@
   .telegram-icon {
   }
   &__copyright {
+    font-size: rem(12);
     text-align: center;
     margin-top: rem(30);
     margin-bottom: rem(5);
-    @media (min-width: $tablet) {
+    @media (min-width:$mobile){
+      font-size: rem(20);
       margin-top: rem(50);
       margin-bottom: rem(10);
     }
+
   }
 }
 //====================================================================================================

@@ -255,7 +255,7 @@
   &__image {
     position: relative;
     margin-bottom: rem(10);
-    height: 450px;
+    // min-height: 360px;
     img {
       object-fit: cover;
       width: 100%;
@@ -269,8 +269,13 @@
     top: 0;
     right: 0;
     background-color: $color-main;
-    width: rem(35);
-    height: rem(35);
+    width: rem(45);
+    height: rem(45);
+    @media (min-width:$mobile){
+      width: rem(35);
+      height: rem(35);
+
+    }
     border-bottom-left-radius: 50%;
   }
   &__icon {
@@ -286,6 +291,12 @@
   }
   &__name {
     color: #000;
+    position: relative;
+  }
+  &__new {
+    color:#E0BEA2;
+    position: absolute;
+    top: 0;right: -5px;
 
   }
   &__price {

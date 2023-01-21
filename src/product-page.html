@@ -9,106 +9,39 @@
   'page': '__catalog-page'
   })
   <main>
-
-    <div class="product">
+    <div id="product" class="product">
       <div class="product__body product__container">
-        <div class="product__navigation navigation">
-          <a class="navigation__link" href="">Главная</a>
+        <div class="product__navigation js-navigation navigation">
           <a class="navigation__link" href="">Каталог</a>
-          <a class="navigation__link" href="">Пальто</a>
-          <a class="navigation__link" href="">Кремовое пальто</a>
+          <a class="navigation__link navigation__link--category js-navigation__link--category" href="">Пальто</a>
+          <a class="navigation__link navigation__link--product js-navigation__link--product" href="">Кремовое пальто</a>
         </div>
         <div class="product__item item">
-          <div class="product__swiper swiper">
-            <div class="product__swiper-wrapper swiper-wrapper">
-               <div class="item__image swiper-slide">
-                 <img src='@img/3.product-page/item_1.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image swiper-slide">
-                 <img src='@img/3.product-page/item_2.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_3.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_4.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_5.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_6.jpg' srcset='' alt=''>
-               </div>
+          <div class="product__swiper swiper ">
+            <div class="product__swiper-wrapper js-swiper-wrapper swiper-wrapper">
+
            </div>
           </div>
           <div class="product__swiper-mini swiper">
-            <div class="product__swiper-mini-wrapper swiper-wrapper">
-               <div class="item__image swiper-slide swiper-slide-big">
-                 <img src='@img/3.product-page/item_1.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image swiper-slide">
-                 <img src='@img/3.product-page/item_2.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_3.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_4.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_5.jpg' srcset='' alt=''>
-               </div>
-               <div class="item__image  swiper-slide">
-                 <img src='@img/3.product-page/item_6.jpg' srcset='' alt=''>
-               </div>
+            <div class="product__swiper-mini-wrapper js-mini-swiper-wrapper swiper-wrapper">
+
            </div>
-
          </div>
-
-          <div class="item__description">
-            <div class="item__name">Кремовое пальто</div>
-            <div class="item__price">3150 грн</div>
+          <div class="item__description js-item__description">
+            <div class="item__name js-item__name"></div>
+            <div class="item__price js-item__price"><span>руб</span></div>
             <form class="product__form" action="">
-              <fieldset class="form__colors item__colors">
-                <input name="colors" id='white' class="item__color-input" type="radio">
-                <label class="item__color-label" for="white">Цвет: Мороженое с ванилью
-                </label>
-                  <span class="radio-color item__color item__color--white"></span>
-                <input name="colors" id='blue' class="item__color-input" type="radio">
-                <label class="item__color-label" for="blue">Цвет: Глубокий океан
-                </label>
-                  <span class="radio-color item__color item__color--blue"></span>
-                <input checked name="colors" id='yellow' class="item__color-input" type="radio">
-                <label class="item__color-label" for="yellow">Цвет: Кофе с молоком меланж
-                </label>
-                  <span class="radio-color item__color item__color--yellow"></span>
+              <fieldset class="form__colors item__colors js-item__colors">
+
               </fieldset>
-
-
               <fieldset class="form__select item__select">
-                  <!--<span class="selectLabel" id="jobLabel"> Main job role</span>-->
                   <div class="selectWrapper">
                     <select class="selectNative js-selectNative" aria-labelledby="jobLabel">
                       <option value="" hidden disabled selected>Выберите размер</option>
-                      <option value="1">XS</option>
-                      <option value="2">S</option>
-                      <option value="3">M</option>
-                      <option value="4">L</option>
                     </select>
-
-                    <div class="selectCustom js-selectCustom" aria-hidden="true">
-                      <div class="selectCustom-trigger">Выберите размер</div>
-                      <div class="selectCustom-options">
-                        <div class="selectCustom-option" data-value="1">XS</div>
-                        <div class="selectCustom-option" data-value="2">XS</div>
-                        <div class="selectCustom-option" data-value="3">S</div>
-                        <div class="selectCustom-option" data-value="4">M</div>
-                        <div class="selectCustom-option" data-value="5">L</div>
-                      </div>
-                    </div>
                   </div>
               </fieldset>
-              <button data-cart class="btn btn--brown">В корзину</button>
+              <button type="button" data-cart data-id="none" class="btn btn--brown js-toCart-btn">В корзину</button>
               <button class="item__to-favorits btn btn--white">
                 <svg class='item__icon icon-svg'>
                   <use xlink:href='../images/icons.svg#favorits'></use>
@@ -414,352 +347,11 @@
         </div>
       </div>
     </div>
-    <div class="cart">
-      <div class="cart__body cart__container">
-        <div class="cart__navigation navigation">
-          <a class="navigation__link" href="">Главная</a>
-          <a class="navigation__link" href="">Корзина</a>
-        </div>
-        <h3 class="cart__title title">Ваш заказ</h3>
-        <div class="cart__wrapper">
-          <div class="cart__item product-cart">
-            <div class="product-cart__image item__image">
-              <img src="@img/3.product-page/item_1.jpg" srcset="" alt="" />
-            </div>
-            <div class="product-cart__info">
-              <div class="product-cart__top">
-                <div class="product-cart__id">арт. 1588262</div>
-                <div class="product-cart__name">Синяя парка</div>
-              </div>
-              <div class="product-cart__bottom">
-                <span
-                  class="product-cart__color radio-color item__color item__color--blue"
-                ></span>
-                <div class="product-cart__size">
-                  <div class="product-cart__select selectWrapper">
-                    <select
-                      class="product-cart__selectNative selectNative js-selectNative"
-                      aria-labelledby="jobLabel"
-                    >
-                      <option value="XS">XS</option>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                    </select>
 
-                    <div
-                      class="product-cart__selectCustom selectCustom js-selectCustom"
-                      aria-hidden="true"
-                    >
-                      <div class="selectCustom-trigger"></div>
-                      <div class="selectCustom-options">
-                        <div class="selectCustom-option" data-value="XS">
-                          XS
-                        </div>
-                        <div class="selectCustom-option" data-value="S">
-                          S
-                        </div>
-                        <div class="selectCustom-option" data-value="M">
-                          M
-                        </div>
-                        <div class="selectCustom-option" data-value="L">
-                          L
-                        </div>
-                        <div class="selectCustom-option" data-value="XL">
-                          XL
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-cart__count count">
-                  <button
-                    data-action="minus"
-                    style="padding-bottom: 5px"
-                    class="count__action"
-                  >
-                    -
-                  </button>
-                  <div data-counter class="count__current">1</div>
-                  <button data-action="plus" class="count__action">+</button>
-                </div>
-                <div class="product-cart__price">9450 грн</div>
-                <button
-                  data-action="remove"
-                  class="product-cart__remove"
-                  type="button"
-                >
-                  <svg class="product-cart__remove--icon">
-                    <use xlink:href="../images/icons.svg#clear"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="cart__sumprice">К оплате: <span>15250 грн</span></div>
-        </div>
-        <div class="cart__order order-info">
-          <h3 class="cart__title title">Оформление заказа</h3>
-          <form action="" class="order-info__form">
-            <div class="order-info__order-column">
-              <fieldset class="order-info__user-info user-info fieldsrt-form">
-                <div class="order-info__name-block">Персональные данные:</div>
-                <input
-                  placeholder=" "
-                  id="user-info--name"
-                  type="text"
-                  class="user-info__input input-form"
-                />
-                <label class="label-form" for="user-info--name"
-                  >Ваше имя*</label
-                >
-              </fieldset>
-              <fieldset class="order-info__user-info user-info fieldsrt-form">
-                <input
-                  placeholder=" "
-                  id="user-info--email"
-                  type="email"
-                  class="user-info__input input-form"
-                />
-                <label class="label-form" for="user-info--email"
-                  >Ваш e-mail*</label
-                >
-              </fieldset>
-              <fieldset class="order-info__user-info user-info fieldsrt-form">
-                <input
-                  placeholder=" "
-                  id="user-info--lastname"
-                  type="text"
-                  class="user-info__input input-form"
-                />
-                <label class="label-form" for="user-info--lastname"
-                  >Ваша фамилия*</label
-                >
-              </fieldset>
-              <fieldset class="order-info__user-info user-info fieldsrt-form">
-                <input
-                  placeholder=" "
-                  id="user-info--tel"
-                  type="tel"
-                  class="user-info__input input-form"
-                />
-                <label class="label-form" for="user-info--tel"
-                  >Ваш телефон*</label
-                >
-              </fieldset>
-
-              <fieldset
-              class="order-info__delivery delivery-cart fieldsrt-form"
-              >
-              <div class="order-info__name-block">Способ доставки:</div>
-                <p>По Украине:</p>
-
-                <div class="fieldset-wrapper">
-                  <input
-                    id="delivery__UKR"
-                    name="delivery"
-                    class="delivery__input"
-                    type="radio"
-                  />
-                  <label
-                    class="deliver__label label-radiomark"
-                    for="delivery__UKR"
-                    >Самовывоз - вул. Большая Васильковская 14(м. Льва
-                    Толстого)
-                  </label>
-                  <span class="delivery__radiomark radiomark"></span>
-                </div>
-
-                <div class="fieldset-wrapper">
-                  <input
-                    id="delivery-new"
-                    name="delivery"
-                    class="delivery__input"
-                    type="radio"
-                  />
-                  <label
-                    class="delivery__label label-radiomark"
-                    for="delivery-new"
-                    >Новая Почта
-                  </label>
-                  <span class="delivery__radiomark radiomark"></span>
-                </div>
-              </fieldset>
-
-              <fieldset
-                class="order-info__delivery delivery-cart fieldsrt-form"
-              >
-                <p>Международная доставка:</p>
-                <div class="fieldset-wrapper">
-                  <input
-                    id="delivery"
-                    name="delivery"
-                    class="delivery__input"
-                    type="radio"
-                  />
-                  <label class="deliver__label label-radiomark" for="delivery"
-                    >Украпочта / 1-3 недели / 30$ <br>
-                    <br>
-                  </label>
-                  <span class="delivery__radiomark radiomark"></span>
-                </div>
-                <div class="fieldset-wrapper">
-                  <input
-                    id="delivery2"
-                    name="delivery"
-                    class="delivery__input"
-                    type="radio"
-                  />
-                  <label
-                    class="deliver__label label-radiomark"
-                    for="delivery2"
-                    >DHL / 3-7 дней / 60$
-                  </label>
-                  <span class="delivery__radiomark radiomark"></span>
-                </div>
-              </fieldset>
-              <fieldset class="order-info__adress adress fieldsrt-form">
-                <div class="order-info__name-block">Адрес доставки:</div>
-                <input
-                  placeholder=" "
-                  id="adress--city"
-                  type="text"
-                  class="adress__input input-form"
-                />
-                <label class="label-form" for="adress--city"> Город*</label>
-              </fieldset>
-              <fieldset class="order-info__adress adress fieldsrt-form">
-                <input
-                  placeholder=" "
-                  id="adress--post"
-                  type="text"
-                  class="adress__input input-form"
-                />
-                <label class="label-form" for="adress--post">
-                  Отделение почты*</label
-                >
-              </fieldset>
-
-              <div
-                class="order-info__name-block order-info__name-block--mobile"
-              >
-                Способ оплаты:
-              </div>
-              <div
-                class="order-info__name-block order-info__name-block--desktop"
-              >
-                Вы можете оплатить покупку одним из ниже перечисленных
-                способов:
-              </div>
-              <fieldset class="order-info__pay pay fieldsrt-form">
-                <div class="fieldset-wrapper">
-                  <input
-                    id="pay__24"
-                    name="pay"
-                    class="pay__input"
-                    type="radio"
-                  />
-                  <label class="pay__label label-radiomark" for="pay__24"
-                    >Полная предоплата через Приват 24
-                    <img src="@img/24.png" alt="" />
-                  </label>
-                  <span class="pay__radiomark radiomark"></span>
-                </div>
-              </fieldset>
-
-              <fieldset class="order-info__pay pay fieldsrt-form">
-
-                <div class="fieldset-wrapper order-info__visa ">
-                  <input
-                    id="payVisa"
-                    name="pay"
-                    class="pay__input"
-                    type="radio"
-                  />
-                  <label class="pay__label label-radiomark" for="payVisa"
-                    >Денежным переводом Visa/MasterCard
-                    <img src="@img/Visa.png" alt="" />
-                    <img src="@img/MasterCard.png" alt="" />
-                  </label>
-                  <span class="pay__radiomark radiomark"></span>
-                </div>
-              </fieldset>
-              <fieldset class="order-info__pay pay fieldsrt-form">
-
-                <div class="fieldset-wrapper">
-                  <input
-                    id="pay"
-                    name="pay"
-                    class="pay__input"
-                    type="radio"
-                  />
-                  <label class="pay__label label-radiomark" for="pay"
-                    >Наложенным платежом в отделении Новой Почты
-                  </label>
-                  <span class="pay__radiomark radiomark"></span>
-                </div>
-              </fieldset>
-              <fieldset class="order-info__bonus bonus fieldsrt-form ">
-                <input
-                  placeholder=" "
-                  id="bonus--city"
-                  type="text"
-                  class="bonus__input input-form"
-                />
-                <label class="label-form" for="bonus--city"
-                  >Сумма списания бонусов*</label
-                >
-              </fieldset>
-            </div>
-            <div class="order-info__pay-column">
-              <ul class="order-info__links">
-                <li>
-                  <a href="" class="order-info__link order-info__user-profile"
-                    >Войти в личный кабинет</a
-                  >
-                </li>
-                <li>
-                  <a href="" class="order-info__link">УСЛОВИЯ ДОСТАВКИ</a>
-                </li>
-                <li>
-                  <a href="" class="order-info__link"
-                    >УСЛОВИЯ ОБМЕНА И ВОЗВРАТА
-                  </a>
-                </li>
-                <li>
-                  <a href="" class="order-info__link">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
-                </li>
-              </ul>
-              <div class="order-info__checkout">
-                <div class="order-info__row">
-                  ДОСТАВКА: <span>По тарифам перевозчика</span>
-                </div>
-                <div class="order-info__row">
-                  БОНУСЫ: <span>-69 грн</span>
-                </div>
-                <div class="order-info__row">
-                  ИТОГО <span>15250 грн</span>
-                </div>
-              </div>
-              <button class="order-info__button btn btn--brown" type="submit">
-                ОФОРМИТЬ ЗАКАЗ
-              </button>
-              <p class="order-info__policy">
-                Нажимая на кнопку «оплатить заказ», я принимаю условия
-                <a href="">публичной оферты</a> и
-                <a href="">политики конфиденциальности</a>
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
   </main>
   @@include('html/footer.html', {})
   @@include('html/script.html', {
   })
-
 </body>
 
 </html>

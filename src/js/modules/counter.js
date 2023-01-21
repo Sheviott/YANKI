@@ -1,48 +1,31 @@
-// Добавляем прослушку на всем окне
-window.addEventListener('click', function (event) {
+// let counter;
+// let price;
+// window.addEventListener("click", function (event) {
+//   // Проверяем клик строго по кнопкам Плюс либо Минус
+//   if ( event.target.dataset.action === "plus" || event.target.dataset.action === "minus"
+//   ) {
+//     const counterBody = event.target.closest(".count");
+//     counter = counterBody.querySelector("[data-counter]");
+// 	price = document.querySelector(".product-cart__price");
+// 	console.log(price);
+//   }
 
-    // Объявляем переменную для счетчика
-    let counter;
+//   // Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
+//   if (event.target.dataset.action === "plus") {
+//     counter.innerText = ++counter.innerText;
+//   }
 
-    // Проверяем клик строго по кнопкам Плюс либо Минус
-    if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
-		// Находим обертку счетчика
-		const counterWrapper = event.target.closest('.count');
-		// Находим див с числом счетчика
-        counter = counterWrapper.querySelector('[data-counter]');
+//   // Проверяем является ли элемент по которому был совершен клик кнопкой Минус
+//   if (event.target.dataset.action === "minus") {
+//     // Проверяем чтобы счетчик был больше 1
+//     if (parseInt(counter.innerText) > 1) {
+//       // Изменяем текст в счетчике уменьшая его на 1
+//       counter.innerText = --counter.innerText;
+//     }
+//   }
+//   //Удаляем из корзины товар
+//   // if (event.target.dataset.action === "remove") {
+//   //   event.target.closest(".cart__item").remove();
+//   // }
 
-	}
-
-	// Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
-	if (event.target.dataset.action === 'plus') {
-		counter.innerText = ++counter.innerText;
-	}
-
-	// Проверяем является ли элемент по которому был совершен клик кнопкой Минус
-	if (event.target.dataset.action === 'minus') {
-
-		// Проверяем чтобы счетчик был больше 1
-		if (parseInt(counter.innerText) > 1) {
-			// Изменяем текст в счетчике уменьшая его на 1
-			counter.innerText = --counter.innerText;
-		} else if (event.target.closest('.count') && parseInt(counter.innerText) === 1) {
-			// Проверка на товар который находится в корзине
-			// Отображение статуса корзины Пустая / Полная
-			toggleCartStatus();
-
-			// Пересчет общей стоимости товаров в корзине
-			calcCartPriceAndDelivery();
-		}
-
-	}
-    //Удаляем из корзины товар
-    if (event.target.dataset.action === 'remove') {
-        event.target.closest('.cart__item').remove();
-    }
-
-	// Проверяем клик на + или - внутри коризины
-	if (event.target.hasAttribute('data-action') && event.target.closest('.cart-wrapper')) {
-		// Пересчет общей стоимости товаров в корзине
-		calcCartPriceAndDelivery();
-	}
-});
+// });

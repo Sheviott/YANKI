@@ -15,7 +15,7 @@
 </head>
 
 
-<body>
+<body data-page="catalog">
   <header id="header" class="header lock-padding __catalog-page">
   <div class="header__container">
     <div class="header__body">
@@ -30,7 +30,7 @@
                 <use xlink:href='../images/icons.svg#search'></use>
               </svg>
             </button>
-            <input placeholder=" " class="menu__search--input search__input" type="search" id="search-menu">
+            <input placeholder=" " class="menu__search--input search__input js-search-input" type="search" id="search-menu">
             <label class="menu__search--label search__label" for="search-menu"> Введите ваш запрос
             </label>
           </fieldset>
@@ -160,58 +160,54 @@
           <summary class="filters__title">Фильтры</summary>
           <form class="filters__form" action="">
             <fieldset class="filters__group filters__group--size">
-              <select class="filters__select" name="" id="">
+              <select class="filters__select js-filters-size" name="" id="">
                 <option disabled selected hidden class="filters__option " label="Размер" value="0">Размер</option>
-                <option class="filters__option" value="">S</option>
-                <option class="filters__option" value="">XS</option>
-                <option class="filters__option" value="">M</option>
-                <option class="filters__option" value="">L</option>
-                <option class="filters__option" value="">XL</option>
-                <option class="filters__option" value="">XXL</option>
-                <option class="filters__option" value="">XXXL</option>
+                <option class="filters__option" value="S">S</option>
+                <option class="filters__option" value="XS">XS</option>
+                <option class="filters__option" value="M">M</option>
+                <option class="filters__option" value="L">L</option>
+                <option class="filters__option" value="XL">XL</option>
+                <option class="filters__option" value="XXL">XXL</option>
+                <option class="filters__option" value="XXXL">XXXL</option>
               </select>
             </fieldset>
             <fieldset class="filters__group filters__group--color">
               <select class="filters__select" name="" id="">
                 <option disabled selected hidden class="filters__option" label="Цвет" value="0">Цвет</option>
-                <option class="filters__option" value="">Синий</option>
-                <option class="filters__option" value="">Красный</option>
-                <option class="filters__option" value="">Белый</option>
-                <option class="filters__option" value="">Синий</option>
-                <option class="filters__option" value="">Коричневый</option>
-                <option class="filters__option" value="">Бирюзовый</option>
-                <option class="filters__option" value="">Желтый</option>
+                <option class="filters__option" value="blue">Синий</option>
+                <option class="filters__option" value="red">Красный</option>
+                <option class="filters__option" value="white">Белый</option>
+                <option class="filters__option" value="brown">Коричневый</option>
+                <option class="filters__option" value="yellow">Желтый</option>
               </select>
             </fieldset>
             <fieldset class="filters__group filters__group--price">
               <select class="filters__select" name="" id="">
                 <option disabled selected hidden class="filters__option" label="Цена" value="0">Цена</option>
-                <option class="filters__option" value="">S</option>
-                <option class="filters__option" value="">XS</option>
-                <option class="filters__option" value="">M</option>
-                <option class="filters__option" value="">L</option>
-                <option class="filters__option" value="">XL</option>
-                <option class="filters__option" value="">XXL</option>
-                <option class="filters__option" value="">XXXL</option>
+                <option class="filters__option" value="">от 500</option>
+                <option class="filters__option" value="">от 1000</option>
+                <option class="filters__option" value="">от 1500</option>
+                <option class="filters__option" value="">от 2000</option>
+                <option class="filters__option" value="">от 2500</option>
+                <option class="filters__option" value="">от 3000</option>
+                <option class="filters__option" value="">от 3500</option>
               </select>
             </fieldset>
             <fieldset class="filters__group filters__group--sort">
               <select class="filters__select" name="" id="">
                 <option disabled selected hidden class="filters__option" label="Сортировать по" value="0">Сортировать по
                 </option>
-                <option class="filters__option" value="">S</option>
-                <option class="filters__option" value="">XS</option>
-                <option class="filters__option" value="">M</option>
-                <option class="filters__option" value="">L</option>
-                <option class="filters__option" value="">XL</option>
-                <option class="filters__option" value="">XXL</option>
-                <option class="filters__option" value="">XXXL</option>
+                <option class="filters__option" value="price">Цене</option>
+                <option class="filters__option" value="size">Размеру</option>
+                <option class="filters__option" value="actually">Популярности</option>
               </select>
             </fieldset>
           </form>
         </details>
         <div class="catalog__products catalog-products__content">
-          <div class="catalog-products__list">
+          <div id="goods" class="catalog-products__list list-unstyled">
+            <!-- <img src="images/loading.gif" alt="" /> -->
+            <!--
             <div class="catalog-products__item item">
               <a href="product-page.html" class="item__image">
                 <img src='images/2.category/category_6.jpg' srcset='' alt=''>
@@ -230,7 +226,7 @@
                 <div class="item__color item__color--yellow"></div>
               </div>
             </div>
-            <div href="product-page.html" class="catalog-products__item item">
+            <div class="catalog-products__item item">
               <a href="" class="item__image">
                 <img src='images/2.category/category_1.jpg' srcset='' alt=''>
               </a>
@@ -248,7 +244,7 @@
                 <div class="item__color item__color--yellow"></div>
               </div>
             </div>
-            <div href="product-page.html" class="catalog-products__item item">
+            <div class="catalog-products__item item">
               <a href="" class="item__image">
                 <img src='images/2.category/category_2.jpg' srcset='' alt=''>
               </a>
@@ -265,68 +261,14 @@
                 <div class="item__color item__color--blue"></div>
                 <div class="item__color item__color--yellow"></div>
               </div>
-            </div>
-            <div href="product-page.html" class="catalog-products__item item">
-              <a href="" class="item__image">
-                <img src='images/2.category/category_3.jpg' srcset='' alt=''>
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div>
-            <div href="product-page.html" class="catalog-products__item item">
-              <a href="" class="item__image">
-                <img src='images/2.category/category_4.jpg' srcset='' alt=''>
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div>
-            <div href="product-page.html" class="catalog-products__item item">
-              <a href="" class="item__image">
-                <img src='images/2.category/category_5.jpg' srcset='' alt=''>
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div>
-          </div>
+            </div> -->
 
+          </div>
         </div>
       </div>
     </div>
   </main>
-  <footer class="footer-menu">
+  <footer class="footer footer-menu">
   <div class="footer-menu__body footer__container">
     <div class="footer-menu__navigation">
       <details class="footer-menu__company">
@@ -386,9 +328,59 @@
   </div>
 </footer>
 
+
+  <script id="catalog-template" type="text/template">
+    <% _.each(goods, function(good) { %>
+      <% sizes = good.sizes %>
+      <% sizes = sizes.toString().replace(/,/g , " ") %>
+                <div class="catalog-products__item item">
+                  <a href="product-page.html" class="item__image js-item__data"
+                  data-id="<%= good.id %>"
+                  data-name="<%- good.name %>"
+                  data-img="<%- good.img %>"
+                  data-imgmini="<%= good.imgmini %>"
+                  data-price="<%= good.price %>"
+                  data-sizes="<%= sizes %>"
+                  data-color-white="<%= good.colors.white %>"
+                  data-color-blue="<%= good.colors.blue %>"
+                  data-color-yellow="<%= good.colors.yellow %>"
+                  data-teg="<%= good.new %>"
+                  >
+                    <img src='<%-good.img %>' srcset='' alt=''>
+                  </a>
+                  <button class="item__to-favorits btn--brown">
+                    <svg class='item__icon icon-svg'>
+                      <use xlink:href='../images/icons.svg#favorits'></use>
+                    </svg>
+                  </button>
+                  <div class="item__name"><%- good.name %>
+                    <% if (good.new) { %>
+                   <div class="item__new"> new</div>
+                    <% } %>
+                  </div>
+                  <div class="item__price"><%= good.price %> руб.</div>
+                  <div class="item__size"><%= sizes %></div>
+                  <div class="item__colors">
+                    <% if (good.colors.white) { %>
+                    <div class="item__color item__color--white"></div>
+                    <% } %>
+                    <% if (good.colors.blue) { %>
+                      <div class="item__color item__color--blue"></div>
+                    <% } %>
+                    <% if (good.colors.yellow) { %>
+                    <div class="item__color item__color--yellow"></div>
+                    <% } %>
+                  </div>
+                </div>
+            </div>
+        </li>
+    <% }); %>
+</script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="js/app.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+<script src="js/app.min.js"></script>
+
 </body>
 
 </html>
