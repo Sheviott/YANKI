@@ -1,9 +1,7 @@
 import "./modules/ibg.js";
 import "./modules/burger.js";
 import "./modules/swiper.js";
-import "./modules/spoiler.js";
 import "./modules/popup.js";
-import "./modules/scroll.js";
 import "./modules/dynamicAdapt.js";
 import "./modules/selects.js";
 import "./modules/details.js";
@@ -11,11 +9,14 @@ import "./modules/search.js";
 import "./modules/counter.js";
 
 import "./modules/profile.js";
-import "./modules/cart.js";
 import "./modules/catalog.js";
-import { forEach } from "underscore";
+
+import * as Functions from "./modules/functions.js";
+
+Functions.scroll();
 
 //страницы сайта
+const homePage = document.querySelector(".main-screen"); // страница каталога
 const catalogPage = document.querySelector(".catalog"); // страница каталога
 const productPage = document.querySelector(".product"); //страница товара
 const cartPage = document.querySelector(".cart"); // страница корзины
@@ -24,7 +25,7 @@ if (catalogPage) {
   // на странице каталога
   //рендерим товары
   renderCatalog();
-  // берем данные из массива JSON и заполняем ими шаблон (рендер каталога товаров)
+  //рендер каталога товаров
   function renderCatalog() {
     var template = _.template($("#catalog-template").html()),
       $goods = $("#goods");
@@ -35,21 +36,21 @@ if (catalogPage) {
   }
 
   //получаем данные с товара
-  //при клике на картинку-ссылку, считываем все параметры товара и добавляем их в LS
-  //картинка-ссылка является контейнером параметров для товара
+  //при клике на картинку, считываем все параметры товара и добавляем их в LS
+  //картинка является контейнером параметров для товара
   getDataToLS();
 
   function getDataToLS() {
     document.addEventListener("click", function (e) {
       const product = e.target.closest(".item"); //клик по товару
       if (product) {
-        const data = product.querySelector(".js-item__data"); // контейнер ссылка//картинка товара
+        const data = product.querySelector(".js-item__data"); //картинка товара
         const id = data.dataset.id,
           name = data.dataset.name,
           img = data.dataset.img, //основное изображение товара
-          imgmini = data.dataset.imgmini.split(","), // мини изображения товара, для галлереи (преобразуем в массив для корректного рендера галереи)
+          imgmini = data.dataset.imgmini.split(","), // мини изображения товара, для галлереи
           price = data.dataset.price,
-          sizes = data.dataset.sizes.split(","), // убираем запятые на рендере
+          sizes = data.dataset.sizes.split(","), //
           colors = [
             //массив true/false цветов
             data.dataset.colorWhite,
@@ -61,53 +62,50 @@ if (catalogPage) {
         localStorage.setItem("pageProduct", JSON.stringify(dataPageProduct));
       }
     });
-  }
+  };
 
+  //ФИЛЬТР ТОВАРОВ
+  let filter = function () {
+    let searchHeader = document.querySelector(".js-search-input");
+    let filterSize = document.querySelector(".js-filters-size");
+    // let filterPrice = document.querySelector(".js-filters-price");
+    // let filterColor = document.querySelector(".js-filters-color");
+    // let option = filterSize.querySelectorAll("option");
 
-//ФИЛЬТР ТОВАРОВ
-let filter = function () {
-  let searchHeader = document.querySelector(".js-search-input");
-  let filterSize = document.querySelector(".js-filters-size");
-  let filterPrice = document.querySelector(".js-filters-price");
-  let filterColor = document.querySelector(".js-filters-color");
-  let option = filterSize.querySelectorAll("option");
+    // отслеживаем текущий размер
+    let activeSize = "";
+    filterSize.addEventListener("change", function (e) {
+      activeSize = filterSize.value.toLowerCase();
+      let filterItems = document.querySelectorAll("#goods .item");
 
-  // отслеживаем текущий размер
-  let activeSize = "";
-  filterSize.addEventListener("change", function (e) {
-    activeSize = filterSize.value.toLowerCase();
-    let bodyProducts = document.querySelector("#goods");
-    let filterItems = document.querySelectorAll("#goods .item");
+      filterItems.forEach((item) => {
+        if (
+          item
+            .querySelector(".item__size")
+            .innerHTML.toLowerCase()
+            .indexOf(activeSize) > -1
+        ) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
 
-    filterItems.forEach((item) => {
-      if (item.querySelector('.item__size').innerHTML.toLowerCase().indexOf(activeSize) > -1) {
-        item.style.display = "";
-        // bodyProducts.insertAdjacentHTML("beforend",
-        // `<div>У нас нет такого!</div>`)
-      } else {
-        item.style.display = "none";
-      }
     });
-    // if (filterItems.querySelector(`style.display = "none"`)) {
-    //   console.log('true');
-    // }
-    // let a = filterItems.querySelector(`style.display = "none"`)
-    // console.log(a);
-  });
-
-  searchHeader.addEventListener("keyup", function () {
-    let filter = searchHeader.value.toLowerCase(),
-      filterItems = document.querySelectorAll("#goods .item");
-    filterItems.forEach((item) => {
-      if (item.innerHTML.toLowerCase().indexOf(filter) > -1) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
-      }
+    // поиск по названию товара
+    searchHeader.addEventListener("keyup", function () {
+      let filter = searchHeader.value.toLowerCase(),
+        filterItems = document.querySelectorAll("#goods .item");
+      filterItems.forEach((item) => {
+        if (item.innerHTML.toLowerCase().indexOf(filter) > -1) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
     });
-  });
-};
-filter();
+  };
+  filter();
 }
 
 if (productPage) {
@@ -133,7 +131,7 @@ if (productPage) {
     colorYellow = dataPageFromLS[6][2],
     count = 1, // количество товара по умолчанию
     //Размеры
-    sizesArray = sizes[0].split(" "); // массив размеров (преобразуем для корректного отображения в select)
+    sizesArray = sizes[0].split(" "); // массив размеров
 
   renderProductPage();
   function renderProductPage() {
@@ -141,7 +139,6 @@ if (productPage) {
     productBtnToCart.dataset.id = id; // кнопка служит контейнером для информации о товаре
     productName.innerHTML = name;
     productPrice.innerHTML = price + " руб.";
-
     renderGallery();
     function renderGallery() {
       let swiper = document.querySelector(".js-swiper-wrapper"); // Массив с изображениями
@@ -192,6 +189,7 @@ if (productPage) {
         );
       }
     }
+
     renderColors();
     function renderColors() {
       if (colorWhite == "true") {
@@ -243,15 +241,20 @@ if (productPage) {
   let activeColor = "";
   formColor.addEventListener("click", function (e) {
     activeColor = e.target.id;
+    console.log();
   });
 
   // отслеживаем текущий размер
   let selectSize = document.querySelector(".js-selectNative");
   let activeSize = "";
-  selectSize.addEventListener("click", function (e) {
+  selectSize.addEventListener("change", function (e) {
     activeSize = selectSize.value;
   });
 
+  //создаем в LS массив товаров если ничего не добавляли
+  if (!localStorage.getItem("products")) {
+    localStorage.setItem("products", JSON.stringify([]));
+  }
   //при клике на кнопку добавляем в LS данные о товаре
   productBtnToCart.addEventListener("click", function (e) {
     if (activeColor) {
@@ -266,12 +269,31 @@ if (productPage) {
           price,
           activeColor,
           activeSize,
-          sizesArray,
           count,
         ];
         let products = JSON.parse(localStorage.getItem("products"));
-        products.push(storageCartData);
-        localStorage.setItem("products", JSON.stringify(products));
+        console.log(products.length);
+        if (products.length > 0) {
+          let isAdd = false;
+          for (let i = 0; i < products.length; i++) {
+            if (storageCartData.equals(products[i])) {
+              isAdd = true;
+              alert("Товар уже есть в корзине");
+              console.log(isAdd, "Товар есть в корзине");
+              return;
+            }
+          }
+          if (!isAdd) {
+            products.push(storageCartData);
+            localStorage.setItem("products", JSON.stringify(products));
+            alert("Готово!");
+            console.log(!isAdd, "Товара нет в корзине");
+          }
+        } else {
+          products.push(storageCartData);
+          localStorage.setItem("products", JSON.stringify(products));
+          alert("Готово!");
+        }
       } else {
         alert("Пожалуйста выберите размер.");
       }
@@ -279,17 +301,50 @@ if (productPage) {
       alert("Пожалуйста выберите цвет.");
     }
   });
-  //создаем в LS массив товаров если ничего не добавляли
-  if (!localStorage.getItem("products")) {
-    localStorage.setItem("products", JSON.stringify([]));
-  }
 }
+
+// сравнение массивов
+Array.prototype.equals = function (array) {
+  if (!array) return false;
+  if (array === this) return true;
+
+  if (
+    this[0] == array[0] &&
+    this[1] == array[1] &&
+    this[4] == array[4] &&
+    this[5] == array[5]
+  ) {
+    return true;
+  }
+  return false;
+};
+Object.defineProperty(Array.prototype, "equals", { enumerable: false });
 
 if (cartPage) {
   // на странице корзины
   update_goods(); // рендер товаров
+ 
+  // удаление товара из LS и корзины
+document.addEventListener("click", function (e) {
+  let targetBtnRemove = e.target.dataset.delete;
+  if (targetBtnRemove == undefined) {
+    return;
+  } else {
+    let products = JSON.parse(localStorage.getItem("products"));
+    for (let i = 0; i < products.length; i++) {
+    const element = products[i];
+      if (String(targetBtnRemove) === String(element[0] + "_" + i)) {
+        products.splice(i, 1);
+        localStorage.setItem("products", JSON.stringify(products));
+        update_goods();
+      }
+    }
+  }
+});
+
 }
 
+// обновить данные в корзине
 function update_goods() {
   let resultPrice = 0; // итоговая сумма товаров
   let sumPrice; // итоговая сумма товаров
@@ -301,9 +356,9 @@ function update_goods() {
     // условие для отображения что корзина пуста, при отсутствии товаров
     products = 0;
   }
-
+  let delAttr = 0;
   if (products.length) {
-    let sizeArray; // переменная для рендера массива доступных размеров
+    // let sizeArray; // переменная для рендера массива доступных размеров
     for (let i = 0; i < products.length; i++) {
       const id = products[i][0],
         name = products[i][1],
@@ -311,8 +366,7 @@ function update_goods() {
         price = products[i][3],
         color = products[i][4],
         size = products[i][5],
-        aviableSize = products[i][6],
-        count = products[i][7];
+        count = products[i][6];
       // рендер цвета
       if (color == "yellow") {
         currColor = "yellow";
@@ -338,17 +392,12 @@ function update_goods() {
           <div class="product-cart__bottom">
           <span class="product-cart__color radio-color item__color item__color--${currColor}"></span>
         <div class="product-cart__size">
-          <div class="product-cart__select selectWrapper">
-            <select
-              class="product-cart__selectNative selectNative js-selectNative"
-              aria-labelledby="jobLabel">
-            </select>
-          </div>
+            ${size}
         </div>
         <div class="product-cart__count count js-count">
-          <button data-product="${id}" data-action="minus" style="padding-bottom: 5px" class="count__action">-</button>
+          <button data-product="${id + i}" data-action="minus" style="padding-bottom: 5px" class="count__action">-</button>
           <div data-counter class="count__current">${count}</div>
-          <button data-product="${id}" data-action="plus" class="count__action">+</button>
+          <button data-product="${id + i}" data-action="plus" class="count__action">+</button>
         </div>
         <div class="product-cart__price js-product-cart__price">${
           count * price
@@ -369,49 +418,13 @@ function update_goods() {
       );
       sumPrice = count * price;
       resultPrice += parseInt(sumPrice); // Сумма всех товаров
-
-      const selectSize = document.querySelectorAll(".js-selectNative"); // select размеров
-      const bodySelectSize = selectSize[i]; // обращаемся к каждому select-у товара
-      sizeArray = products[i][6]; //массив доступных размеров
-      sizeArray.forEach((element) => {
-        // заполняем select-ы товаров доступными размерами
-        //при этом выделим размер, выбранный пользователем
-        if (element == products[i][5]) {
-          bodySelectSize.insertAdjacentHTML(
-            "beforeEnd",
-            `<option selected class="js-option" value="${element}">${element}</option>`
-          );
-        } else {
-          bodySelectSize.insertAdjacentHTML(
-            "beforeEnd",
-            `<option class="js-option" value="${element}">${element}</option>`
-          );
-        }
-      });
+      delAttr = "_" + [i];
     }
     //рендер суммы товаров
     cart.insertAdjacentHTML(
       "beforeend",
       `<div class="cart__sumprice">К оплате:<span id="total-cart-summa">${resultPrice} руб.</span></div>`
     );
-
-    // удаление товара из LS и корзины
-    document.addEventListener("click", function (e) {
-      let targetBtnRemove = e.target.dataset.delete;
-      if (!targetBtnRemove) {
-        return;
-      } else {
-        let products = JSON.parse(localStorage.getItem("products"));
-        for (let i = 0; i < products.length; i++) {
-          if (parseInt(targetBtnRemove) == parseInt(products[i][0])) {
-            console.log("true");
-            products.splice(i, 1);
-            localStorage.setItem("products", JSON.stringify(products));
-            update_goods();
-          }
-        }
-      }
-    });
 
     // меняем количество товара
     const countBody = document.querySelectorAll(".js-count");
@@ -428,10 +441,10 @@ function update_goods() {
             console.log("+1");
             for (let i = 0; i < products.length; i++) {
               if (
-                products[i][7] > 0 &&
-                products[i][0] == e.target.dataset.product
+                products[i][6] > 0 &&
+                (products[i][0] + i) == e.target.dataset.product
               ) {
-                products[i].splice(7, 1, products[i][7] + 1);
+                products[i].splice(6, 1, products[i][6] + 1);
                 console.log(products);
                 localStorage.setItem("products", JSON.stringify(products));
                 update_goods();
@@ -440,10 +453,10 @@ function update_goods() {
           } else if (targetBtnCount === "minus") {
             for (let i = 0; i < products.length; i++) {
               if (
-                products[i][7] > 1 &&
-                products[i][0] == e.target.dataset.product
+                products[i][6] > 1 &&
+                (products[i][0] + i) == e.target.dataset.product
               ) {
-                products[i].splice(7, 1, products[i][7] - 1);
+                products[i].splice(6, 1, products[i][6] - 1);
                 localStorage.setItem("products", JSON.stringify(products));
                 update_goods();
               }
@@ -454,6 +467,33 @@ function update_goods() {
     });
   } else {
     // если корзина пуста
-    cart.insertAdjacentHTML("beforeend", `<div>А в корзине пустота!</div>`);
+    cart.insertAdjacentHTML("beforeend", `<div>Тут пусто...</div>`);
   }
 }
+
+if (homePage) {
+  // анимация на мейскрине, смотреть  новинки
+  window.onload = function () {
+    var body = document.querySelector(".js-animated-show-active");
+    body.addEventListener("click", onLinkClicked);
+
+    function onLinkClicked(event) {
+      event.preventDefault();
+      body.classList.remove("animated-show-active");
+      setTimeout(onAnimationComplete, 400);
+    }
+    function onAnimationComplete() {
+      window.location = body.href;
+    }
+  };
+}
+//добавить в избранное (анимация иконки)
+let toAddFavor = function () {
+  document.addEventListener("click", function (e) {
+    let btn = e.target.closest(".js-item__to-favorits");
+    if (btn) {
+      btn.classList.toggle("__in-favor");
+    }
+  });
+};
+toAddFavor();

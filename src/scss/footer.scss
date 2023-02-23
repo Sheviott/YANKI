@@ -1,43 +1,28 @@
-//====================================================================================================
 .footer {
   text-align: center;
   margin-top: rem(30);
   margin-bottom: rem(5);
-  @media (min-width:$tablet){
+  @media (min-width: $tablet) {
     margin-top: rem(50);
     margin-bottom: rem(10);
-
-  }
-  &__copyright {
   }
 }
 .footer-menu {
-  &__body {
-  }
   &__navigation {
+    max-width: rem(600);
+    margin: 0 auto;
     @media (min-width: $pc) {
+      max-width: none;
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
-     ul li a:hover,  a:hover {
+      ul li a:hover,
+      a:hover {
         text-decoration: underline;
         color: $color-main;
         transition: all 0.3s ease 0s;
       }
     }
-
-    @media (max-width: $pc) {
-      max-width: rem(600);
-      margin: 0 auto;
-    }
-  }
-  &__company {
-  }
-  &__useful {
-  }
-  &__for-user {
-  }
-  &__contacts {
   }
   details {
     display: block;
@@ -62,16 +47,8 @@
     @media (min-width: $pc) {
       height: auto;
       padding: 0;
-      pointer-events: none; /* prevents click events */
-      user-select: none; /* prevents text selection */
-    }
-  }
-  .company {
-    &__title {
-    }
-    &__list {
-    }
-    &__link {
+      pointer-events: none;
+      user-select: none;
     }
   }
   .title {
@@ -79,22 +56,6 @@
     margin: 0;
     @media (min-width: $pc) {
       margin-bottom: rem(15);
-    }
-  }
-  .useful {
-    &__title {
-    }
-    &__list {
-    }
-    &__link {
-    }
-  }
-  .for-user {
-    &__title {
-    }
-    &__list {
-    }
-    &__link {
     }
   }
   .contacts {
@@ -113,7 +74,6 @@
       a:hover {
         text-decoration: none;
       }
-
     }
     &__tel {
       display: block;
@@ -124,23 +84,16 @@
       @extend .contacts__tel;
     }
   }
-  .instagram-icon {
-  }
-  .icon-img {
-  }
-  .telegram-icon {
-  }
+
   &__copyright {
     font-size: rem(12);
     text-align: center;
     margin-top: rem(30);
     margin-bottom: rem(5);
-    @media (min-width:$mobile){
+    @media (min-width: $mobile) {
       font-size: rem(20);
       margin-top: rem(50);
       margin-bottom: rem(10);
     }
-
   }
 }
-//====================================================================================================

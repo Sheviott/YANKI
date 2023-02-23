@@ -1,293 +1,44 @@
 .popup {
-  //ОБЩИЕ СТИЛИ
   position: fixed;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
-  z-index: 100000000;
+  z-index: 2;
   overflow-y: scroll;
   overflow-x: hidden;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.8s ease 0s;
+  transition: all 0.4s ease 0s;
+  margin: 0;
   &__body {
     min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: rem(30) rem(10);
+    
   }
   &__content {
     width: 300px;
+    text-align: center;
+    border: 10px solid $color-main;
     background: white;
+    border-radius: 5px;
     padding: rem(48) rem(21) rem(38) rem(27);
     position: relative;
     @media (min-width: $tablet) {
-      width: 900px;
       padding: rem(56) rem(74) rem(48) rem(37);
     }
   }
-
-  // СТИЛИ ДЛЯ ФОРМ
-  form .form__row {
-    margin-bottom: rem(0);
-  }
-  .form {
-    &__body {
-    }
-    &__row {
-      display: block;
-      &--last {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        margin-top: rem(36);
-      }
-    }
-    &__group {
-    }
-    &__input {
-      color: black;
-      background: #f4f5f5;
-    }
-    &__label {
-      z-index: 10000000000000000000000;
-      color: rgba($color: #000000, $alpha: 0.6);
-    }
-    &__label--checkbox {
-      color: rgba($color: #000000, $alpha: 0.6);
-      font-size: rem(12);
-      line-height: 16px;
-      @media (min-width: $tablet) {
-        white-space: nowrap;
-      }
-    }
-    &__input--checkbox {
-    }
-    &__button {
-    }
-  }
-  .form__input:focus ~ .form__label,
-  .form__input:not(:placeholder-shown) ~ .form__label {
-    color: rgba($color: #000000, $alpha: 0.4);
-  }
-
-  .check {
-    &__box {
-      width: 16px;
-      height: 16px;
-      margin-top: 0;
-    }
-  }
-  .btn {
-    padding: rem(13) rem(32);
-  }
-  .btn--w {
-  }
-
-  //СТИЛИ ДЛЯ СПОЙЛЕРОВ
-  details {
-    display: inline-block;
-  }
-  summary {
-    position: relative;
-  }
-  summary::after,
-  summary::before {
-    transition: all 0.3s ease 0s;
-    top: 7px;
-  }
-  summary:after {
-    content: url(../images/Mobile_arrow.svg);
-    position: absolute;
-    top: 0;
-    right: -20px;
-    border-radius: 2px;
-    transition: all 0.3s ease 0s;
-  }
-
-  summary:before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    right: -12.5px;
-    width: 0;
-    height: 0;
-    transform: rotate(45deg);
-  }
-
-  details[open] > summary::after {
-    transform: rotate(-180deg);
-  }
-  details[open] {
-    height: 150px;
-  }
-  .spoilers--block {
-    display: inline-block;
-    font-size: rem(16);
-
-    &__quest {
-      font-weight: 600;
-      text-decoration: underline dotted rgb(175, 175, 175) 2px;
-      text-underline-position: under;
-    }
-    &__icon {
-    }
-    &__answer {
-      margin-top: rem(11);
-      font-size: 13px;
-      color: $color-text-grey;
-    }
-  }
-  .spoilers--wrapper {
-    position: relative;
-    width: 100%;
-  }
-  // количество штук справа
-  .spoiler-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-weight: 600;
-    //margin-left: 22%;
-  }
-  .icon-spoiler {
-    &__line {
-    }
-  }
-
-  // КАРТОЧКИ РАЦИОНОВ
-  .item-set {
-    &__set-M {
-    }
-    &__body {
-      @media (min-width: $tablet) {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: rem(37);
-      }
-      padding: 0;
-    }
-    &__set-name {
-      margin-bottom: rem(12);
-      font-size: rem(20);
-    }
-    &__image {
-      width: 100%;
-      height: rem(355);
-      background-repeat: no-repeat;
-      margin-bottom: rem(12);
-      img {
-        width: 100%;
-      }
-      @media (min-width: $tablet) {
-        flex: 0 0 50%;
-        height: rem(690);
-      }
-    }
-    &__category {
-    }
-    &__weight {
-      margin-bottom: rem(16);
-    }
-    &__description {
-      position: relative;
-      margin-bottom: rem(24);
-      @media (min-width: $tablet) {
-        margin-bottom: rem(0);
-      }
-    }
-    &__spoilers--block {
-      margin-bottom: rem(12);
-    }
-    &__price {
-      text-align: center;
-      @media (min-width: $tablet) {
-        margin-bottom: rem(0);
-        width: rem(70);
-      }
-    }
-    &__old-price {
-      font-size: rem(14);
-    }
-    &__new-price {
-      font-size: rem(20);
-      @media (min-width: $tablet) {
-        padding: 0;
-      }
-    }
-
-    .divider {
-      @media (min-width: $tablet) {
-        display: flex;
-        flex-flow: column;
-        flex-grow: 1;
-        justify-content: space-between;
-      }
-    }
-  }
-  //РАССИТАТЬ РАЦИОН
-  .calculate {
-    &__body {
-    }
-    &__title {
-      color: $color-main-red;
-      margin-bottom: rem(16);
-    }
-    &__text {
-      margin-bottom: rem(42);
-    }
-    &__whatsApp,
-    &__telegram {
-      color: $color-main-red;
-      text-decoration: underline $color-main-red;
-      text-underline-position: under;
-    }
-    .title {
-    }
-    .text {
-    }
-    .form {
-      &__group {
-      }
-      &__input {
-      }
-      &__label {
-        max-width: 100%;
-      }
-      .textarea {
-        padding: 15px 10px 100px 10px;
-      }
-      &__label--radio {
-        width: 100%;
-        padding-left: 30px;
-        @media (min-width: $tablet) {
-          font-size: rem(16);
-        }
-      }
-      &__input----radio {
-      }
-      &__button {
-        max-width: 100%;
-      }
-    }
-
-    .checkboxmark--body {
-    }
-    .checkboxmark {
-    }
-    .check {
-      &__box {
-      }
-    }
-    .btn {
-    }
-    .btn--r {
-    }
-  }
+.close-popup{
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 8px;
 }
+ }
 .popup.open {
   opacity: 1;
   visibility: visible;
@@ -300,26 +51,4 @@
   height: 40px;
   top: 5px;
   right: 5px;
-}
-
-.close {
-  &::before,
-  &::after {
-    content: "";
-    transition: all 0.3s ease 0s;
-    right: 20%;
-    position: absolute;
-    width: 70%;
-    height: 2px;
-  }
-  &::before {
-    top: calc(50% - rem(1));
-    transform: rotate(-45deg);
-    background-color: rgb(0, 0, 0);
-  }
-  &::after {
-    bottom: calc(50% - rem(1));
-    transform: rotate(45deg);
-    background-color: rgb(0, 0, 0);
-  }
 }

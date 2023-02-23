@@ -1,4 +1,3 @@
-
 export function ibg(){
 
 	let ibg = document.querySelectorAll(".ibg");

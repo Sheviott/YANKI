@@ -1,8 +1,72 @@
 @font-face {
-                font-family: Pushster;
+                font-family: lg;
                 font-display: swap;
-                src: url("../fonts/Pushster-Regular.woff2") format("woff2"),
-                    url("../fonts/Pushster-Regular.woff") format("woff");
+                src: url("../fonts/lg.woff2") format("woff2"),
+                    url("../fonts/lg.woff") format("woff");
                 font-weight: 400;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Raleway;
+                font-display: swap;
+                src: url("../fonts/Raleway-Bold.woff2") format("woff2"),
+                    url("../fonts/Raleway-Bold.woff") format("woff");
+                font-weight: 700;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Raleway;
+                font-display: swap;
+                src: url("../fonts/Raleway-Light.woff2") format("woff2"),
+                    url("../fonts/Raleway-Light.woff") format("woff");
+                font-weight: 300;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Raleway;
+                font-display: swap;
+                src: url("../fonts/Raleway-ExtraLight.woff2") format("woff2"),
+                    url("../fonts/Raleway-ExtraLight.woff") format("woff");
+                font-weight: 200;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Raleway;
+                font-display: swap;
+                src: url("../fonts/Raleway-Medium.woff2") format("woff2"),
+                    url("../fonts/Raleway-Medium.woff") format("woff");
+                font-weight: 500;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Raleway;
+                font-display: swap;
+                src: url("../fonts/Raleway-Regular.woff2") format("woff2"),
+                    url("../fonts/Raleway-Regular.woff") format("woff");
+                font-weight: 400;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Roboto;
+                font-display: swap;
+                src: url("../fonts/Roboto-Medium.woff2") format("woff2"),
+                    url("../fonts/Roboto-Medium.woff") format("woff");
+                font-weight: 500;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Roboto;
+                font-display: swap;
+                src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+                    url("../fonts/Roboto-Regular.woff") format("woff");
+                font-weight: 400;
+                font-style: normal;
+              }
+@font-face {
+                font-family: Roboto;
+                font-display: swap;
+                src: url("../fonts/Roboto-Light.woff2") format("woff2"),
+                    url("../fonts/Roboto-Light.woff") format("woff");
+                font-weight: 300;
                 font-style: normal;
               }

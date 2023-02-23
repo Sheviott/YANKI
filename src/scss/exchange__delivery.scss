@@ -1,7 +1,5 @@
 .exchange,
 .delivery {
-  margin-top: rem(80);
-  margin-bottom: rem(60);
   &__navigation {
     margin-bottom: rem(15);
     @media (min-width: $pc) {
@@ -24,10 +22,8 @@
   }
   &__row {
     max-width: 600px;
-    margin: 0 auto;
     @media (min-width: $pc) {
       display: flex;
-      gap: 30px;
       max-width: none;
     }
   }
@@ -40,19 +36,16 @@
       margin-bottom: rem(25);
     }
   }
-  &__body {
-  }
-  &__content {
-  }
-  &__container {
-  }
   &__text {
     margin-bottom: rem(10);
   }
   &__column {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 20px;
+    grid-template-columns: 1fr;
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 20px;
+    }
     column-gap: 40px;
   }
   &__text-block {
@@ -66,28 +59,26 @@
     }
   }
   &__row {
-    @media (min-width:$pc){
-       display: grid;
-       grid-template-columns: 24% 24% 50%;
-       grid-template-rows: auto;
+    @media (min-width: $pc) {
+      display: grid;
+      grid-template-columns: 24% 24% 50%;
+      grid-template-rows: auto;
+      justify-content: space-between;
     }
   }
 }
-.navigation {
-  &__link {
-  }
-}
+
 .LIQPAY {
   &__row {
     display: grid;
-    grid-template-columns:min-content;
+    grid-template-columns: min-content;
     grid-template-rows: 1fr;
     align-items: center;
     column-gap: 25px;
-    @media (min-width:$pc){
+    @media (min-width: $pc) {
       column-gap: 15px;
     }
-    
+
     :not(:last-child) {
       margin-bottom: rem(15);
     }
@@ -105,10 +96,7 @@
       padding: 0;
       display: inline-block;
     }
-
   }
-}
-.LIQPAY-icon {
 }
 
 .exchange {
@@ -120,15 +108,7 @@
     font-size: 14px;
     font-weight: 300;
   }
-  //&__row {
-  //  max-width: 600px;
-  //  margin: 0 auto;
-  //  @media (min-width:$pc){
-  //     display: flex;
-  //     gap: 30px;
-  //     max-width: none;;
-  //  }
-  //}
+
   &__text-block {
     text-align: center;
     &:not(:last-child) {
@@ -138,6 +118,13 @@
       flex: 0 0 165px;
     }
   }
-  .icon-svg {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    margin: 0 auto;
+    @media (min-width: $pc) {
+      flex-flow: row;
+    }
   }
 }

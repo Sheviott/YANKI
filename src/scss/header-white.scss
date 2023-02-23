@@ -1,0 +1,87 @@
+.__white-header.__menu-open {
+  .icon-menu {
+    span,
+    &::before,
+    &::after {
+      background-color: $color-main;
+    }
+  }
+}
+.__white-header {
+  .icon-svg {
+    fill: $color-main;
+  }
+  .icon-svg.icon-search {
+    &:hover {
+      fill: rgb(95, 95, 95);
+    }
+  }
+  .icon-arrow {
+    fill: black;
+  }
+  &.__scroll-on-catalog {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    animation: none;
+  }
+
+  &.header {
+    background-color: white;
+    .header {
+      &__lang {
+        color: black;
+      }
+      &__actions {
+        color: black;
+      }
+    }
+    .dropdown-body {
+      background-color: white;
+      box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+      .dropdown-item {
+        color: black;
+        border-top: 1px solid $color-main;
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+  }
+  .menu {
+    &__line {
+      background-color: $color-main;
+    }
+    &__body {
+      @media (max-width: 1023px) {
+        border-top: 1px solid $color-main;
+      }
+    }
+    &__link {
+      color: black;
+    }
+  }
+
+  .icon-menu {
+    span,
+    &::before,
+    &::after {
+      background-color: $color-main;
+    }
+  }
+  .icon-search {
+    fill: black;
+  }
+
+  .value__arrow {
+    fill: black;
+  }
+  .arrow {
+    fill: black;
+  }
+  .dropdown {
+    background-color: white;
+  }
+  .dropdown-item {
+    color: black;
+  }
+}

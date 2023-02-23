@@ -1,10 +1,10 @@
 [
     {
         "id": "0001",
-        "name": "Куртка белая",
+        "name": "Зимняя белая куртка с мехом, большие карманы",
         "price": "2900",
         "img": "images/2.category/category_1.jpg",
-        "imgmini": ["images/2.category/category_1.jpg", "images/2.category/category_1.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "imgmini": ["images/2.category/category_1.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_5.jpg", "images/3.product-page/item_6.jpg", "images/3.product-page/item_4.jpg"],
         "sizes": ["XXS","XS", "S", "M", "L", "XL"],
         "colors": {
             "yellow": true,
@@ -19,21 +19,21 @@
         "name": "Синее пальто",
         "price": "3150",
         "img": "images/2.category/category_2.jpg",
-        "imgmini": ["images/2.category/category_2.jpg", "images/2.category/category_2.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "imgmini": ["images/2.category/category_2.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_5.jpg", "images/3.product-page/item_6.jpg", "images/3.product-page/item_4.jpg"],
         "sizes": ["XXS","XS", "S"],
         "colors": {
             "yellow": true,
             "blue": false,
             "white": true
         },
-        "new": false
+        "new": true
     },
     {
         "id": "0003",
         "name": "Бежевая шуба",
         "price": "4200",
         "img": "images/2.category/category_3.jpg",
-        "imgmini": ["images/2.category/category_3.jpg", "images/2.category/category_3.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "imgmini": ["images/2.category/category_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_5.jpg", "images/3.product-page/item_6.jpg", "images/3.product-page/item_4.jpg"],
         "sizes": ["XS", "S", "M"],
         "colors": {
             "yellow": false,
@@ -47,7 +47,7 @@
         "name": "Синяя парка",
         "price": "2900",
         "img": "images/2.category/category_4.jpg",
-        "imgmini": ["images/2.category/category_4.jpg", "images/2.category/category_4.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "imgmini": ["images/2.category/category_4.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_5.jpg", "images/3.product-page/item_6.jpg", "images/3.product-page/item_4.jpg"],
         "sizes": ["M", "L", "XL"],
         "colors": {
             "yellow": true,
@@ -61,7 +61,7 @@
         "name": "Бежевое пальто",
         "price": "3800",
         "img": "images/2.category/category_6.jpg",
-        "imgmini": ["images/2.category/category_6.jpg", "images/2.category/category_6.jpg", "images/3.product-page/item_3.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_2.jpg", "images/3.product-page/item_1.jpg"],
+        "imgmini": ["images/2.category/category_6.jpg", "images/3.product-page/item_4.jpg", "images/3.product-page/item_5.jpg", "images/3.product-page/item_6.jpg", "images/3.product-page/item_4.jpg"],
         "sizes": ["XXS","XS", "S", "M", "L"],
         "colors": {
             "yellow": true,

@@ -6,7 +6,7 @@
 
 <body>
   @@include('html/header.html', {
-  'page': '__catalog-page'
+  'page': '__white-header'
   })
   <main>
     <div id="product" class="product">
@@ -14,19 +14,27 @@
         <div class="product__navigation js-navigation navigation">
           <a class="navigation__link" href="">Каталог</a>
           <a class="navigation__link navigation__link--category js-navigation__link--category" href="">Пальто</a>
-          <a class="navigation__link navigation__link--product js-navigation__link--product" href="">Кремовое пальто</a>
+          <p class="navigation__link navigation__link--product js-navigation__link--product">Кремовое пальто</p>
         </div>
         <div class="product__item item">
-          <div class="product__swiper swiper ">
-            <div class="product__swiper-wrapper js-swiper-wrapper swiper-wrapper">
-
-           </div>
-          </div>
-          <div class="product__swiper-mini swiper">
-            <div class="product__swiper-mini-wrapper js-mini-swiper-wrapper swiper-wrapper">
-
-           </div>
-         </div>
+          <di class="item__gallery">
+            <div class="product__swiper swiper">
+              <div class="swiper-pagination"></div>
+              <button class="swiper__icon close-icon">
+                <img src="@img/resize.svg" alt="">
+              </button>
+             
+              <div class="product__swiper-wrapper js-swiper-wrapper swiper-wrapper">
+              </div>
+            </div>
+            <div class="product__swiper-mini swiper">
+              <div id="" class="product__swiper-mini-wrapper js-mini-swiper-wrapper swiper-wrapper">
+  
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </di >
           <div class="item__description js-item__description">
             <div class="item__name js-item__name"></div>
             <div class="item__price js-item__price"><span>руб</span></div>
@@ -35,18 +43,20 @@
 
               </fieldset>
               <fieldset class="form__select item__select">
-                  <div class="selectWrapper">
-                    <select class="selectNative js-selectNative" aria-labelledby="jobLabel">
-                      <option value="" hidden disabled selected>Выберите размер</option>
-                    </select>
-                  </div>
+                <div class="selectWrapper">
+                  <select class="selectNative js-selectNative" aria-labelledby="jobLabel">
+                    <option value="" hidden disabled selected>Выберите размер</option>
+                  </select>
+                </div>
               </fieldset>
-              <button type="button" data-cart data-id="none" class="btn btn--brown js-toCart-btn">В корзину</button>
-              <button class="item__to-favorits btn btn--white">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-                В избранное</button>
+              <div class="form__actions">
+                <button type="button" data-cart data-id="none" class="btn btn--brown js-toCart-btn">В корзину</button>
+                <button datastate class="item__to-favorits btn btn--white">
+                  <svg class='item__icon icon-svg'>
+                    <use xlink:href='../images/icons.svg#favorits'></use>
+                  </svg>
+                  В избранное</button>
+              </div >
             </form>
             <div class="product__details">
               <p>Подробности</p>

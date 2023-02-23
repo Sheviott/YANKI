@@ -1,95 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
-  @@include('html/head.html', { 'title': 'Каталог' })
+@@include('html/head.html', { 'title': 'Каталог' })
 
-  <body>
-    @@include('html/header.html', { 'page': '__catalog-page' })
-    <main>
-      <div class="favorits">
-        <div class="favorits__body favorits__container">
-          <div class="favorits__navigation navigation">
-            <a class="navigation__link" href="">Главная</a>
-            <a class="navigation__link" href="">Избранное</a>
+<body>
+  @@include('html/header.html', { 'page': '__white-header' })
+  <main>
+    <div class="favorits">
+      <div class="favorits__body favorits__container">
+        <div class="favorits__navigation navigation">
+          <a class="navigation__link" href="">Главная</a>
+          <p class="navigation__link">Избранное</p>
+        </div>
+        <h3 class="cart__title title">Избранное</h3>
+        <div class="favorits__list-item">
+          <div class="favorits__item item">
+            <a href="product-page.html" class="item__image">
+              <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
+            </a>
+            <button class="item__to-favorits __in-favor js-item__to-favorits btn--brown">
+              <svg class="item__icon icon-svg">
+                <use xlink:href="../images/icons.svg#favorits"></use>
+              </svg>
+            </button>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
+            </div>
           </div>
-          <h3 class="cart__title title">Избранное</h3>
-          <div class="favorits__list-item">
-            <div class="favorits__item item">
-              <a href="product-page.html" class="item__image">
-                <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class="item__icon icon-svg">
-                  <use xlink:href="../images/icons.svg#favorits"></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
+          <div class="favorits__item item">
+            <a href="product-page.html" class="item__image">
+              <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
+            </a>
+            <button class="item__to-favorits __in-favor js-item__to-favorits btn--brown">
+              <svg class="item__icon icon-svg">
+                <use xlink:href="../images/icons.svg#favorits"></use>
+              </svg>
+            </button>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
             </div>
-            <div class="favorits__item item">
-              <a href="product-page.html" class="item__image">
-                <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class="item__icon icon-svg">
-                  <use xlink:href="../images/icons.svg#favorits"></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
+          </div>
+          <div class="favorits__item item">
+            <a href="product-page.html" class="item__image">
+              <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
+            </a>
+            <button class="item__to-favorits __in-favor js-item__to-favorits btn--brown">
+              <svg class="item__icon icon-svg">
+                <use xlink:href="../images/icons.svg#favorits"></use>
+              </svg>
+            </button>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
             </div>
-            <div class="favorits__item item">
-              <a href="product-page.html" class="item__image">
-                <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class="item__icon icon-svg">
-                  <use xlink:href="../images/icons.svg#favorits"></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div>
-            <div class="favorits__item item">
-              <a href="product-page.html" class="item__image">
-                <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class="item__icon icon-svg">
-                  <use xlink:href="../images/icons.svg#favorits"></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
+          </div>
+          <div class="favorits__item item">
+            <a href="product-page.html" class="item__image">
+              <img src="@img/2.category/category_6.jpg" srcset="" alt="" />
+            </a>
+            <button class="item__to-favorits __in-favor js-item__to-favorits btn--brown">
+              <svg class="item__icon icon-svg">
+                <use xlink:href="../images/icons.svg#favorits"></use>
+              </svg>
+            </button>
+            <div class="item__name">Белая куртка</div>
+            <div class="item__price">2900 грн</div>
+            <div class="item__size">XXS XS S M L</div>
+            <div class="item__colors">
+              <div class="item__color item__color--white"></div>
+              <div class="item__color item__color--blue"></div>
+              <div class="item__color item__color--yellow"></div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    @@include('html/footer.html', {})
-    @@include('html/script.html', { })
-  </body>
+    </div>
+  </main>
+  @@include('html/footer.html', {})
+  @@include('html/script.html', { })
+</body>
+
 </html>

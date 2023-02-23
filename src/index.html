@@ -11,21 +11,22 @@
     })
     <main class="page">
       <section class="main-screen">
-        <div class="main-screen__images">
-          <picture class="main-img main-img__1 ibg">
-            <img src='@img/1.main-screen/Yanki1.jpg' srcset='' alt=''>
-          </picture>
-          <picture class="main-img main-img__2 ibg">
-            <source srcset='@img/1.main-screen/Yanki2.jpg' media="(min-width: 768px)">
-            <img src='@img/1.main-screen/Yanki2.jpg' srcset='' alt=''>
-          </picture>
-          <picture class="main-img main-img__3 ibg">
-            <source srcset='@img/1.main-screen/Yanki3.jpg' media="(min-width: 1024px)">
-            <img src='@img/1.main-screen/Yanki3.jpg' srcset='' alt=''>
-          </picture>
-        </div>
+       <div class="main-screen__swiper swiper">
+          <div class="main-screen__images swiper-wrapper">
+            <div class="main-screen__image swiper-slide">
+                <img src='@img/1.main-screen/Yanki1.jpg' srcset='' alt=''>
+            </div >
+            <div class="main-screen__image swiper-slide" >
+                <img src='@img/1.main-screen/Yanki2.jpg' srcset='' alt=''>
+            </div >
+           <div class="main-screen__image swiper-slide">
+                <img src='@img/1.main-screen/Yanki3.jpg' srcset='' alt=''>
+           </div >
+
+          </div>
+       </div >
         <div class="main-screen__content">
-          <a href="" class="main-screen__body">
+          <a href="catalog.html" class="main-screen__body js-animated-show-active animated-show-active">
             <h1 class="main-screen__title title">Новая коллекция</h1>
             <div class="main-screen__subtitle">Смотреть Новинки
             </div>
@@ -40,7 +41,6 @@
               <div class="category__slide swiper-slide">
                 <a href="product-page.html" class="category__item item">
                   <div class="item__image ibg">
-                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
                     <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
                   </div>
                   <div class="item__category-name">Куртки</div>
@@ -49,7 +49,6 @@
               <div class="category__slide swiper-slide">
                 <a href="" class="category__item item">
                   <div class="item__image ibg">
-                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
                     <img src='@img/2.category/category_2.jpg' srcset='' alt=''>
                   </div>
                   <div class="item__category-name">Пальто</div>
@@ -58,7 +57,6 @@
               <div class="category__slide swiper-slide">
                 <a href="" class="category__item item">
                   <div class="item__image ibg">
-                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
                     <img src='@img/2.category/category_3.jpg' srcset='' alt=''>
                   </div>
                   <div class="item__category-name">Шубы</div>
@@ -67,7 +65,6 @@
               <div class="category__slide swiper-slide">
                 <a href="" class="category__item item">
                   <div class="item__image ibg">
-                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
                     <img src='@img/2.category/category_4.jpg' srcset='' alt=''>
                   </div>
                   <div class="item__category-name">Парки</div>
@@ -76,7 +73,6 @@
               <div class="category__slide swiper-slide">
                 <a href="" class="category__item item">
                   <div class="item__image ibg">
-                    <!--<source media='(max-width: 768px)' srcset=' 1x, 2x' type='image/webp'>-->
                     <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
                   </div>
                   <div class="item__category-name">Шапки</div>
@@ -97,13 +93,21 @@
                 class="email-subscribe__email--input input-form" id="email-form">
               <label class="email-subscribe__email--label label-form" for="email-form">Ваш e-mail*</label>
             </fieldset>
-            <button class="email-subscribe__button btn btn--brown" type="submit">Подписаться</button>
+            <button class="email-subscribe__button btn btn--brown popup-link" type="button" href="#thanku">Подписаться</button>
           </form>
           <p class="email-subscribe__accept-policy">Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих
             персональных данных и ознакомлен(а) с условиями конфиденциальности.
           </p>
         </div>
       </section>
+      <div id="thanku" class="popup">
+        <div class="popup__body">
+          <div class="popup__content">
+            <div class="close-popup">X</div>
+            Спасибо за подписку!
+          </div>
+        </div>
+      </div>
     </main>
     @@include('html/footer.html', {
       })

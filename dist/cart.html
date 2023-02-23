@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="css/style.min.css">
   <title>Каталог</title>
 </head>
 
 
 <body data-page="cart">
-  <header id="header" class="header lock-padding __catalog-page">
+  <header id="header" class="header lock-padding __white-header">
   <div class="header__container">
     <div class="header__body">
       <div class="header__menu menu">
@@ -24,25 +22,26 @@
           <span class="menu__line"></span>
         </div>
         <div class="menu__body">
-          <fieldset data-da=".user--menu__icons,1024,0" class="menu__search ">
+          <fieldset class="menu__search" data-da=".user-menu__icons,1024,0">
             <button class="menu__search--button search__button" type="submit">
-              <svg id='icon-search-menu' class='search-icon icon-svg'>
+              <svg class='icon-search icon-svg'>
                 <use xlink:href='../images/icons.svg#search'></use>
               </svg>
             </button>
-            <input placeholder=" " class="menu__search--input search__input js-search-input" type="search" id="search-menu">
+            <input placeholder=" " class="menu__search--input search__input js-search-input" type="search"
+              id="search-menu">
             <label class="menu__search--label search__label" for="search-menu"> Введите ваш запрос
             </label>
           </fieldset>
-          <div data-da=".header__lang,1024,4" class="menu__value">
-            <div class="menu__value--current current-dropdown value">UAH
-              <svg class="value--arrow arrow arrow-icon icon-svg" alt="arrow">
+          <div class="menu__value actions__value" data-da=".header__actions,1024,2">
+            <div data-js-dropdown-active class="value__active dropdown">UAH
+              <svg class="value__arrow icon-arrow icon-svg" alt="arrow">
                 <use xlink:href='../images/icons.svg#arrow'></use>
               </svg>
             </div>
-            <div class=" menu__value--dropdown visually-hidden dropdown">
-              <a class=" value dropdown-item" href="">USD</a>
-              <a class="value dropdown-item" href="">EUR</a>
+            <div data-js-dropdown-open class="value__body dropdown-body visually-hidden">
+              <p class="dropdown-item">USD</p>
+              <p class="dropdown-item">EUR</p>
             </div>
           </div>
           <nav class="menu__list">
@@ -79,39 +78,42 @@
             <div class="contacts__email">info@yanki.com</div>
           </div>
         </div>
-
-        <div class="header__lang">
-          <div class="header__lang--current current-dropdown language ">RU
-            <svg class="lang--arrow arrow arrow-icon icon-svg" alt="arrow">
-              <use xlink:href='../images/icons.svg#arrow'></use>
-            </svg>
-          </div>
-          <div class="header__lang--dropdown visually-hidden dropdown">
-            <a class="language dropdown-item" href="">UA</a>
-            <a class="language dropdown-item" href="">EN</a>
+        <div class="header__actions">
+          <div class="actions__lang">
+            <div data-js-dropdown-active class="lang__active dropdown">RU
+              <svg class="lang__arrow icon-arrow icon-svg" alt="arrow">
+                <use xlink:href='../images/icons.svg#arrow'></use>
+              </svg>
+            </div>
+            <div data-js-dropdown-open class="lang__body dropdown-body visually-hidden ">
+              <a class="dropdown-item" href="">UA</a>
+              <a class="dropdown-item" href="">EN</a>
+            </div>
           </div>
         </div>
+
+
         <div class="header__logo">
-          <a class="header__icon-logo" href="index.html">
+          <a class="header__logo-icon" href="index.html">
             <picture>
-              <source media='(min-width: 1024px)' srcset='../images/YANKI--desktop__catalog-page.svg'>
-              <img src="../images/YANKI__catalog-page.svg" class="logo-icon" alt="logo" />
+              <source media='(min-width: 768px)' srcset='../images/YANKI--desktop__white-header.svg'>
+              <img src="../images/YANKI__white-header.svg" class="logo-icon" alt="logo" />
             </picture>
           </a>
         </div>
-        <div class="header__user--menu">
-          <div class="user--menu__icons icons">
-            <a href="profile.html" class="icons__profile">
+        <div class="header__user-menu">
+          <div class="user-menu__icons icons">
+            <a href="profile.html" class="icons__item icons__profile">
               <svg class="profile-icon icon-svg" alt="profile">
                 <use xlink:href='../images/icons.svg#profile'></use>
               </svg>
             </a>
-            <a href="favorits.html" class="icons__favorits">
+            <a href="favorits.html" class="icons__item icons__favorits">
               <svg class="favorits-icon icon-svg" alt="favorits">
                 <use xlink:href='../images/icons.svg#favorits'></use>
               </svg>
             </a>
-            <a href="cart.html" class="icons__basket">
+            <a href="cart.html" class="icons__item icons__basket">
               <svg class="basket-icon icon-svg" alt="basket">
                 <use xlink:href='../images/icons.svg#basket'></use>
               </svg>
@@ -126,12 +128,12 @@
     <div class="cart">
       <div class="cart__body cart__container">
         <div class="cart__navigation navigation">
-          <a class="navigation__link" href="">Главная</a>
-          <a class="navigation__link" href="">Корзина</a>
+          <a class="navigation__link" href="index.html">Главная</a>
+          <p class="navigation__link">Корзина</p>
         </div>
         <h3 class="cart__title title">Ваш заказ</h3>
         <div id="cart" class="cart__wrapper js-cart">
-
+<!-- Скрипт -->
         </div>
         <div class="cart__order order-info">
           <h3 class="cart__title title">Оформление заказа</h3>
@@ -236,32 +238,34 @@
               </fieldset>
             </div>
             <div class="order-info__right">
-              <div class="order-info__links">
-                <a href="" class="order-info__link order-info__user-profile">Войти в личный кабинет</a>
-                <a href="" class="order-info__link">УСЛОВИЯ ДОСТАВКИ</a>
-                <a href="" class="order-info__link">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА
-                </a>
-                <a href="" class="order-info__link">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
+              <div class="order-info__wrap">
+                <div class="order-info__links">
+                  <a href="" class="order-info__link order-info__user-profile">Войти в личный кабинет</a>
+                  <a href="" class="order-info__link">УСЛОВИЯ ДОСТАВКИ</a>
+                  <a href="" class="order-info__link">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА
+                  </a>
+                  <a href="" class="order-info__link">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
+                </div>
+                <div class="order-info__bottom">
+                  <div class="order-info__row">
+                    ДОСТАВКА: <span>По тарифам перевозчика</span>
+                  </div>
+                  <div class="order-info__row">
+                    БОНУСЫ: <span>-69 грн</span>
+                  </div>
+                  <div class="order-info__row">
+                    ИТОГО <span>15250 грн</span>
+                  </div>
+                </div>
+                <button id="order" class="btn btn--brown" type="submit">
+                  ОФОРМИТЬ ЗАКАЗ
+                </button>
+                <p class="order-info__policy">
+                  Нажимая на кнопку «оплатить заказ», я принимаю условия
+                  <a href="">публичной оферты</a> и
+                  <a href="">политики конфиденциальности</a>
+                </p>
               </div>
-              <div class="order-info__checkout">
-                <div class="order-info__row">
-                  ДОСТАВКА: <span>По тарифам перевозчика</span>
-                </div>
-                <div class="order-info__row">
-                  БОНУСЫ: <span>-69 грн</span>
-                </div>
-                <div class="order-info__row">
-                  ИТОГО <span>15250 грн</span>
-                </div>
-              </div>
-              <button id="order" class="btn btn--brown" type="submit">
-                ОФОРМИТЬ ЗАКАЗ
-              </button>
-              <p class="order-info__policy">
-                Нажимая на кнопку «оплатить заказ», я принимаю условия
-                <a href="">публичной оферты</a> и
-                <a href="">политики конфиденциальности</a>
-              </p>
             </div>
           </form>
         </div>
@@ -318,8 +322,8 @@
             </svg>
           </a>
         </div>
-        <a href="tel:+380730963644" class="contacts__tel">+38(073) 096 36 44</a>
-        <a href="email:info@yanki.com" class="contacts__email">info@yanki.com</a>
+        <a href="tel:+0000000000" class="contacts__tel">+38(073) 096 36 44</a>
+        <a href="mailto:example@gmail.com" class="contacts__email">info@yanki.com</a>
       </div>
     </div>
     <div class="footer-menu__copyright">
@@ -336,11 +340,13 @@
           </div>
           <div class="product-cart__info">
             <div class="product-cart__top">
-              <div class="product-cart__id">арт. <%= good.id %>
-              </div>
+              <div class="product-cart__id">арт. <%= good.id %></div>
               <div class="product-cart__name">
                 <%- good.name %>
                   << /div>
+              </div>
+              <div class="product-cart__price">
+                <%= good.price %>
               </div>
               <div class="product-cart__bottom">
                 <span class="product-cart__color radio-color item__color item__color--blue"></span>
@@ -381,20 +387,6 @@
                   <div data-counter class="count__current">1</div>
                   <button data-action="plus" class="count__action">+</button>
                 </div>
-                <!-- <span class="cart-item__btn-dec-count js-change-count" title="Уменьшить на 1" data-id="<%= good.id %>"
-                  data-delta="-1">
-                  <span class="glyphicon glyphicon-minus"></span>
-                </span>
-                <span class="js-count">
-                  <%= good.count %>
-                </span>
-                <span class="cart-item__btn-inc-count js-change-count" title="Увеличить на 1" data-id="<%= good.id %>"
-                  data-delta="1">
-                  <span class="glyphicon glyphicon-plus"></span>
-                </span> -->
-                <div class="product-cart__price">
-                  <%= good.price %>
-                </div>
                 <span class="js-summa"><%= good.count * good.price %></span> руб.
                 <button data-action="remove" class="product-cart__remove" type="button">
                   <svg class="product-cart__remove--icon">
@@ -408,9 +400,18 @@
 
       <% }); %>
     </script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script src="../files/libs/swiper/swiper-bundle.min.js"></script>
+
+<!-- <script  src="../files/libs/lightGallery/dist/lightgallery.umd.js"></script>
+<script src="../files/libs/lightGallery/dist/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+<script src="../files/libs/lightGallery/dist/plugins/zoom/lg-zoom.umd.js"></script>
+<script src="../files/libs/lightGallery/dist/plugins/rotate/lg-rotate.umd.js"></script> -->
+
+<script src="../files/libs/jquery/jquery-3.6.3.min.js"></script>
+
+<script src="../files/libs/underscore/underscore-umd-min.js"></script>
+
+
 <script src="js/app.min.js"></script>
 
 </body>

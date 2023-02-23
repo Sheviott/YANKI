@@ -1,7 +1,11 @@
-//================================================================================================================================
-//ОБЩИЕ СТИЛИ
-//========================================================================================================================================================
-//ТЕКСТ
+.__in-favor {
+  .item__icon {
+    background-image: url("../images/toFavorits.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
 .title {
   margin-bottom: rem(30);
   font-weight: 300;
@@ -11,9 +15,6 @@
     font-size: 36px;
   }
 }
-
-//========================================================================================================================================================
-//Все svg иконки
 .icon-svg {
   fill: #ffffff;
   width: rem(30);
@@ -22,19 +23,6 @@
   position: relative;
   padding: 5px;
 }
-
-.__home-page {
-  .icon-svg {
-    @media (min-width: $tablet) {
-      &:hover {
-        fill: $color-main;
-        transition: all 0.3s ease 0s;
-      }
-    }
-  }
-}
-//=================================================================================================================================
-//КНОПКИ
 .btn {
   display: inline-block;
   padding: 13px 42px;
@@ -63,31 +51,12 @@
 .btn--brown:active {
   background-color: #cca88a;
 }
-//=================================================================================================================================
-//ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ
-
-//================================================================================================================================
-
-//=================================================================================================================================
-//СВАЙПЕР
 .swiper {
   width: 100%;
   height: 100%;
 }
 
-//==================================================================================================================================
-//ССЫЛКИ
-//a:hover:not(.main-screen__body){
-//  text-decoration: underline;
-//  text-decoration-color: $color-main;
-//  text-underline-position: under;
-//}
-//a:hover:not(.menu__link) {
-//@extend a:hover:not(.main-screen__body);
-//}
-//========================================================================================================================================================
 //ФОРМА
-
 .fieldsrt-form {
   position: relative;
 }
@@ -106,7 +75,6 @@ fieldset {
 }
 label {
   position: absolute;
-  // top: 0;
   left: 0;
   padding: rem(10);
   transition: all 0.3s ease 0s;
@@ -126,7 +94,6 @@ input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
   opacity: 0;
 }
-//убираем крестики у input search
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -140,7 +107,6 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 0;
 }
 
-//УБЕРАЕМ ВСТРОЕННЫЕ СТИЛИ
 input[type="checkbox"],
 input[type="radio"] {
   position: absolute;
@@ -148,10 +114,9 @@ input[type="radio"] {
   width: 0;
   height: 0;
   border: 0;
-  // @extend .visually-hidden;
 }
 summary {
-  display: inline-block; // убирает стрелки
+  display: inline-block;
   cursor: pointer;
   position: relative;
   width: 100%;
@@ -160,9 +125,6 @@ summary {
 select {
   appearance: none;
 }
-
-//========================================================================================================================================================
-
 summary:after {
   content: url("../images/icons.svg#arrowBrown");
   width: rem(25);

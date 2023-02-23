@@ -6,14 +6,14 @@
 
 <body data-page="catalog">
   @@include('html/header.html', {
-  'page': '__catalog-page'
+  'page': '__white-header'
   })
   <main>
     <div class="catalog">
       <div class="catalog__body catalog__container">
         <div class="catalog__navigation navigation">
-          <a class="navigation__link" href="">Главная</a>
-          <a class="navigation__link" href="">Каталог</a>
+          <a class="navigation__link" href="index.html">Главная</a>
+          <p class="navigation__link">Каталог</p>
         </div>
         <details class="catalog__category category__button">
           <summary class="category__title title">
@@ -92,64 +92,18 @@
         </details>
         <div class="catalog__products catalog-products__content">
           <div id="goods" class="catalog-products__list list-unstyled">
-            <!-- <img src="@img/loading.gif" alt="" /> -->
-            <!--
-            <div class="catalog-products__item item">
-              <a href="product-page.html" class="item__image">
-                <img src='@img/2.category/category_6.jpg' srcset='' alt=''>
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div>
-            <div class="catalog-products__item item">
-              <a href="" class="item__image">
-                <img src='@img/2.category/category_1.jpg' srcset='' alt=''>
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div>
-            <div class="catalog-products__item item">
-              <a href="" class="item__image">
-                <img src='@img/2.category/category_2.jpg' srcset='' alt=''>
-              </a>
-              <button class="item__to-favorits btn--brown">
-                <svg class='item__icon icon-svg'>
-                  <use xlink:href='../images/icons.svg#favorits'></use>
-                </svg>
-              </button>
-              <div class="item__name">Белая куртка</div>
-              <div class="item__price">2900 грн</div>
-              <div class="item__size">XXS XS S M L</div>
-              <div class="item__colors">
-                <div class="item__color item__color--white"></div>
-                <div class="item__color item__color--blue"></div>
-                <div class="item__color item__color--yellow"></div>
-              </div>
-            </div> -->
-
           </div>
+          <div class="catalog-products__pagination pagination">
+            <ul class="pagination__list">
+              <li><a href="">&laquo;</a></li>
+              <li><a href="">&lt;</a></li>
+              <li data-page="1"><a href="" class="__active">1</a></li>
+              <li data-page="2"><a href="">2</a></li>
+              <li data-page="3"><a href="">3</a></li>
+              <li><a href="">&#62;</a></li>
+              <li><a href="">&#187;</a></li>
+            </ul>
+        </div>
         </div>
       </div>
     </div>
@@ -175,12 +129,13 @@
                   >
                     <img src='<%-good.img %>' srcset='' alt=''>
                   </a>
-                  <button class="item__to-favorits btn--brown">
+                  <button class="item__to-favorits js-item__to-favorits btn--brown">
                     <svg class='item__icon icon-svg'>
                       <use xlink:href='../images/icons.svg#favorits'></use>
                     </svg>
                   </button>
-                  <div class="item__name"><%- good.name %>
+                  <div class="item__name">
+                   <div class='item__content'> <%- good.name %></div >
                     <% if (good.new) { %>
                    <div class="item__new"> new</div>
                     <% } %>

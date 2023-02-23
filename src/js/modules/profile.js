@@ -3,8 +3,8 @@ const historyButton = document.querySelector('.profile__history');
 const profileButton = document.querySelector('.profile__profile-info');
 const historyBodyButton = document.querySelector('.js-history');
 const profileBodyProfile = document.querySelector('.js-personal-info');
-if(historyButton) {
 
+if(historyButton) {
     historyButton.addEventListener("click", function (e) {
         if(!historyButton.classList.contains('_active')) {
             historyButton.classList.add('_active');

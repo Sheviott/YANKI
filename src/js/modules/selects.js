@@ -1,21 +1,21 @@
-let currentdropdown = document.querySelectorAll('.current-dropdown');
-let dropdownOpen = document.querySelectorAll('.dropdown');
-let arrow = document.querySelectorAll('.arrow-icon');
+let dropdownBlock = document.querySelectorAll('[data-js-dropdown-active]');
+let dropdownOpen = document.querySelectorAll('[data-js-dropdown-open]');
+let arrow = document.querySelectorAll('.icon-arrow');
 
-if (currentdropdown.length > 0) {
-  for (let index = 0; index < currentdropdown.length; index++) {
-    const currentdropdownItem = currentdropdown[index];
+if (dropdownBlock.length > 0) {
+  for (let index = 0; index < dropdownBlock.length; index++) {
+    const dropdownBlockItem = dropdownBlock[index];
     const dropdownOpenBlock = dropdownOpen[index];
     const arrowItem = arrow[index];
 
-    currentdropdownItem.addEventListener("click", function (e) {
+    dropdownBlockItem.addEventListener("click", function (e) {
       dropdownOpenBlock.classList.toggle('visually-hidden');
       arrowItem.classList.toggle('__arrow-rotate');
     });
     // скрываем все по клику вне объекта
     document.addEventListener('click', (e) => {
       const pathDropdown = e.composedPath().includes(dropdownOpenBlock);
-      const pathCurrent = e.composedPath().includes(currentdropdownItem);
+      const pathCurrent = e.composedPath().includes(dropdownBlockItem);
       if (!pathDropdown & !pathCurrent) {
         dropdownOpenBlock.classList.add('visually-hidden');
         arrowItem.classList.remove('__arrow-rotate');
@@ -24,7 +24,6 @@ if (currentdropdown.length > 0) {
 
   }
 }
-
 let selectProfile = document.querySelectorAll('.item-order__row');
 for (let i = 0; i < selectProfile.length; i++) {
   const element = selectProfile[i];
@@ -32,6 +31,6 @@ for (let i = 0; i < selectProfile.length; i++) {
     console.log(element.closest('.item-order'));
     const bodyOrder = element.closest('.item-order');
     bodyOrder.querySelector('.item-order__body').classList.toggle('_active');
-    bodyOrder.querySelector('.arrow-icon').classList.toggle('_active');
+    bodyOrder.querySelector('.icon-arrow').classList.toggle('_active');
   });
 }

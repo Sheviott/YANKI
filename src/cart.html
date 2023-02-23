@@ -3,17 +3,17 @@
 @@include('html/head.html', { 'title': 'Каталог' })
 
 <body data-page="cart">
-  @@include('html/header.html', { 'page': '__catalog-page' })
+  @@include('html/header.html', { 'page': '__white-header' })
   <main>
     <div class="cart">
       <div class="cart__body cart__container">
         <div class="cart__navigation navigation">
-          <a class="navigation__link" href="">Главная</a>
-          <a class="navigation__link" href="">Корзина</a>
+          <a class="navigation__link" href="index.html">Главная</a>
+          <p class="navigation__link">Корзина</p>
         </div>
         <h3 class="cart__title title">Ваш заказ</h3>
         <div id="cart" class="cart__wrapper js-cart">
-
+<!-- Скрипт -->
         </div>
         <div class="cart__order order-info">
           <h3 class="cart__title title">Оформление заказа</h3>
@@ -118,32 +118,34 @@
               </fieldset>
             </div>
             <div class="order-info__right">
-              <div class="order-info__links">
-                <a href="" class="order-info__link order-info__user-profile">Войти в личный кабинет</a>
-                <a href="" class="order-info__link">УСЛОВИЯ ДОСТАВКИ</a>
-                <a href="" class="order-info__link">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА
-                </a>
-                <a href="" class="order-info__link">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
+              <div class="order-info__wrap">
+                <div class="order-info__links">
+                  <a href="" class="order-info__link order-info__user-profile">Войти в личный кабинет</a>
+                  <a href="" class="order-info__link">УСЛОВИЯ ДОСТАВКИ</a>
+                  <a href="" class="order-info__link">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА
+                  </a>
+                  <a href="" class="order-info__link">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
+                </div>
+                <div class="order-info__bottom">
+                  <div class="order-info__row">
+                    ДОСТАВКА: <span>По тарифам перевозчика</span>
+                  </div>
+                  <div class="order-info__row">
+                    БОНУСЫ: <span>-69 грн</span>
+                  </div>
+                  <div class="order-info__row">
+                    ИТОГО <span>15250 грн</span>
+                  </div>
+                </div>
+                <button id="order" class="btn btn--brown" type="submit">
+                  ОФОРМИТЬ ЗАКАЗ
+                </button>
+                <p class="order-info__policy">
+                  Нажимая на кнопку «оплатить заказ», я принимаю условия
+                  <a href="">публичной оферты</a> и
+                  <a href="">политики конфиденциальности</a>
+                </p>
               </div>
-              <div class="order-info__checkout">
-                <div class="order-info__row">
-                  ДОСТАВКА: <span>По тарифам перевозчика</span>
-                </div>
-                <div class="order-info__row">
-                  БОНУСЫ: <span>-69 грн</span>
-                </div>
-                <div class="order-info__row">
-                  ИТОГО <span>15250 грн</span>
-                </div>
-              </div>
-              <button id="order" class="btn btn--brown" type="submit">
-                ОФОРМИТЬ ЗАКАЗ
-              </button>
-              <p class="order-info__policy">
-                Нажимая на кнопку «оплатить заказ», я принимаю условия
-                <a href="">публичной оферты</a> и
-                <a href="">политики конфиденциальности</a>
-              </p>
             </div>
           </form>
         </div>
@@ -159,11 +161,13 @@
           </div>
           <div class="product-cart__info">
             <div class="product-cart__top">
-              <div class="product-cart__id">арт. <%= good.id %>
-              </div>
+              <div class="product-cart__id">арт. <%= good.id %></div>
               <div class="product-cart__name">
                 <%- good.name %>
                   << /div>
+              </div>
+              <div class="product-cart__price">
+                <%= good.price %>
               </div>
               <div class="product-cart__bottom">
                 <span class="product-cart__color radio-color item__color item__color--blue"></span>
@@ -203,20 +207,6 @@
                   <button data-action="minus" style="padding-bottom: 5px" class="count__action">-</button>
                   <div data-counter class="count__current">1</div>
                   <button data-action="plus" class="count__action">+</button>
-                </div>
-                <!-- <span class="cart-item__btn-dec-count js-change-count" title="Уменьшить на 1" data-id="<%= good.id %>"
-                  data-delta="-1">
-                  <span class="glyphicon glyphicon-minus"></span>
-                </span>
-                <span class="js-count">
-                  <%= good.count %>
-                </span>
-                <span class="cart-item__btn-inc-count js-change-count" title="Увеличить на 1" data-id="<%= good.id %>"
-                  data-delta="1">
-                  <span class="glyphicon glyphicon-plus"></span>
-                </span> -->
-                <div class="product-cart__price">
-                  <%= good.price %>
                 </div>
                 <span class="js-summa"><%= good.count * good.price %></span> руб.
                 <button data-action="remove" class="product-cart__remove" type="button">

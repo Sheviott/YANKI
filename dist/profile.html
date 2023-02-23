@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="css/style.min.css">
   <title>Каталог</title>
 </head>
 
 
-  <body>
-    <header id="header" class="header lock-padding __catalog-page">
+<body>
+  <header id="header" class="header lock-padding __white-header">
   <div class="header__container">
     <div class="header__body">
       <div class="header__menu menu">
@@ -24,25 +22,26 @@
           <span class="menu__line"></span>
         </div>
         <div class="menu__body">
-          <fieldset data-da=".user--menu__icons,1024,0" class="menu__search ">
+          <fieldset class="menu__search" data-da=".user-menu__icons,1024,0">
             <button class="menu__search--button search__button" type="submit">
-              <svg id='icon-search-menu' class='search-icon icon-svg'>
+              <svg class='icon-search icon-svg'>
                 <use xlink:href='../images/icons.svg#search'></use>
               </svg>
             </button>
-            <input placeholder=" " class="menu__search--input search__input js-search-input" type="search" id="search-menu">
+            <input placeholder=" " class="menu__search--input search__input js-search-input" type="search"
+              id="search-menu">
             <label class="menu__search--label search__label" for="search-menu"> Введите ваш запрос
             </label>
           </fieldset>
-          <div data-da=".header__lang,1024,4" class="menu__value">
-            <div class="menu__value--current current-dropdown value">UAH
-              <svg class="value--arrow arrow arrow-icon icon-svg" alt="arrow">
+          <div class="menu__value actions__value" data-da=".header__actions,1024,2">
+            <div data-js-dropdown-active class="value__active dropdown">UAH
+              <svg class="value__arrow icon-arrow icon-svg" alt="arrow">
                 <use xlink:href='../images/icons.svg#arrow'></use>
               </svg>
             </div>
-            <div class=" menu__value--dropdown visually-hidden dropdown">
-              <a class=" value dropdown-item" href="">USD</a>
-              <a class="value dropdown-item" href="">EUR</a>
+            <div data-js-dropdown-open class="value__body dropdown-body visually-hidden">
+              <p class="dropdown-item">USD</p>
+              <p class="dropdown-item">EUR</p>
             </div>
           </div>
           <nav class="menu__list">
@@ -79,39 +78,42 @@
             <div class="contacts__email">info@yanki.com</div>
           </div>
         </div>
-
-        <div class="header__lang">
-          <div class="header__lang--current current-dropdown language ">RU
-            <svg class="lang--arrow arrow arrow-icon icon-svg" alt="arrow">
-              <use xlink:href='../images/icons.svg#arrow'></use>
-            </svg>
-          </div>
-          <div class="header__lang--dropdown visually-hidden dropdown">
-            <a class="language dropdown-item" href="">UA</a>
-            <a class="language dropdown-item" href="">EN</a>
+        <div class="header__actions">
+          <div class="actions__lang">
+            <div data-js-dropdown-active class="lang__active dropdown">RU
+              <svg class="lang__arrow icon-arrow icon-svg" alt="arrow">
+                <use xlink:href='../images/icons.svg#arrow'></use>
+              </svg>
+            </div>
+            <div data-js-dropdown-open class="lang__body dropdown-body visually-hidden ">
+              <a class="dropdown-item" href="">UA</a>
+              <a class="dropdown-item" href="">EN</a>
+            </div>
           </div>
         </div>
+
+
         <div class="header__logo">
-          <a class="header__icon-logo" href="index.html">
+          <a class="header__logo-icon" href="index.html">
             <picture>
-              <source media='(min-width: 1024px)' srcset='../images/YANKI--desktop__catalog-page.svg'>
-              <img src="../images/YANKI__catalog-page.svg" class="logo-icon" alt="logo" />
+              <source media='(min-width: 768px)' srcset='../images/YANKI--desktop__white-header.svg'>
+              <img src="../images/YANKI__white-header.svg" class="logo-icon" alt="logo" />
             </picture>
           </a>
         </div>
-        <div class="header__user--menu">
-          <div class="user--menu__icons icons">
-            <a href="profile.html" class="icons__profile">
+        <div class="header__user-menu">
+          <div class="user-menu__icons icons">
+            <a href="profile.html" class="icons__item icons__profile">
               <svg class="profile-icon icon-svg" alt="profile">
                 <use xlink:href='../images/icons.svg#profile'></use>
               </svg>
             </a>
-            <a href="favorits.html" class="icons__favorits">
+            <a href="favorits.html" class="icons__item icons__favorits">
               <svg class="favorits-icon icon-svg" alt="favorits">
                 <use xlink:href='../images/icons.svg#favorits'></use>
               </svg>
             </a>
-            <a href="cart.html" class="icons__basket">
+            <a href="cart.html" class="icons__item icons__basket">
               <svg class="basket-icon icon-svg" alt="basket">
                 <use xlink:href='../images/icons.svg#basket'></use>
               </svg>
@@ -122,266 +124,203 @@
     </div>
 </header>
 
-    <main>
-      <div class="profile">
-        <div class="profile__body profile__container">
-          <div class="profile__navigation navigation">
-            <a class="navigation__link" href="">Главная</a>
-            <a class="navigation__link" href="">Личный кабинет</a>
-          </div>
-          <div class="profile__actions">
-            <button class="profile__history _active">История заказов</button>
-            <button class="profile__profile-info">Личные данные</button>
-            <button class="profile__logout">Выйти</button>
-          </div>
-          <!-- История заказов -->
-          <div class="profile__list js-history _active">
-            <div class="profile__item-order item-order">
-              <div  class="item-order__row">
-                <div class="item-order__number item-order__info-item">№ 718 от 28.09.21</div>
-                <div class="item-order__status item-order__info-item">
-                  Статус:
-                  <span>Отменён</span>
-                </div>
-                <div class="item-order__summ item-order__info-item">
-                  Сумма заказа:
-                  <span>13682 грн</span>
-                </div>
-                <svg class="value--arrow arrow arrow-icon icon-svg">
-                  <use xlink:href="../images/icons.svg#arrow"></use>
-                </svg>
+  <main>
+    <div class="profile">
+      <div class="profile__body profile__container">
+        <div class="profile__navigation navigation">
+          <a class="navigation__link" href="index.html">Главная</a>
+          <p class="navigation__link">Личный кабинет</p>
+        </div>
+        <div class="profile__actions">
+          <button class="profile__history _active">История заказов</button>
+          <button class="profile__profile-info">Личные данные</button>
+          <button class="profile__logout">Выйти</button>
+        </div>
+        <!-- История заказов -->
+        <div class="profile__list js-history _active">
+          <div class="profile__item-order item-order">
+            <div class="item-order__row">
+              <div class="item-order__number item-order__info-item">№ 718 от 28.09.21</div>
+              <div class="item-order__status item-order__info-item">
+                Статус:
+                <span>Отменён</span>
               </div>
-              <div class="item-order__body">
-                <div class="item-order__product cart__item product-cart">
-                  <div class="product-cart__image item__image">
-                    <img
-                      src="images/3.product-page/item_1.jpg"
-                      srcset=""
-                      alt=""
-                    />
-                  </div>
-                  <div class="product-cart__info">
-                    <div class="product-cart__top">
-                      <div class="product-cart__id">арт. 1588262</div>
-                      <div class="product-cart__name">Синяя парка</div>
-                    </div>
-                    <div class="product-cart__bottom">
-                      <span
-                        class="product-cart__color radio-color item__color item__color--yellow"
-                      ></span>
-                      <div class="product-cart__size"><span>Размер:</span> L</div>
-                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
-                      <div class="product-cart__price">9450 грн</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item-order__product cart__item product-cart">
-                  <div class="product-cart__image item__image">
-                    <img
-                      src="images/2.category/category_3.jpg"
-                      srcset=""
-                      alt=""
-                    />
-                  </div>
-                  <div class="product-cart__info">
-                    <div class="product-cart__top">
-                      <div class="product-cart__id">арт. 1588262</div>
-                      <div class="product-cart__name">Синяя парка</div>
-                    </div>
-                    <div class="product-cart__bottom">
-                      <span
-                        class="product-cart__color radio-color item__color item__color--white"
-                      ></span>
-                      <div class="product-cart__size"><span>Размер:</span> L</div>
-                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
-                      <div class="product-cart__price">9450 грн</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item-order__product cart__item product-cart">
-                  <div class="product-cart__image item__image">
-                    <img
-                      src="images/2.category/category_2.jpg"
-                      srcset=""
-                      alt=""
-                    />
-                  </div>
-                  <div class="product-cart__info">
-                    <div class="product-cart__top">
-                      <div class="product-cart__id">арт. 1588262</div>
-                      <div class="product-cart__name">Синяя парка</div>
-                    </div>
-                    <div class="product-cart__bottom">
-                      <span
-                        class="product-cart__color radio-color item__color item__color--blue"
-                      ></span>
-                      <div class="product-cart__size"><span>Размер:</span> L</div>
-                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
-                      <div class="product-cart__price">9450 грн</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item-order__person-info">
-                  <div class="person-info__name
-                  person-info__info">
-                    Имя Фамилия: <span>Елизаветта Станиславчук</span>
-                  </div>
-                  <div class="person-info__email person-info__info">
-                    E-mail: <span>ella.s97@gmail.com</span>
-                  </div>
-                  <div class="person-info__tel person-info__info">
-                    Номер телефона: <span>+38(067)470 20 66</span>
-                  </div>
-                  <div class="person-info__delivery person-info__info">
-                    Способ доставки: <span>Доставка Новой Почтой</span>
-                  </div>
-                  <div class="person-info__pay person-info__info">
-                    Способ оплаты: <span>Оплата при получении</span>
-                  </div>
-                </div>
+              <div class="item-order__summ item-order__info-item">
+                Сумма заказа:
+                <span>13682 грн</span>
               </div>
+              <svg class="value__arrow arrow icon-arrow icon-svg">
+                <use xlink:href="../images/icons.svg#arrow"></use>
+              </svg>
             </div>
-            <div class="profile__item-order item-order">
-              <div  class="item-order__row">
-                <div class="item-order__number item-order__info-item">№ 718 от 28.09.21</div>
-                <div class="item-order__status item-order__info-item">
-                  Статус:
-                  <span>Отменён</span>
+            <div class="item-order__body">
+              <div class="item-order__product cart__item product-cart">
+                <div class="product-cart__image item__image">
+                  <img src="images/3.product-page/item_1.jpg" srcset="" alt="" />
                 </div>
-                <div class="item-order__summ item-order__info-item">
-                  Сумма заказа:
-                  <span>13682 грн</span>
+                <div class="product-cart__info">
+                  <div class="product-cart__top">
+                    <div class="product-cart__id">арт. 1588262</div>
+                    <div class="product-cart__name">Синяя парка</div>
+                  </div>
+                  <div class="product-cart__bottom">
+                    <span class="product-cart__color radio-color item__color item__color--yellow"></span>
+                    <div class="product-cart__size"><span>Размер:</span> L</div>
+                    <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                    <div class="product-cart__price">9450 грн</div>
+                  </div>
                 </div>
-                <svg class="value--arrow arrow arrow-icon icon-svg">
-                  <use xlink:href="../images/icons.svg#arrow"></use>
-                </svg>
               </div>
-              <div class="item-order__body">
-                <div class="item-order__product cart__item product-cart">
-                  <div class="product-cart__image item__image">
-                    <img
-                      src="images/3.product-page/item_1.jpg"
-                      srcset=""
-                      alt=""
-                    />
+              <div class="item-order__product cart__item product-cart">
+                <div class="product-cart__image item__image">
+                  <img src="images/2.category/category_3.jpg" srcset="" alt="" />
+                </div>
+                <div class="product-cart__info">
+                  <div class="product-cart__top">
+                    <div class="product-cart__id">арт. 1588262</div>
+                    <div class="product-cart__name">Синяя парка</div>
                   </div>
-                  <div class="product-cart__info">
-                    <div class="product-cart__top">
-                      <div class="product-cart__id">арт. 1588262</div>
-                      <div class="product-cart__name">Синяя парка</div>
-                    </div>
-                    <div class="product-cart__bottom">
-                      <span
-                        class="product-cart__color radio-color item__color item__color--blue"
-                      ></span>
-                      <div class="product-cart__size"><span>Размер:</span> L</div>
-                      <div class="product-cart__count count"><span>Количество:</span> 2</div>
-                      <div class="product-cart__price">9450 грн</div>
-                    </div>
+                  <div class="product-cart__bottom">
+                    <span class="product-cart__color radio-color item__color item__color--white"></span>
+                    <div class="product-cart__size"><span>Размер:</span> L</div>
+                    <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                    <div class="product-cart__price">9450 грн</div>
                   </div>
                 </div>
-                <div class="item-order__person-info">
-                  <div class="person-info__name
+              </div>
+              <div class="item-order__product cart__item product-cart">
+                <div class="product-cart__image item__image">
+                  <img src="images/2.category/category_2.jpg" srcset="" alt="" />
+                </div>
+                <div class="product-cart__info">
+                  <div class="product-cart__top">
+                    <div class="product-cart__id">арт. 1588262</div>
+                    <div class="product-cart__name">Синяя парка</div>
+                  </div>
+                  <div class="product-cart__bottom">
+                    <span class="product-cart__color radio-color item__color item__color--blue"></span>
+                    <div class="product-cart__size"><span>Размер:</span> L</div>
+                    <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                    <div class="product-cart__price">9450 грн</div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-order__person-info">
+                <div class="person-info__name
                   person-info__info">
-                    Имя Фамилия: <span>Елизаветта Станиславчук</span>
-                  </div>
-                  <div class="person-info__email person-info__info">
-                    E-mail: <span>ella.s97@gmail.com</span>
-                  </div>
-                  <div class="person-info__tel person-info__info">
-                    Номер телефона: <span>+38(067)470 20 66</span>
-                  </div>
-                  <div class="person-info__delivery person-info__info">
-                    Способ доставки: <span>Доставка Новой Почтой</span>
-                  </div>
-                  <div class="person-info__pay person-info__info">
-                    Способ оплаты: <span>Оплата при получении</span>
-                  </div>
+                  Имя Фамилия: <span>Елизаветта Станиславчук</span>
+                </div>
+                <div class="person-info__email person-info__info">
+                  E-mail: <span>ella.s97@gmail.com</span>
+                </div>
+                <div class="person-info__tel person-info__info">
+                  Номер телефона: <span>+38(067)470 20 66</span>
+                </div>
+                <div class="person-info__delivery person-info__info">
+                  Способ доставки: <span>Доставка Новой Почтой</span>
+                </div>
+                <div class="person-info__pay person-info__info">
+                  Способ оплаты: <span>Оплата при получении</span>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Личные данные -->
-          <div class="profile__personal-info js-personal-info">
-            <form action="" class="order-info__form order-info">
-              <div class="order-info__order-column">
-                <div class="order-info__name-block">Персональные данные:</div>
-                <fieldset class="order-info__user-info  user-info fieldsrt-form">
-                  <input
-                    placeholder=" "
-                    id="user-info--name"
-                    type="text"
-                    class="user-info__input input-form"
-                  />
-                  <label class="label-form" for="user-info--name"
-                    >Ваше имя*</label
-                  >
-                </fieldset>
-                <fieldset class="order-info__user-info user-info fieldsrt-form">
-                  <input
-                    placeholder=" "
-                    id="user-info--lastname"
-                    type="text"
-                    class="user-info__input input-form"
-                  />
-                  <label class="label-form" for="user-info--lastname"
-                    >Ваша фамилия*</label
-                  >
-                </fieldset>
-                <fieldset class="order-info__user-info user-info fieldsrt-form">
-                  <input
-                    placeholder=" "
-                    id="user-info--email"
-                    type="email"
-                    class="user-info__input input-form"
-                  />
-                  <label class="label-form" for="user-info--email"
-                    >Ваш e-mail*</label
-                  >
-                </fieldset>
-
-                <fieldset class="order-info__user-info user-info fieldsrt-form">
-                  <input
-                    placeholder=" "
-                    id="user-info--tel"
-                    type="tel"
-                    class="user-info__input input-form"
-                  />
-                  <label class="label-form" for="user-info--tel"
-                    >Ваш телефон*</label
-                  >
-                </fieldset>
-                <div class="order-info__name-block">Адрес доставки:</div>
-                <fieldset class="order-info__adress adress fieldsrt-form">
-                  <input
-                    placeholder=" "
-                    id="adress--city"
-                    type="text"
-                    class="adress__input input-form"
-                  />
-                  <label class="label-form" for="adress--city"> Город*</label>
-                </fieldset>
-                <fieldset class="order-info__adress adress fieldsrt-form">
-                  <input
-                    placeholder=" "
-                    id="adress--post"
-                    type="text"
-                    class="adress__input input-form"
-                  />
-                  <label class="label-form" for="adress--post">
-                    Отделение почты*</label
-                  >
-                </fieldset>
-                <button class="order-info__button btn btn--brown" type="submit">
-                  ОБНОВИТЬ ИНФОРМАЦИЮ
-                </button>
+          <div class="profile__item-order item-order">
+            <div class="item-order__row">
+              <div class="item-order__number item-order__info-item">№ 718 от 28.09.21</div>
+              <div class="item-order__status item-order__info-item">
+                Статус:
+                <span>Отменён</span>
               </div>
-            </form>
+              <div class="item-order__summ item-order__info-item">
+                Сумма заказа:
+                <span>13682 грн</span>
+              </div>
+              <svg class="value__arrow arrow icon-arrow icon-svg">
+                <use xlink:href="../images/icons.svg#arrow"></use>
+              </svg>
+            </div>
+            <div class="item-order__body">
+              <div class="item-order__product cart__item product-cart">
+                <div class="product-cart__image item__image">
+                  <img src="images/3.product-page/item_1.jpg" srcset="" alt="" />
+                </div>
+                <div class="product-cart__info">
+                  <div class="product-cart__top">
+                    <div class="product-cart__id">арт. 1588262</div>
+                    <div class="product-cart__name">Синяя парка</div>
+                  </div>
+                  <div class="product-cart__bottom">
+                    <span class="product-cart__color radio-color item__color item__color--blue"></span>
+                    <div class="product-cart__size"><span>Размер:</span> L</div>
+                    <div class="product-cart__count count"><span>Количество:</span> 2</div>
+                    <div class="product-cart__price">9450 грн</div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-order__person-info">
+                <div class="person-info__name
+                  person-info__info">
+                  Имя Фамилия: <span>Елизаветта Станиславчук</span>
+                </div>
+                <div class="person-info__email person-info__info">
+                  E-mail: <span>ella.s97@gmail.com</span>
+                </div>
+                <div class="person-info__tel person-info__info">
+                  Номер телефона: <span>+38(067)470 20 66</span>
+                </div>
+                <div class="person-info__delivery person-info__info">
+                  Способ доставки: <span>Доставка Новой Почтой</span>
+                </div>
+                <div class="person-info__pay person-info__info">
+                  Способ оплаты: <span>Оплата при получении</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- Личные данные -->
+        <div class="profile__personal-info js-personal-info">
+          <form action="" class="order-info__form order-info">
+            <div class="order-info__order-column">
+              <div class="order-info__name-block">Персональные данные:</div>
+              <fieldset class="order-info__user-info  user-info fieldsrt-form">
+                <input placeholder=" " id="user-info--name" type="text" class="user-info__input input-form" />
+                <label class="label-form" for="user-info--name">Ваше имя*</label>
+              </fieldset>
+              <fieldset class="order-info__user-info user-info fieldsrt-form">
+                <input placeholder=" " id="user-info--lastname" type="text" class="user-info__input input-form" />
+                <label class="label-form" for="user-info--lastname">Ваша фамилия*</label>
+              </fieldset>
+              <fieldset class="order-info__user-info user-info fieldsrt-form">
+                <input placeholder=" " id="user-info--email" type="email" class="user-info__input input-form" />
+                <label class="label-form" for="user-info--email">Ваш e-mail*</label>
+              </fieldset>
+
+              <fieldset class="order-info__user-info user-info fieldsrt-form">
+                <input placeholder=" " id="user-info--tel" type="tel" class="user-info__input input-form" />
+                <label class="label-form" for="user-info--tel">Ваш телефон*</label>
+              </fieldset>
+              <div class="order-info__name-block">Адрес доставки:</div>
+              <fieldset class="order-info__adress adress fieldsrt-form">
+                <input placeholder=" " id="adress--city" type="text" class="adress__input input-form" />
+                <label class="label-form" for="adress--city"> Город*</label>
+              </fieldset>
+              <fieldset class="order-info__adress adress fieldsrt-form">
+                <input placeholder=" " id="adress--post" type="text" class="adress__input input-form" />
+                <label class="label-form" for="adress--post">
+                  Отделение почты*</label>
+              </fieldset>
+              <button class="order-info__button btn btn--brown" type="submit">
+                ОБНОВИТЬ ИНФОРМАЦИЮ
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </main>
-    <footer class="footer footer-menu">
+    </div>
+  </main>
+  <footer class="footer footer-menu">
   <div class="footer-menu__body footer__container">
     <div class="footer-menu__navigation">
       <details class="footer-menu__company">
@@ -431,8 +370,8 @@
             </svg>
           </a>
         </div>
-        <a href="tel:+380730963644" class="contacts__tel">+38(073) 096 36 44</a>
-        <a href="email:info@yanki.com" class="contacts__email">info@yanki.com</a>
+        <a href="tel:+0000000000" class="contacts__tel">+38(073) 096 36 44</a>
+        <a href="mailto:example@gmail.com" class="contacts__email">info@yanki.com</a>
       </div>
     </div>
     <div class="footer-menu__copyright">
@@ -441,10 +380,20 @@
   </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script src="../files/libs/swiper/swiper-bundle.min.js"></script>
+
+<!-- <script  src="../files/libs/lightGallery/dist/lightgallery.umd.js"></script>
+<script src="../files/libs/lightGallery/dist/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+<script src="../files/libs/lightGallery/dist/plugins/zoom/lg-zoom.umd.js"></script>
+<script src="../files/libs/lightGallery/dist/plugins/rotate/lg-rotate.umd.js"></script> -->
+
+<script src="../files/libs/jquery/jquery-3.6.3.min.js"></script>
+
+<script src="../files/libs/underscore/underscore-umd-min.js"></script>
+
+
 <script src="js/app.min.js"></script>
 
-  </body>
+</body>
+
 </html>
