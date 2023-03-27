@@ -1266,7 +1266,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 1023.98px) {
   .exchange__navigation,
-.delivery__navigation {
+  .delivery__navigation {
     margin-bottom: 1.875rem;
   }
 }
@@ -1277,7 +1277,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 1023.98px) {
   .exchange__content,
-.delivery__content {
+  .delivery__content {
     display: block;
   }
 }
@@ -1288,7 +1288,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 1023.98px) {
   .exchange__title,
-.delivery__title {
+  .delivery__title {
     font-size: 20px;
   }
 }
@@ -1298,7 +1298,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 1023.98px) {
   .exchange__row,
-.delivery__row {
+  .delivery__row {
     display: flex;
     max-width: none;
   }
@@ -1702,7 +1702,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 767.98px) {
   .product__swiper-mini .swiper-button-next,
-.product__swiper-mini .swiper-button-prev {
+  .product__swiper-mini .swiper-button-prev {
     color: #f2c6a3;
     left: auto;
     display: block;
@@ -1828,7 +1828,6 @@ details[open] > summary > .icon-svg {
   .selectCustom {
     display: block;
   }
-
   .selectNative:focus + .selectCustom {
     display: none;
   }
@@ -1952,7 +1951,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 374.98px) {
   .selectNative,
-.selectCustom {
+  .selectCustom {
     font-size: 16px;
   }
 }
@@ -2258,7 +2257,7 @@ details[open] > summary > .icon-svg {
 }
 @media (min-width: 767.98px) {
   .cart .order-info__name-block,
-.cart .order-info p {
+  .cart .order-info p {
     margin-bottom: 1.25rem;
   }
 }
@@ -2712,7 +2711,7 @@ details[open] > summary > .icon-svg {
     justify-content: flex-start;
   }
   .footer-menu__navigation ul li a:hover,
-.footer-menu__navigation a:hover {
+  .footer-menu__navigation a:hover {
     text-decoration: underline;
     color: #e0bea2;
     transition: all 0.3s ease 0s;
